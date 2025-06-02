@@ -2,6 +2,15 @@
 <html lang="en" dir="ltr" data-mode="dark" data-theme="neo">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    try {
+      const mode = localStorage.getItem("mode") || "dark";
+      const theme = localStorage.getItem("theme") || "neo";
+      const html = document.documentElement;
+      html.setAttribute("data-mode", mode);
+      html.setAttribute("data-theme", theme);
+    } catch (_) {}
+  </script>
   <link rel="icon" type="image/svg+xml" href="/images/corex.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Introduction- Corex</title>
