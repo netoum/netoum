@@ -1,0 +1,850 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Checkbox</h1>
+        <h2>A pure vanilla JS implementation of <a href="https://zagjs.com/components/react/checkbox" target="_blank"
+                class="link ">Zag JS Checkbox
+                {{> icon/external}}
+            </a></h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Checkbox component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">label</code>
+            <code class="code-js">hidden-input</code>
+            <code class="code-js">control</code>
+        </div>
+
+        <p>To hide and show the correct on checkobx states, you must add <code
+            class="code-js">class="control__checked"</code> and <code
+            class="code-js">class="control__indeterminate"</code> to the respective icons</p>
+      
+            <div class="preview">
+            <div id="checkbox-anatomy" class="preview-display">
+                <div class="checkbox checkbox-js">
+                    <label data-part="root">
+                        <span data-part="label">Label</span>
+                        <input data-part="hidden-input" />
+                      <div data-part="control">
+                        <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                      </div>
+                    </label>
+                </div>
+            </div>
+            {{> copy/checkbox/anatomy}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each checkbox can be set with different settings with the following data-attribute.</p>
+        <div class="notification">
+            <p>We are aware of a bug regarding the default state as indeterminate. It currently sets the state as true instead of "indeterminate".
+              We will update the components as soon as it is resolved on the new version.
+            </p>
+              </div>
+        <div class="preview">
+            <div id="checkbox-attribute" class="preview-display">
+                <div>
+                    <div class="checkbox checkbox-js" data-default-checked="true">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js" data-checked="indeterminate">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js" data-default-checked="true" data-disabled="true">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js" data-invalid="true">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js" data-default-checked="true" data-invalid="true" >
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+            {{> copy/checkbox/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-checked</code></td>
+                        <td>boolean || "indeterminate</td>
+                        <td>The initial checked state of the checkbox</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-checked</code></td>
+                        <td>boolean || "indeterminate</td>
+                        <td>The controlled checked state of the checkbox</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-dir</code></td>
+                        <td>ltr | rtl</td>
+                        <td>The orientation of the checkbox. Can be `ltr` or `rtl`</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-disabled</code></td>
+                        <td>string</td>
+                        <td>Whether the checkbox is disabled</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-invalid</code></td>
+                        <td>boolean</td>
+                        <td>Whether the checkbox is invalid</td>
+                    </tr>
+                    <tr>
+                        <tr>
+                            <td><code class="code-js select-all">data-required</code></td>
+                            <td>boolean</td>
+                            <td>Whether the checkbox is required</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-js select-all">data-read-only</code></td>
+                            <td>boolean</td>
+                            <td>Whether the checkbox is read only</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-js select-all">data-form</code></td>
+                            <td>string</td>
+                            <td>The id of the form that the checkbox belongs to.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-js select-all">data-name</code></td>
+                            <td>string</td>
+                            <td>The name of the input field in a checkbox. Useful for form submission.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-js select-all">data-value</code></td>
+                            <td>string</td>
+                            <td>The value of checkbox input. Useful for form submission. Default to "on"</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callback">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each checkbox component can receive callbacks that can be used to respond to user interaction with custom
+            behavior.</p>
+        <p>You must add a custom id and an event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+            document.getElementById("my-callback-checkbox")
+            ?.addEventListener("my-callback-checkbox-event", (event) => {
+              console.log("Received event:", (event as CustomEvent).detail);
+            });
+        </code></pre>
+        <div class="preview">
+            <div id="checkbox-callback" class="preview-display">
+                <div id="my-callback-checkbox" class="checkbox checkbox-js" data-on-checked-change="my-callback-checkbox-event" >
+                    <label data-part="root">
+                      <span data-part="label"></span>
+                      <input data-part="hidden-input" />
+                      <div data-part="control">
+                        <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                      </div>
+                    </label>
+                </div>
+            </div>
+            {{> copy/checkbox/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when you open or close the above checkbox</p>
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-open-change</code></td>
+                        <td>string</td>
+                        <td>Function to call when the checkbox's open state changes
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="state">
+    <section>
+        <h3>Checked State Control</h3>
+        <p>Checkbox checked state can be control with data attributes on any element
+        </p>
+        <p>You must set a custom id for your checkbox, as the default is randomly generated</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-check-checkbox="checkbox-id"</code>
+            <code class="code-js">data-uncheck-checkbox="checkbox-id"</code>
+            <code class="code-js">data-indeterminate-checkbox="checkbox-id"</code>
+        </div>
+        <div class="preview">
+            <div id="checkbox-state" class="preview-display">
+               <div>
+                <button data-check-checkbox="my-checkbox" class="button button--sm">
+                    Check Checkbox
+                </button>
+                <button data-uncheck-checkbox="my-checkbox" class="button button--sm">
+                    Uncheck Checkbox
+                </button>
+               </div>
+     
+                <div id="my-checkbox" class="checkbox checkbox-js">
+                    <label data-part="root">
+                      <span data-part="label"></span>
+                      <input data-part="hidden-input" />
+                      <div data-part="control">
+                        <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                      </div>
+                    </label>
+                </div>
+            </div>
+            {{> copy/checkbox/state}}
+
+        </div>
+        <p>You also dispatch an event named <code class="code-js" data-lang="js">checkbox:set-checked</code> to the checkbox id with a boolean value</p>
+        <pre><code class="code-js" data-lang="js">
+            const el = document.getElementById("my-checkbox");
+            if (el) {
+              el.dispatchEvent(
+                new CustomEvent("checkbox:set-checked", {
+                  detail: { value: true },
+                })
+              );
+            } else {
+              console.warn("Element with ID 'my-checkbox' not found");
+            }
+        </code></pre>
+
+    </section>
+    <hr id="form">
+    <section>
+        <h3>Use with Form</h3>
+        <p>Checkbox can be used inside a form</p>
+        <p>You must set the id of the form and the name of the checkbox</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-form="form-id"</code>
+            <code class="code-js">data-name="checkbox-name"</code>
+        </div>
+        <p>You can also add the value of the checkbox. Default to : "on"</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-value="yes"</code>
+        </div>
+        <div class="preview">
+            <div id="checkbox-form" class="preview-display">
+                <form id="my-form">
+                    <div class="checkbox checkbox-js" data-form="my-form" data-name="newsletter" data-value="yes">
+                        <label data-part="root">
+                          <span data-part="label">Receive Newsletter ?</span>
+                          <input data-part="hidden-input"/>
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <button class="button button--accent" type="submit">Submit</button>
+                  </form>
+                
+                  <div id="result"></div>
+            </div>
+            {{> copy/checkbox/form}}
+
+        </div>
+        <p>You can use the results from the form as you wish</p>
+        <pre><code class="code-js" data-lang="js">
+            form.addEventListener('submit', (e: Event) => {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const newsletter = (formData.get('newsletter') as string) || 'no';
+                result.textContent = `Submitted: newsletter: ${newsletter}`;
+              });
+        </code></pre>
+
+    </section>
+    <hr id="modifers">
+    <section>
+        <h3>Modifier</h3>
+        <p>Each checkbox can be styled with modifiers.</p>
+        <p>You can <a href="#mix" class="link">mix as many modifiers</a> on the same checkbox, however you
+            can choose only one choice per modifer</p>
+        <p>For convenience the default variant name is omited, meaning there is no need to add the default name
+            class</p>
+        <div class="notification">
+            You may have noticed the double dash before the modifier name — this follows the
+            <a class="link" href="https://en.bem.info/methodology/quick-start/" target="_blank">BEM (Block Element
+                Modifier)
+                <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor">
+                    <title>Opens in a new window</title>
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+            </a> naming convention
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modifier</th>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#color" class="link">Color</a></td>
+                        <td>base (default), brand, alert</td>
+                        <td>Use any semantic colors</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#size" class="link">Size</a></td>
+                        <td>md (default), sm, lg, xl</td>
+                        <td>Modify the size of the checkbox.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#shape" class="link">Shape</a></td>
+                        <td>square (default), circle</td>
+                        <td>Modify the shape of the checkbox.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="color">
+    <section>
+        <h3>Color</h3>
+        <p>Set the color of each button</p>
+        <p>Options: <strong>base(default)</strong>, <strong>brand</strong>, <strong>alert</strong></p>
+        <div class="preview">
+            <div id="checkbox-color" class="preview-display">
+                <div>
+                    <div class="checkbox checkbox-js">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--brand">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--alert">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+
+                </div>
+                
+            </div>
+            {{>copy/checkbox/color}}
+        </div>
+    </section>
+    <hr id="size">
+    <section>
+        <h3>Size</h3>
+        <p>Set the size of each button</p>
+        <p>Options: <strong>md(default)</strong>, <strong>sm</strong>, <strong>lg</strong>, <strong>xl</strong></p>
+        <div class="preview">
+            <div id="checkbox-size" class="preview-display">
+                <div>
+                <div class="checkbox checkbox-js checkbox--sm">
+                    <label data-part="root">
+                      <span data-part="label"></span>
+                      <input data-part="hidden-input" />
+                      <div data-part="control">
+                        <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                      </div>
+                    </label>
+                </div>
+                <div class="checkbox checkbox-js">
+                    <label data-part="root">
+                      <span data-part="label"></span>
+                      <input data-part="hidden-input" />
+                      <div data-part="control">
+                        <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                      </div>
+                    </label>
+                </div>
+                <div class="checkbox checkbox-js checkbox--lg">
+                    <label data-part="root">
+                      <span data-part="label"></span>
+                      <input data-part="hidden-input" />
+                      <div data-part="control">
+                        <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                      </div>
+                    </label>
+                </div>
+                <div class="checkbox checkbox-js checkbox--xl">
+                    <label data-part="root">
+                      <span data-part="label"></span>
+                      <input data-part="hidden-input" />
+                      <div data-part="control">
+                        <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                      </div>
+                    </label>
+                </div>
+            </div>
+            </div>
+            {{>copy/checkbox/size}}
+        </div>
+    </section>
+    <hr id="shape">
+    <section>
+        <h3>Shape</h3>
+        <p>Set the shape of each button</p>
+        <p>Options: <strong>square(default)</strong>, <strong>circle</strong></p>
+        <div class="preview">
+            <div id="button-shape" class="preview-display">
+                <div>
+                    <div class="checkbox checkbox-js">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--circle">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            {{>copy/button/shape}}
+        </div>
+    </section>
+    <hr id="mix">
+    <section>
+        <h3>Mix</h3>
+        <p>Mix as many modifiers for each button</p>
+        <div class="preview">
+            <div id="checkbox-mix" class="preview-display">
+                <div>
+                    <div class="checkbox checkbox-js checkbox--sm checkbox--circle">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--brand checkbox--sm checkbox--circle">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--alert checkbox--sm checkbox--circle">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js  checkbox--sm">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--alert  checkbox--sm">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--brand checkbox--sm">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="checkbox checkbox-js checkbox--lg checkbox--circle">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--brand checkbox--lg checkbox--circle">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--alert checkbox--lg checkbox--circle">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js  checkbox--lg">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--alert  checkbox--lg">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                    <div class="checkbox checkbox-js checkbox--brand checkbox--lg">
+                        <label data-part="root">
+                          <span data-part="label"></span>
+                          <input data-part="hidden-input" />
+                          <div data-part="control">
+                            <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                              stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                          </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            {{>copy/checkbox/mix}}
+        </div>
+    </section>
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each checkbox with Tailwind utilities</p>
+        <div class="preview">
+            <div id="checkbox-custom" class="preview-display">
+                <div class="checkbox checkbox-js">
+                    <label data-part="root">
+                      <span data-part="label" class="text-contrast-brand-2">Label</span>
+                      <input data-part="hidden-input" />
+                      <div data-part="control" class="rounded-lg text-accent-contrast-alert  border-contrast-alert border-2 ">
+                        <svg class="control__checked" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        </svg>
+                        <svg class="control__indeterminate" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                        </svg>
+                      </div>
+                    </label>
+                </div>
+            </div>
+            {{>copy/checkbox/custom}}
+        </div>
+    </section>
+    <h3>Templates</h3>
+    <p>Checkbox components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Clipboard" next="Link" prev-path="components/clipboard" next-path="components/link"}}
+</main>

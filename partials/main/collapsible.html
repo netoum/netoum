@@ -1,0 +1,265 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Collapsible</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/collapsible" target="_blank" class="link ">Zag JS Collapsible
+                {{> icon/external}}
+            </a>
+        </h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Collapsible component consists of the following <code class="code-js" data-lang="html">data-part</code>
+        </p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">trigger</code>
+            <code class="code-js">content</code>
+        </div>
+        <div class="preview">
+            <div id="collapsible-anatomy" class="preview-display">
+                <div class="collapsible collapsible-js">
+                    <div data-part="root">
+                        <button data-part="trigger" class="button">
+                            <span class="trigger__open">Open</span>
+                            <span class="trigger__closed">Close</span>
+                            <span data-part="indicator">
+                                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5">
+                                    </path>
+                                </svg>
+                            </span>
+                        </button>
+                        <div data-part="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, augue a pulvinar
+                            facilisis, eros urna
+                            accumsan risus, ut laoreet est sapien eu ipsum. Fusce nec quam turpis. Maecenas congue
+                            ornare vestibulum.
+                            Pellentesque vel risus nulla. Suspendisse feugiat est tortor, nec efficitur ligula ultricies
+                            sed
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/collapsible/anatomy}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each collapsible can be set with different settings with the following data-attribute.</p>
+
+        <div class="preview">
+            <div id="collapsible-attribute" class="preview-display">
+                <div class="collapsible collapsible-js" data-default-open="true" data-disabled="true">
+                    <div data-part="root">
+                        <button data-part="trigger" class="button">
+                            <span class="trigger__open">Open</span>
+                            <span class="trigger__closed">Close</span>
+                            <span data-part="indicator">
+                                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5">
+                                    </path>
+                                </svg>
+                            </span>
+                        </button>
+                        <div data-part="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, augue a pulvinar
+                            facilisis, eros urna
+                            accumsan risus, ut laoreet est sapien eu ipsum. Fusce nec quam turpis. Maecenas congue
+                            ornare vestibulum.
+                            Pellentesque vel risus nulla. Suspendisse feugiat est tortor, nec efficitur ligula ultricies
+                            sed
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/collapsible/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-open</code></td>
+                        <td>boolean</td>
+                        <td>The initial open state of the collapsible when rendered. Use when you don't need to control the open state of the collapsible.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-open</code></td>
+                        <td>boolean</td>
+                        <td>The controlled open state of the collapsible.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-disabled</code></td>
+                        <td>boolean</td>
+                        <td>Whether the collapsible is disabled.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callbacks">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each Collapsible component can receive callbacks that can be used to respond to user interaction with
+            custom
+            behavior.</p>
+        <p>You must add a custom id for the collapsible and a event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+                document.getElementById("my-callback-collapsible")
+                ?.addEventListener("my-callback-collapsible-event", (event) => {
+                  console.log("Received event:", (event as CustomEvent).detail);
+                });
+            </code></pre>
+        <div class="preview">
+            <div id="collapsible-callback" class="preview-display">
+                <div id="my-callback-collapsible" class="collapsible collapsible-js" data-on-open-change="my-callback-collapsible-event">
+                    <div data-part="root">
+                        <button data-part="trigger" class="button">
+                            <span class="trigger__open">Open</span>
+                            <span class="trigger__closed">Close</span>
+                            <span data-part="indicator">
+                                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5">
+                                    </path>
+                                </svg>
+                            </span>
+                        </button>
+                        <div data-part="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, augue a pulvinar
+                            facilisis, eros urna
+                            accumsan risus, ut laoreet est sapien eu ipsum. Fusce nec quam turpis. Maecenas congue
+                            ornare vestibulum.
+                            Pellentesque vel risus nulla. Suspendisse feugiat est tortor, nec efficitur ligula ultricies
+                            sed
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/collapsible/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when the collapsible is opened or closed</p>
+        </div>
+    </section>
+
+    <hr id="state">
+    <section>
+        <h3>Open State Control</h3>
+        <p>Dialog open state can be control with data attributes on any element, it can also be outside of the dialog
+        </p>
+        <p>You must set a custom id for your collapsible, as the default is randomly generated</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-open-collapsible="collapsible-id"</code>
+            <code class="code-js">data-close-collapsible="collapsible-id"</code>
+        </div>
+        <div class="preview">
+            <div id="collapsible-state" class="preview-display">
+
+            <div>
+                <button data-open-collapsible="my-collapsible" class="button button--sm">Outside Open</button>
+                <button data-close-collapsible="my-collapsible" class="button button--sm">Outside Close</button>
+    
+            </div>
+     
+            <div id="my-collapsible" class="collapsible collapsible-js">
+                <div data-part="root">
+                    <button data-part="trigger" class="button">
+                        <span class="trigger__open">Open</span>
+                        <span class="trigger__closed">Close</span>
+                        <span data-part="indicator">
+                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5">
+                                </path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div data-part="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, augue a pulvinar
+                        facilisis, eros urna
+                        accumsan risus, ut laoreet est sapien eu ipsum. Fusce nec quam turpis. Maecenas congue
+                        ornare vestibulum.
+                        Pellentesque vel risus nulla. Suspendisse feugiat est tortor, nec efficitur ligula ultricies
+                        sed
+                    </div>
+                </div>
+            </div>
+            </div>
+            {{> copy/collapsible/state}}
+
+        </div>
+        <p>You also dispatch an event named <code class="code-js" data-lang="js">collapsible:set-open</code> to the collapsible id with a boolean value</p>
+        <pre><code class="code-js" data-lang="js">
+            const el = document.getElementById("my-collapsible");
+            if (el) {
+              el.dispatchEvent(
+                new CustomEvent("collapsible:set-open", {
+                  detail: { value: true },
+                })
+              );
+            } else {
+              console.warn("Element with ID 'my-collapsible' not found");
+            }
+        </code></pre>
+
+    </section>
+
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each collapsible and its parts with Tailwind utilities
+        </p>
+        <div class="preview my-6">
+            <div id="collapsible-custom" class="preview-display">
+                <div class="collapsible collapsible-js">
+                    <div data-part="root">
+                        <button data-part="trigger" class="button text-contrast-alert  border-contrast-alert border-2 rounded-full">
+                            <span class="trigger__open">Open</span>
+                            <span class="trigger__closed">Close</span>
+                            <span data-part="indicator" class="text-contrast-brand">
+                                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5">
+                                    </path>
+                                </svg>
+                            </span>
+                        </button>
+                        <div data-part="content" class="text-contrast-brand  border-contrast-brand border-2 rounded-xl shadow-xl">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius, augue a pulvinar
+                            facilisis, eros urna
+                            accumsan risus, ut laoreet est sapien eu ipsum. Fusce nec quam turpis. Maecenas congue
+                            ornare vestibulum.
+                            Pellentesque vel risus nulla. Suspendisse feugiat est tortor, nec efficitur ligula ultricies
+                            sed
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/collapsible/custom}}
+        </div>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Collapsible components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Clipboard" next="Dialog" prev-path="components/clipboard" next-path="components/dialog"}}
+</main>

@@ -1,0 +1,19 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-theme=uno] {
+  --theme-font-family: var(--font-classical-humanist);
+  --theme-font-family-code: var(--font-monospace-code);
+  --theme-font-size: var(--font-size-4);
+  --theme-font-line-height: var(--font-line-height-4);
+  --theme-border-radius: var(--border-radius-0);
+  --theme-border-width: var(--border-width-1);
+  --theme-height: var(--size-14);
+  --theme-padding: var(--size-6);
+  --theme-margin: var(--size-9);
+  --theme-gap: var(--size-6);
+  --theme-color-border-1: var(--color-brand-6);
+  --theme-color-border: var(--color-brand-5);
+  --theme-border-color: var(--color-border);
+}

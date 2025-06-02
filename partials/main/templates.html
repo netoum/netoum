@@ -1,0 +1,427 @@
+<main class="layout-main scrollbar">
+  <section>
+    <h1>Corex Templates: Advanced CSS Variable Architecture</h1>
+    <p>
+      Corex Templates represent a sophisticated approach to CSS variable management, offering three distinct
+      architectural patterns that scale from simple styling to complex multi-theme systems. Each template provides a
+      different level of abstraction and functionality while maintaining component consistency.
+    </p>
+    <div class="table-wrapper scrollbar scrollbar--sm">
+      <table>
+        <thead>
+          <tr>
+            <th>Template</th>
+            <th>Modes</th>
+            <th>Themes</th>
+            <th>Export</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#corex" class="link">Corex</a></td>
+            <td>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-10 text-red-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </td>
+            <td>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-10 text-red-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </td>
+            <td>CSS & Tailwind</td>
+          </tr>
+          <tr>
+            <td><a href="#modex" class="link">Modex</a></td>
+            <td>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-10 text-green-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </td>
+            <td>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-10 text-red-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </td>
+            <td>CSS & Tailwind</td>
+          </tr>
+          <tr>
+            <td><a href="#themex" class="link">Themex</a></td>
+            <td>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-10 text-green-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </td>
+            <td>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-10 text-green-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </td>
+            <td>CSS & Tailwind</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <hr id="corex">
+  <section>
+    <h2>Corex Template</h2>
+    <p>This is the default template for Corex.</p>
+    <p>The template consists of <strong>Global tokens</strong>, <strong>Semantic tokens</strong> and
+      <strong>Components</strong>
+    </p>
+    <div class="space-y-6 my-4">
+      <a href="https://github.com/netoum/corex-css" class="link" target="_blank">
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 128 128">
+          <path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+          <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+          <path fill="#fff"
+            d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
+          <path fill="#EBEBEB"
+            d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+          <path fill="#fff"
+            d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
+          <path fill="#EBEBEB"
+            d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+        </svg>
+        Corex CSS
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <title>Opens in a new window</title>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+      <a href="https://github.com/netoum/corex-tailwind" class="link" target="_blank">
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32">
+          <path
+            d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
+            style="fill:#44a8b3" />
+        </svg>
+        Corex Tailwind
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <title>Opens in a new window</title>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+      <a href="https://github.com/netoum/corex-css" class="link" target="_blank">
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+          <path fill="#1ABCFE"
+            d="M8.55 8c0-1.289 1.019-2.333 2.275-2.333C12.082 5.667 13.1 6.71 13.1 8c0 1.289-1.018 2.333-2.275 2.333C9.57 10.333 8.55 9.29 8.55 8z" />
+          <path fill="#0ACF83"
+            d="M4 12.667c0-1.289 1.019-2.334 2.275-2.334H8.55v2.334C8.55 13.955 7.531 15 6.275 15S4 13.955 4 12.667z" />
+          <path fill="#FF7262"
+            d="M8.55 1v4.667h2.275c1.257 0 2.275-1.045 2.275-2.334C13.1 2.045 12.082 1 10.825 1H8.55z" />
+          <path fill="#F24E1E" d="M4 3.333c0 1.289 1.019 2.334 2.275 2.334H8.55V1H6.275C5.019 1 4 2.045 4 3.333z" />
+          <path fill="#A259FF" d="M4 8c0 1.289 1.019 2.333 2.275 2.333H8.55V5.667H6.275C5.019 5.667 4 6.71 4 8z" />
+        </svg>
+        Corex Design Tokens
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <title>Opens in a new window</title>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+    </div>
+    <div class="tabs tabs-js" data-default-value="css">
+      <div data-part="root">
+        <div data-part="list">
+          <button data-part="trigger" data-value="css">CSS</button>
+          <button data-part="trigger" data-value="tailwind">Tailwind</button>
+        </div>
+        <div data-part="content" data-value="css">
+          <h3>Corex CSS</h3>
+          <code data-lang="js" class="select-all code-js">npm install @netoum/corex-css</code>
+          <p>In you main CSS file import all Corex CSS components or only some components</p>
+          <pre>
+       <code data-lang="css" class="code-js"> @import "@netoum/corex-css";
+       </code>
+     </pre>
+        </div>
+        <div data-part="content" data-value="tailwind">
+          <h3>Corex Tailwind</h3>
+          <code data-lang="js" class="select-all code-js">npm install @netoum/corex-tailwind</code>
+          <p>In you main CSS file import all Corex CSS components or only some components</p>
+          <pre>
+           <code data-lang="css" class="code-js">@import "@netoum/corex-tailwind";
+           </code>
+         </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr id="modex">
+  <section>
+    <h2>Modex Template</h2>
+    <p>Based on the default Corex template, it adds refencing for dark and light mode to each color with <code
+        data-lang="html" class="code-js">[data-mode="light"]</code> and <code data-lang="html"
+        class="code-js">[data-mode="dark"]</code></p>
+    <p>The template consists of <strong>Global tokens</strong>, <strong>Modes tokens</strong> and
+      <strong>Components</strong>
+    </p>
+    <div class="space-y-6 my-4">
+      <a href="https://github.com/netoum/modex-css" class="link" target="_blank">
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 128 128">
+          <path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+          <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+          <path fill="#fff"
+            d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
+          <path fill="#EBEBEB"
+            d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+          <path fill="#fff"
+            d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
+          <path fill="#EBEBEB"
+            d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+        </svg>
+        Modex CSS
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <title>Opens in a new window</title>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+      <a href="https://github.com/netoum/modex-tailwind" class="link" target="_blank">
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32">
+          <path
+            d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
+            style="fill:#44a8b3" />
+        </svg>
+        Modex Tailwind
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <title>Opens in a new window</title>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+      <a href="https://github.com/netoum/modex-css" class="link" target="_blank">
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+          <path fill="#1ABCFE"
+            d="M8.55 8c0-1.289 1.019-2.333 2.275-2.333C12.082 5.667 13.1 6.71 13.1 8c0 1.289-1.018 2.333-2.275 2.333C9.57 10.333 8.55 9.29 8.55 8z" />
+          <path fill="#0ACF83"
+            d="M4 12.667c0-1.289 1.019-2.334 2.275-2.334H8.55v2.334C8.55 13.955 7.531 15 6.275 15S4 13.955 4 12.667z" />
+          <path fill="#FF7262"
+            d="M8.55 1v4.667h2.275c1.257 0 2.275-1.045 2.275-2.334C13.1 2.045 12.082 1 10.825 1H8.55z" />
+          <path fill="#F24E1E" d="M4 3.333c0 1.289 1.019 2.334 2.275 2.334H8.55V1H6.275C5.019 1 4 2.045 4 3.333z" />
+          <path fill="#A259FF" d="M4 8c0 1.289 1.019 2.333 2.275 2.333H8.55V5.667H6.275C5.019 5.667 4 6.71 4 8z" />
+        </svg>
+        Modex Design Tokens
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <title>Opens in a new window</title>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+    </div>
+    <div class="tabs tabs-js" data-default-value="css">
+      <div data-part="root">
+        <div data-part="list">
+          <button data-part="trigger" data-value="css">CSS</button>
+          <button data-part="trigger" data-value="tailwind">Tailwind</button>
+        </div>
+        <div data-part="content" data-value="css">
+          <h3>Modex CSS</h3>
+          <code data-lang="js" class="select-all code-js">npm install @netoum/modex-css</code>
+          <p>In you main CSS file import all Modex CSS components or only some components</p>
+          <pre>
+       <code data-lang="css" class="code-js">@import "@netoum/modex-css";
+       </code>
+     </pre>
+        </div>
+        <div data-part="content" data-value="tailwind">
+          <h3>Modex Tailwind</h3>
+          <code data-lang="js" class="select-all code-js">npm install @netoum/modex-tailwind</code>
+          <p>In you main CSS file import all Modex CSS components or only some components</p>
+          <pre>
+           <code data-lang="css" class="code-js">@import "@netoum/modex-tailwind";
+           </code>
+         </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr id="themex">
+  <section>
+    <h2>Themex Template</h2>
+    <p>Based on the default Corex template, it adds refencing for multi level themes and modes to each color with <code
+        data-lang="html" class="code-js">[data-theme="${theme}"]</code> and <code data-lang="html"
+        class="code-js">[data-mode="${mode}"]</code></p>
+    <p>The template consists of <strong>Global tokens</strong>, <strong>Themes tokens</strong> and
+      <strong>Components</strong>
+    </p>
+    <div class="space-y-6 my-4">
+      <a href="https://github.com/netoum/themex-css" class="link" target="_blank">
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 128 128">
+          <path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+          <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+          <path fill="#fff"
+            d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
+          <path fill="#EBEBEB"
+            d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+          <path fill="#fff"
+            d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
+          <path fill="#EBEBEB"
+            d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+        </svg>
+        Themex CSS
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <title>Opens in a new window</title>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+      <a href="https://github.com/netoum/themex-tailwind" class="link" target="_blank">
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32">
+          <path
+            d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
+            style="fill:#44a8b3" />
+        </svg>
+        Themex Tailwind
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <title>Opens in a new window</title>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+      <a href="https://github.com/netoum/themex-css" class="link" target="_blank">
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+          <path fill="#1ABCFE"
+            d="M8.55 8c0-1.289 1.019-2.333 2.275-2.333C12.082 5.667 13.1 6.71 13.1 8c0 1.289-1.018 2.333-2.275 2.333C9.57 10.333 8.55 9.29 8.55 8z" />
+          <path fill="#0ACF83"
+            d="M4 12.667c0-1.289 1.019-2.334 2.275-2.334H8.55v2.334C8.55 13.955 7.531 15 6.275 15S4 13.955 4 12.667z" />
+          <path fill="#FF7262"
+            d="M8.55 1v4.667h2.275c1.257 0 2.275-1.045 2.275-2.334C13.1 2.045 12.082 1 10.825 1H8.55z" />
+          <path fill="#F24E1E" d="M4 3.333c0 1.289 1.019 2.334 2.275 2.334H8.55V1H6.275C5.019 1 4 2.045 4 3.333z" />
+          <path fill="#A259FF" d="M4 8c0 1.289 1.019 2.333 2.275 2.333H8.55V5.667H6.275C5.019 5.667 4 6.71 4 8z" />
+        </svg>
+        Themex Design Tokens
+        <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <title>Opens in a new window</title>
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+        </svg>
+      </a>
+    </div>
+    <div class="tabs tabs-js" data-default-value="css">
+      <div data-part="root">
+        <div data-part="list">
+          <button data-part="trigger" data-value="css">CSS</button>
+          <button data-part="trigger" data-value="tailwind">Tailwind</button>
+        </div>
+        <div data-part="content" data-value="css">
+          <h3>Themex CSS</h3>
+          <code data-lang="js" class="select-all code-js">npm install @netoum/themex-css</code>
+          <p>In you main CSS file import all Themex CSS components or only some components</p>
+          <pre>
+     <code data-lang="css" class="code-js">@import "@netoum/themex-css";
+     </code>
+   </pre>
+        </div>
+        <div data-part="content" data-value="tailwind">
+          <h3>Themex Tailwind</h3>
+          <code data-lang="js" class="select-all code-js">npm install @netoum/themex-tailwind</code>
+          <p>In you main CSS file import all Themex CSS components or only some components</p>
+          <pre>
+         <code data-lang="css" class="code-js">@import "@netoum/themex-tailwind";
+         </code>
+       </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h3>Corex: Foundation Template</h3>
+    <p>The simplest architecture focuses on direct variable mapping with minimal abstraction.</p>
+    <pre><code class="code-js" data-lang="css">
+/* Corex Template - Direct Mapping */
+--color-gray-2: #f7f7f7;
+--color-base-2: var(--color-gray-2);
+.button {
+  background-color: var(--color-base-2);
+}
+    </code></pre>
+    <h4>Architecture Characteristics:</h4>
+    <ul>
+      <li><strong>Direct Token Mapping</strong>: Colors map directly to semantic tokens</li>
+      <li><strong>Minimal Abstraction</strong>: One layer of indirection between raw values and components</li>
+      <li><strong>Single Context</strong>: No mode or theme switching capabilities</li>
+      <li><strong>Ideal For</strong>: Simple projects, prototypes, or applications with static styling needs</li>
+    </ul>
+    <h3>Modex: Mode-Aware Template</h3>
+    <p>Introduces light/dark mode capabilities through conditional variable resolution.</p>
+    <pre><code class="code-js" data-lang="css">
+/* Modex Template - Mode-Aware System */
+--color-gray-2: #f7f7f7;
+--color-dark-gray-2: #050504;
+--color-base-2: var(--mode-color-base-2);
+[data-mode=light] {
+  --mode-color-base-2: var(--color-gray-2);
+}
+[data-mode=dark] {
+  --mode-color-base-2: var(--color-dark-gray-2);
+}
+.button {
+  background-color: var(--color-base-2);
+}
+    </code></pre>
+    <h4>Architecture Characteristics:</h4>
+    <ul>
+      <li><strong>Mode-Conditional Resolution</strong>: Variables resolve differently based on <code>data-mode</code>
+        attribute</li>
+      <li><strong>Dual Color Palettes</strong>: Maintains separate color definitions for light and dark contexts</li>
+      <li><strong>Contextual Switching</strong>: Automatic theme switching through CSS attribute selectors</li>
+      <li><strong>Ideal For</strong>: Applications requiring light/dark mode support with consistent UX patterns</li>
+    </ul>
+    <h3>Themex: Multi-Theme Template</h3>
+    <p>The most sophisticated system supporting multiple themes with mode variations.</p>
+    <pre><code class="code-js" data-lang="css">
+/* Themex Template - Multi-Theme Architecture */
+--color-gray-2: #f7f7f7;
+--color-dark-gray-2: #050504;
+--color-pastel-gray-2: #f7f7f7;
+--color-pastel-dark-gray-2: #050504;
+--color-base-2: var(--theme-color-base-2);
+[data-theme=neo][data-mode=light] {
+  --theme-color-base-2: var(--color-gray-2);
+}
+[data-theme=neo][data-mode=dark] {
+  --theme-color-base-2: var(--color-dark-gray-2);
+}
+[data-theme=revo][data-mode=light] {
+  --theme-color-base-2: var(--color-pastel-gray-2);
+}
+[data-theme=revo][data-mode=dark] {
+  --theme-color-base-2: var(--color-pastel-dark-gray-2);
+}
+.button {
+  background-color: var(--color-base-2);
+}
+    </code></pre>
+    <h4>Architecture Characteristics:</h4>
+    <ul>
+      <li><strong>Multi-Dimensional Theming</strong>: Supports multiple themes, each with mode variations</li>
+      <li><strong>Comprehensive Color Palettes</strong>: Maintains distinct color sets for each theme-mode combination
+      </li>
+      <li><strong>Complex Conditional Logic</strong>: Uses compound CSS selectors for precise variable resolution</li>
+      <li><strong>Maximum Flexibility</strong>: Enables brand variations, user preferences, and contextual styling</li>
+      <li><strong>Ideal For</strong>: Enterprise applications, white-label products, or platforms requiring extensive
+        customization</li>
+    </ul>
+  </section>
+  <hr>
+  {{> skip prev="Installation" next="Theming" prev-path="installation" next-path="theming"}}
+</main>

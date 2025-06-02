@@ -1,0 +1,301 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Dialog</h1>
+        <h2>A pure vanilla JS implementation of <a href="https://zagjs.com/components/react/dialog" target="_blank"
+                class="link ">Zag JS Dialog
+                {{> icon/external}}
+            </a></h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Tabs component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">trigger</code>
+            <code class="code-js">backdrop</code>
+            <code class="code-js">positioner</code>
+            <code class="code-js">title</code>
+            <code class="code-js">description</code>
+            <code class="code-js">close-trigger</code>
+        </div>
+        <div class="preview">
+            <div id="dialog-anatomy" class="preview-display">
+                <div class="dialog dialog-js">
+                    <button data-part="trigger" class="button" aria-label="Open dialog">
+                        Open Dialog
+                    </button>
+                    <div data-part="backdrop"></div>
+                    <div data-part="positioner">
+                        <div data-part="content">
+                            <h3 data-part="title">Title</h3>
+                            <p data-part="description">
+                                Description
+                            </p>
+                            <button data-part="close-trigger" class="button button--circle button-sm"
+                                aria-label="Close menu">
+                                <svg class="button__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                    class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/dialog/anatomy}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each dialog can be set with different settings with the following data-attribute.</p>
+        <div class="preview">
+            <div id="dialog-attribute" class="preview-display">
+                <div class="dialog dialog-js" id="custom-dialog" data-aria-label="My dialog title"
+                    data-default-open="false" data-dir="rtl" data-modal="true" data-prevent-scroll="false"
+                    data-restore-focus="true" data-trap-focus="true" data-close-on-interact-outside="false"
+                    data-close-on-escape="true" data-role="dialog">
+                    <button data-part="trigger" class="button" aria-label="Open dialog">
+                        Open Dialog
+                    </button>
+                    <div data-part="backdrop"></div>
+                    <div data-part="positioner">
+                        <div data-part="content">
+                            <h3 data-part="title">Title</h3>
+                            <p data-part="description">
+                                Description
+                            </p>
+                            <button data-part="close-trigger" class="button" aria-label="Close menu">
+                                <svg class="button__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                    class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/dialog/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-open</code></td>
+                        <td>string</td>
+                        <td>The initial open state of the dialog</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-value</code></td>
+                        <td>string</td>
+                        <td>The controlled open state of the dialog</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-dir</code></td>
+                        <td>ltr | rtl</td>
+                        <td>The orientation of the dialog. Can be `ltr` or `rtl`</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-aria-label</code></td>
+                        <td>string</td>
+                        <td>Human readable label for the dialog, in event the dialog title is not rendered
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-modal</code></td>
+                        <td>boolean</td>
+                        <td>Whether to prevent pointer interaction outside the element and hide all content below it
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-open</code></td>
+                        <td>boolean</td>
+                        <td>The controlled open state of the dialog</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-prevent-scroll</code></td>
+                        <td>boolean</td>
+                        <td>Whether to prevent scrolling behind the dialog when it's opened
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-restore-focus</code></td>
+                        <td>boolean</td>
+                        <td>Whether to restore focus to the element that had focus before the dialog was opened</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-trap-focus</code></td>
+                        <td>boolean</td>
+                        <td>Whether to trap focus inside the dialog when it's opened
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-close-on-interact-outside</code></td>
+                        <td>boolean</td>
+                        <td>Whether to trap focus inside the dialog when it's opened
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-close-on-escape</code></td>
+                        <td>boolean</td>
+                        <td>Whether to close the dialog when the escape key is pressed
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-role</code></td>
+                        <td>"dialog" || "alertdialog</td>
+                        <td>The dialog's role
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callback">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each dialog component can receive callbacks that can be used to respond to user interaction with custom
+            behavior.</p>
+        <p>You must add a custom id and an event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+            document.getElementById("my-callback-dialog")
+            ?.addEventListener("my-callback-dialog-event", (event) => {
+              console.log("Received event:", (event as CustomEvent).detail);
+            });
+        </code></pre>
+        <div class="preview">
+            <div id="dialog-callback" class="preview-display">
+                <div id="my-callback-dialog" class="dialog dialog-js" data-on-open-change="my-callback-dialog-event">
+                    <button data-part="trigger" class="button" aria-label="Open dialog">
+                        Open Dialog
+                    </button>
+                    <div data-part="backdrop"></div>
+                    <div data-part="positioner">
+                        <div data-part="content">
+                            <h3 data-part="title">Title</h3>
+                            <p data-part="description">
+                                Description
+                            </p>
+                            <button data-part="close-trigger" class="button" aria-label="Close menu">
+                                <svg class="button__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                    class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/dialog/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when you open or close the above dialog</p>
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-open-change</code></td>
+                        <td>string</td>
+                        <td>Function to call when the dialog's open state changes
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="state">
+    <section>
+        <h3>Open State Control</h3>
+        <p>Dialog open state can be control with data attributes on any element, it can also be outside of the dialog
+        </p>
+        <p>You must set a custom id for your dialog, as the default is randomly generated</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-open-dialog="dialog-id"</code>
+            <code class="code-js">data-close-dialog="dialog-id"</code>
+        </div>
+        <div class="preview">
+            <div id="dialog-state" class="preview-display">
+                <button data-open-dialog="my-dialog" class="button" aria-label="Open dialog">
+                    Open Dialog
+                </button>
+                <div id="my-dialog" class="dialog dialog-js">
+                    <div data-part="backdrop"></div>
+                    <div data-part="positioner">
+                        <div data-part="content">
+                            <h3 data-part="title">Title</h3>
+                            <p data-part="description">
+                                Description
+                            </p>
+                            <button data-part="close-trigger" class="button" aria-label="Close menu">
+                                <svg class="button__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                    class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
+                            <button data-close-dialog="my-dialog" class="button">Cancel</button>
+                            <button data-close-dialog="my-dialog" class="button button--accent">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/dialog/state}}
+
+        </div>
+        <p>You also dispatch an event named <code class="code-js" data-lang="js">dialog:set-open</code> to the dialog id with a boolean value</p>
+        <pre><code class="code-js" data-lang="js">
+            const el = document.getElementById("my-dialog");
+            if (el) {
+              el.dispatchEvent(
+                new CustomEvent("dialog:set-open", {
+                  detail: { value: true },
+                })
+              );
+            } else {
+              console.warn("Element with ID 'my-dialog' not found");
+            }
+        </code></pre>
+
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Dialog components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Clipboard" next="Link" prev-path="components/clipboard" next-path="components/link"}}
+</main>

@@ -1,0 +1,258 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Avatar</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/avatar" target="_blank" class="link ">Zag JS Avatar
+                {{> icon/external}}
+            </a>
+        </h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Avatar component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">fallback</code>
+            <code class="code-js">image</code>
+        </div>
+        <div class="preview">
+            <div id="avatar-anatomy" class="preview-display">
+                <div>
+                    <div class="avatar avatar-js">
+                        <div data-part="root">
+                            <span data-part="fallback">C</span>
+                            <img data-part="image" alt="Corex HTML" src="/images/corex.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js">
+                        <div data-part="root">
+                            <span data-part="fallback">N</span>
+                            <img data-part="image" alt="Netoum" src="/images/avatar.png" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/avatar/anatomy}}
+        </div>
+    </section>
+    <hr id="modifers">
+    <section>
+        <h3>Modifier</h3>
+        <p>Each avatar can be styled with modifiers.</p>
+        <p>You can <a href="#mix" class="link">mix as many modifiers</a> on the same avatar, however you
+            can choose only one choice per modifer</p>
+        <p>For convenience the default variant name is omited, meaning there is no need to add the default name
+            class</p>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modifier</th>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#variant" class="link">Variant</a></td>
+                        <td>neutral (default), accent</td>
+                        <td>Used for different types of meanings</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#color" class="link">Color</a></td>
+                        <td>base (default), brand, alert</td>
+                        <td>Use any semantic colors</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#font-color" class="link">Font Color</a></td>
+                        <td>base (default), brand, alert</td>
+                        <td>Use any semantic colors.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#size" class="link">Size</a></td>
+                        <td>md (default), sm, lg, xl</td>
+                        <td>Modify the size of the avatar.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="variant">
+    <section>
+        <h3>Variant</h3>
+        <p>Set the variant of each avatar</p>
+        <p>Options: <strong>neutral(default)</strong>, <strong>accent</strong></p>
+        <div class="preview">
+            <div id="avatar-variant" class="preview-display">
+                <div>
+                    <div class="avatar avatar-js avatar--accent">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/images/corex.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js  avatar--accent">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {{>copy/avatar/variant}}
+        </div>
+    </section>
+    <hr id="color">
+    <section>
+        <h3>Color</h3>
+        <p>Set the color of each avatar</p>
+        <p>Options: <strong>base(default)</strong>, <strong>brand</strong>, <strong>alert</strong></p>
+        <div class="preview my-6">
+            <div id="avatar-color" class="preview-display">
+                <div>
+                    <div class="avatar avatar-js  avatar--brand">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js  avatar--alert">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js avatar--accent avatar--brand">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js avatar--accent avatar--alert">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{>copy/avatar/color}}
+        </div>
+    </section>
+    <hr id="font-color">
+    <section>
+        <h3>Font Color</h3>
+        <p>Set the font color of each avatar</p>
+        <p>Options: <strong>base(default)</strong>, <strong>brand</strong>, <strong>alert</strong></p>
+        <div class="preview my-6">
+            <div id="avatar-font-color" class="preview-display">
+                <div>
+
+                    <div class="avatar avatar-js  avatar--font-brand">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js  avatar--font-alert">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js avatar--accent avatar--font-brand">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js avatar--accent avatar--font-alert">
+                        <div data-part="root">
+                            <span data-part="fallback">CX</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {{>copy/avatar/font-color}}
+        </div>
+    </section>
+    <hr id="size">
+    <section>
+        <h3>Size</h3>
+        <p>Set the size of each avatar</p>
+        <p>Options: <strong>md(default)</strong>, <strong>sm</strong>, <strong>lg</strong>, <strong>xl</strong></p>
+        <div class="preview my-6">
+            <div id="avatar-size" class="preview-display">
+                <div>
+
+                    <div class="avatar avatar-js  avatar--sm">
+                        <div data-part="root">
+                            <span data-part="fallback">SM</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js">
+                        <div data-part="root">
+                            <span data-part="fallback">MD</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js avatar--lg">
+                        <div data-part="root">
+                            <span data-part="fallback">LG</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js avatar--xl">
+                        <div data-part="root">
+                            <span data-part="fallback">XL</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {{>copy/avatar/size}}
+        </div>
+    </section>
+    <section>
+        <h3>RTL</h3>
+        <p>RTL support for button with icon</p>
+        <div class="preview my-6">
+            <div id="avatar-rtl" class="preview-display">
+                <div dir="rtl">
+                    <div class="avatar avatar-js" data-dir="rtl">
+                        <div data-part="root">
+                            <span data-part="fallback">كس</span>
+                            <img data-part="image" alt="Corex HTML" src="/images/corex.svg" />
+                        </div>
+                    </div>
+                    <div class="avatar avatar-js" data-dir="rtl">
+                        <div data-part="root">
+                            <span data-part="fallback">كس</span>
+                            <img data-part="image" alt="Corex HTML" src="/corex_not_found.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{>copy/avatar/rtl}}
+        </div>
+    </section>
+    <hr>
+    <section>
+        <h3>Templates</h3>
+        <p>Avatar components is available in the followng templates</p>
+        {{>styling}}
+    </section>
+    {{> skip prev="Accordion" next="Badge" prev-path="components/accordion" next-path="components/badge"}}
+</main>

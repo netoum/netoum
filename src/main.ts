@@ -1,0 +1,153 @@
+import "@netoum/corex"
+import "./components/code"
+import "./main.css";
+
+
+
+document.getElementById("my-callback-dialog")
+  ?.addEventListener("my-callback-dialog-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+document.getElementById("my-callback-tabs")
+  ?.addEventListener("my-callback-tabs-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+document.getElementById("my-callback-toggle-group")
+  ?.addEventListener("my-callback-toggle-group-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+document.getElementById("my-callback-tree-view")
+  ?.addEventListener("my-callback-tree-view-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+document.getElementById("my-callback-menu")
+  ?.addEventListener("my-callback-menu-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+
+document.getElementById("my-callback-clipboard")
+  ?.addEventListener("my-callback-clipboard-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+document.getElementById("my-callback-listbox")
+  ?.addEventListener("my-callback-listbox-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+document.getElementById("my-callback-accordion")
+  ?.addEventListener("my-callback-accordion-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+document.getElementById("my-callback-collapsible")
+  ?.addEventListener("my-callback-collapsible-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+  document.getElementById("my-callback-checkbox")
+  ?.addEventListener("my-callback-checkbox-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+  document.getElementById("my-callback-switch")
+  ?.addEventListener("my-callback-switch-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+document.getElementById("mode-switcher-demo")?.addEventListener("update-mode-switcher", (event) => {
+  const { value } = (event as CustomEvent<{ value: string[] }>).detail;
+  const targetEl = document.getElementById("mode-switcher-side");
+  if (targetEl && targetEl !== event.target) {
+    targetEl.dispatchEvent(new CustomEvent("switcher:set-value", {
+      detail: { value }
+    }));
+  }
+  const targetEl2 = document.getElementById("mode-switcher-header");
+  if (targetEl2 && targetEl2 !== event.target) {
+    targetEl2.dispatchEvent(new CustomEvent("switcher:set-value", {
+      detail: { value }
+    }));
+  }
+});
+
+document.getElementById("mode-switcher-side")?.addEventListener("update-mode-switcher", (event) => {
+  const { value } = (event as CustomEvent<{ value: string[] }>).detail;
+  const targetEl = document.getElementById("mode-switcher-demo");
+  if (targetEl && targetEl !== event.target) {
+    targetEl.dispatchEvent(new CustomEvent("switcher:set-value", {
+      detail: { value }
+    }));
+  }
+  const targetEl2 = document.getElementById("mode-switcher-header");
+  if (targetEl2 && targetEl2 !== event.target) {
+    targetEl2.dispatchEvent(new CustomEvent("switcher:set-value", {
+      detail: { value }
+    }));
+  }
+});
+
+document.getElementById("mode-switcher-header")?.addEventListener("update-mode-switcher", (event) => {
+  const { value } = (event as CustomEvent<{ value: string[] }>).detail;
+  const targetEl = document.getElementById("mode-switcher-demo");
+  if (targetEl && targetEl !== event.target) {
+    targetEl.dispatchEvent(new CustomEvent("switcher:set-value", {
+      detail: { value }
+    }));
+  }
+  const targetEl2 = document.getElementById("mode-switcher-side");
+  if (targetEl2 && targetEl2 !== event.target) {
+    targetEl2.dispatchEvent(new CustomEvent("switcher:set-value", {
+      detail: { value }
+    }));
+  }
+});
+
+document.getElementById("theme-switcher-header")?.addEventListener("update-theme-switcher-side", (event) => {
+  const { value } = (event as CustomEvent<{ value: string[] }>).detail;
+  const targetEl = document.getElementById("theme-switcher-side");
+  if (targetEl && targetEl !== event.target) {
+    targetEl.dispatchEvent(new CustomEvent("switcher:set-value", {
+      detail: { value }
+    }));
+  }
+});
+
+document.getElementById("theme-switcher-side")?.addEventListener("update-theme-switcher-header", (event) => {
+  console.log("sfd")
+  const { value } = (event as CustomEvent<{ value: string[] }>).detail;
+  const targetEl = document.getElementById("theme-switcher-header");
+  // console.log(value)
+  // console.log(targetEl)
+
+  if (targetEl && targetEl !== event.target) {
+    console.log(targetEl)
+
+    targetEl.dispatchEvent(new CustomEvent("switcher:set-value", {
+      detail: { value }
+    }));
+  }
+});
+
+document.getElementById("timer-2")
+  ?.addEventListener("timer-done-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+
+
+  const form = document.getElementById('my-form') as HTMLFormElement | null;
+  const result = document.getElementById('result') as HTMLDivElement | null;
+  
+  if (form && result) {
+    form.addEventListener('submit', (e: Event) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const newsletter = (formData.get('newsletter') as string) || 'no';
+      result.textContent = `Submitted: newsletter: ${newsletter}`;
+    });
+  }

@@ -1,0 +1,656 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Tree View</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/tree-view" target="_blank" class="link ">Zag JS Tree View
+                {{> icon/external}}
+            </a>
+        </h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Tree View component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">tree</code>
+            <code class="code-js">branch</code>
+            <code class="code-js">branch-control</code>
+            <code class="code-js">branch-text</code>
+            <code class="code-js">branch-indicator</code>
+            <code class="code-js">branch-content</code>
+            <code class="code-js">branch-indent-guide</code>
+            <code class="code-js">item</code>
+        </div>
+        <p>It can include multiple branch, branch-control, branch-text, branch-indicator, branch-content,
+            branch-indent-guide and item parts.</p>
+        <p><code class="code-js">data-id</code> and <code class="code-js">data-name</code> are required on all branch
+            parts and items</p>
+        <p>The collection is dynamically generated from the html structure of the item and branch parts</p>
+        <div class="preview">
+            <div id="tree-view-anatomy" class="preview-display">
+                <div class="tree-view-js tree-view">
+                    <div data-part="root">
+                        <h3 data-part="label" class="">Tree View Label</h3>
+                        <div data-part="tree">
+                            <div data-part="item" data-id="single" data-name="single">
+                                Single Item
+                            </div>
+                            <div data-part="branch" data-id="branch" data-name="branch">
+                                <div data-part="branch-control" data-id="branch" data-name="branch">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                    </svg>
+                                    <span data-part="branch-text" data-id="branch" data-name="branch">Branch</span>
+                                    <span data-part="branch-indicator" data-id="branch" data-name="branch">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div data-part="branch-content" data-id="branch" data-name="branch">
+                                    <div data-part="branch-indent-guide" data-id="branch" data-name="branch"></div>
+                                    <div data-part="item" data-id="nested-item" data-name="nested-item">
+                                        Nested Item
+                                    </div>
+                                    <div data-part="branch" data-id="sub-branch" data-name="sub-branch">
+                                        <div data-part="branch-control" data-id="sub-branch" data-name="sub-branch">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                            </svg>
+                                            <span data-part="branch-text" data-id="sub-branch"
+                                                data-name="sub-branch">Sub
+                                                Branch</span>
+                                            <span data-part="branch-indicator" data-id="sub-branch"
+                                                data-name="sub-branch">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div data-part="branch-content" data-id="sub-branch" data-name="sub-branch">
+                                            <div data-part="branch-indent-guide" data-id="sub-branch"
+                                                data-name="sub-branch"></div>
+                                            <div data-part="item" data-id="sub-nested-item" data-name="sub-nested-item">
+                                                Sub Nested Item
+                                            </div>
+                                            <div data-part="branch" data-id="nested-sub-branch"
+                                                data-name="nested-sub-branch">
+                                                <div data-part="branch-control" data-id="nested-sub-branch"
+                                                    data-name="nested-sub-branch">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                                    </svg>
+                                                    <span data-part="branch-text" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch">Nested Sub
+                                                        Branch</span>
+                                                    <span data-part="branch-indicator" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5"
+                                                            stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <div data-part="branch-content" data-id="nested-sub-branch"
+                                                    data-name="nested-sub-branch">
+                                                    <div data-part="branch-indent-guide" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch"></div>
+                                                    <div data-part="item" data-id="nested-sub-nested-item"
+                                                        data-name="nested-sub-nested-item">
+                                                        Nested Sub Nested Item
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tree-view/anatomy}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each tree-view can be set with different settings with the following data-attribute.</p>
+        <div class="preview">
+            <div id="tree-view-attribute" class="preview-display">
+                <div class="tree-view-js tree-view" data-default-expanded-value="branch, sub-branch" data-default-selected-value="single,sub-branch" data-dir="ltr" data-expand-on-click="true" data-focused-value="branch" data-selection-mode="multiple" data-selected-value="nested-item,single">
+                    <div data-part="root">
+                        <h3 data-part="label" class="">Tree View Label</h3>
+                        <div data-part="tree">
+                            <div data-part="item" data-id="single" data-name="single">
+                                Single Item
+                            </div>
+                            <div data-part="branch" data-id="branch" data-name="branch">
+                                <div data-part="branch-control" data-id="branch" data-name="branch">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                    </svg>
+                                    <span data-part="branch-text" data-id="branch" data-name="branch">Branch</span>
+                                    <span data-part="branch-indicator" data-id="branch" data-name="branch">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div data-part="branch-content" data-id="branch" data-name="branch">
+                                    <div data-part="branch-indent-guide" data-id="branch" data-name="branch"></div>
+                                    <div data-part="item" data-id="nested-item" data-name="nested-item">
+                                        Nested Item
+                                    </div>
+                                    <div data-part="branch" data-id="sub-branch" data-name="sub-branch">
+                                        <div data-part="branch-control" data-id="sub-branch" data-name="sub-branch">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                            </svg>
+                                            <span data-part="branch-text" data-id="sub-branch"
+                                                data-name="sub-branch">Sub
+                                                Branch</span>
+                                            <span data-part="branch-indicator" data-id="sub-branch"
+                                                data-name="sub-branch">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div data-part="branch-content" data-id="sub-branch" data-name="sub-branch">
+                                            <div data-part="branch-indent-guide" data-id="sub-branch"
+                                                data-name="sub-branch"></div>
+                                            <div data-part="item" data-id="sub-nested-item" data-name="sub-nested-item">
+                                                Sub Nested Item
+                                            </div>
+                                            <div data-part="branch" data-id="nested-sub-branch"
+                                                data-name="nested-sub-branch">
+                                                <div data-part="branch-control" data-id="nested-sub-branch"
+                                                    data-name="nested-sub-branch">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                                    </svg>
+                                                    <span data-part="branch-text" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch">Nested Sub
+                                                        Branch</span>
+                                                    <span data-part="branch-indicator" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5"
+                                                            stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <div data-part="branch-content" data-id="nested-sub-branch"
+                                                    data-name="nested-sub-branch">
+                                                    <div data-part="branch-indent-guide" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch"></div>
+                                                    <div data-part="item" data-id="nested-sub-nested-item"
+                                                        data-name="nested-sub-nested-item">
+                                                        Nested Sub Nested Item
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tree-view/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-expanded-value</code></td>
+                        <td>string || string list</td>
+                        <td>The initial expanded node ids when rendered. Use when you don't need to control the expanded node ids. Separated by comma</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-selected-value</code></td>
+                        <td>string || string list</td>
+                        <td>The initial selected node ids when rendered. Use when you don't need to control the selected node ids. Separated by comma</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-dir</code></td>
+                        <td>ltr | rtl</td>
+                        <td>The orientation of the tree-view. Can be `ltr` or `rtl`</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-expanded-value</code></td>
+                        <td>boolean</td>
+                        <td>The controlled expanded node ids. Separated by comma</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-expand-on-click</code></td>
+                        <td>boolean</td>
+                        <td>Whether clicking on a branch should open it or not</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-focused-value</code></td>
+                        <td>string || string list</td>
+                        <td>The id of the focused node. Separated by comma</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-selection-mode</code></td>
+                        <td>"single" || "multiple"</td>
+                        <td>Whether the tree supports multiple selection. "single": only one node can be selected. "multiple": multiple nodes can be selected
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-selected-value</code></td>
+                        <td>string || string list</td>
+                        <td>The controlled selected node ids. Separated by comma</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-typeahead</code></td>
+                        <td>boolean</td>
+                        <td>Whether the tree supports typeahead search</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callbacks">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each Tree View component can receive callbacks that can be used to respond to user interaction with
+            custom
+            behavior.</p>
+        <p>You must add a custom id for the toggle group and a event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+                document.getElementById("my-callback-tree-view")
+                ?.addEventListener("my-callback-tree-view-event", (event) => {
+                  console.log("Received event:", (event as CustomEvent).detail);
+                });
+            </code></pre>
+        <div class="preview">
+            <div id="tree-view-callback" class="preview-display">
+                <div class="tree-view-js tree-view" id="my-callback-tree-view" data-on-expanded-change="my-callback-tree-view-event">
+                    <div data-part="root">
+                        <h3 data-part="label" class="">Tree View Label</h3>
+                        <div data-part="tree">
+                            <div data-part="item" data-id="single" data-name="single">
+                                Single Item
+                            </div>
+                            <div data-part="branch" data-id="branch" data-name="branch">
+                                <div data-part="branch-control" data-id="branch" data-name="branch">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                    </svg>
+                                    <span data-part="branch-text" data-id="branch" data-name="branch">Branch</span>
+                                    <span data-part="branch-indicator" data-id="branch" data-name="branch">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div data-part="branch-content" data-id="branch" data-name="branch">
+                                    <div data-part="branch-indent-guide" data-id="branch" data-name="branch"></div>
+                                    <div data-part="item" data-id="nested-item" data-name="nested-item">
+                                        Nested Item
+                                    </div>
+                                    <div data-part="branch" data-id="sub-branch" data-name="sub-branch">
+                                        <div data-part="branch-control" data-id="sub-branch" data-name="sub-branch">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                            </svg>
+                                            <span data-part="branch-text" data-id="sub-branch"
+                                                data-name="sub-branch">Sub
+                                                Branch</span>
+                                            <span data-part="branch-indicator" data-id="sub-branch"
+                                                data-name="sub-branch">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div data-part="branch-content" data-id="sub-branch" data-name="sub-branch">
+                                            <div data-part="branch-indent-guide" data-id="sub-branch"
+                                                data-name="sub-branch"></div>
+                                            <div data-part="item" data-id="sub-nested-item" data-name="sub-nested-item">
+                                                Sub Nested Item
+                                            </div>
+                                            <div data-part="branch" data-id="nested-sub-branch"
+                                                data-name="nested-sub-branch">
+                                                <div data-part="branch-control" data-id="nested-sub-branch"
+                                                    data-name="nested-sub-branch">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                                    </svg>
+                                                    <span data-part="branch-text" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch">Nested Sub
+                                                        Branch</span>
+                                                    <span data-part="branch-indicator" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5"
+                                                            stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <div data-part="branch-content" data-id="nested-sub-branch"
+                                                    data-name="nested-sub-branch">
+                                                    <div data-part="branch-indent-guide" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch"></div>
+                                                    <div data-part="item" data-id="nested-sub-nested-item"
+                                                        data-name="nested-sub-nested-item">
+                                                        Nested Sub Nested Item
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tree-view/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when the tree is opened or closed</p>
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-expanded-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when the tree is opened or closed
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-focus-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when  the focused node changes
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-selection-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when the selection changes
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="rtl">
+    <section>
+        <h3>RTL</h3>
+        <p>RTL support for tree-view</p>
+        <div class="preview my-6">
+            <div id="tree-view-rtl" class="preview-display" dir="rtl">
+                <div class="tree-view-js tree-view" data-dir="rtl">
+                    <div data-part="root">
+                        <h3 data-part="label" class="">Tree View Label</h3>
+                        <div data-part="tree">
+                            <div data-part="item" data-id="single" data-name="single">
+                                Single Item
+                            </div>
+                            <div data-part="branch" data-id="branch" data-name="branch">
+                                <div data-part="branch-control" data-id="branch" data-name="branch">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                    </svg>
+                                    <span data-part="branch-text" data-id="branch" data-name="branch">Branch</span>
+                                    <span data-part="branch-indicator" data-id="branch" data-name="branch">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div data-part="branch-content" data-id="branch" data-name="branch">
+                                    <div data-part="branch-indent-guide" data-id="branch" data-name="branch"></div>
+                                    <div data-part="item" data-id="nested-item" data-name="nested-item">
+                                        Nested Item
+                                    </div>
+                                    <div data-part="branch" data-id="sub-branch" data-name="sub-branch">
+                                        <div data-part="branch-control" data-id="sub-branch" data-name="sub-branch">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                            </svg>
+                                            <span data-part="branch-text" data-id="sub-branch"
+                                                data-name="sub-branch">Sub
+                                                Branch</span>
+                                            <span data-part="branch-indicator" data-id="sub-branch"
+                                                data-name="sub-branch">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div data-part="branch-content" data-id="sub-branch" data-name="sub-branch">
+                                            <div data-part="branch-indent-guide" data-id="sub-branch"
+                                                data-name="sub-branch"></div>
+                                            <div data-part="item" data-id="sub-nested-item" data-name="sub-nested-item">
+                                                Sub Nested Item
+                                            </div>
+                                            <div data-part="branch" data-id="nested-sub-branch"
+                                                data-name="nested-sub-branch">
+                                                <div data-part="branch-control" data-id="nested-sub-branch"
+                                                    data-name="nested-sub-branch">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                                    </svg>
+                                                    <span data-part="branch-text" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch">Nested Sub
+                                                        Branch</span>
+                                                    <span data-part="branch-indicator" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5"
+                                                            stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <div data-part="branch-content" data-id="nested-sub-branch"
+                                                    data-name="nested-sub-branch">
+                                                    <div data-part="branch-indent-guide" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch"></div>
+                                                    <div data-part="item" data-id="nested-sub-nested-item"
+                                                        data-name="nested-sub-nested-item">
+                                                        Nested Sub Nested Item
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tree-view/rtl}}
+        </div>
+    </section>
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each tree-view and its parts with Tailwind utilities
+        </p>
+        <div class="preview my-6">
+            <div id="tree-view-custom" class="preview-display">
+                <div class="tree-view-js tree-view">
+                    <div data-part="root" class="bg-red-5 shadow-xl border-2 rounded-xl">
+                        <h3 data-part="label" class="text-contrast-brand m-2">Tree View Label</h3>
+                        <div data-part="tree" class="bg-yellow-5 shadow-xl border-2 rounded-xl">
+                            <div data-part="item" class="border-2 rounded-xl border-red-3" data-id="single" data-name="single">
+                                Single Item
+                            </div>
+                            <div data-part="branch" data-id="branch" data-name="branch">
+                                <div data-part="branch-control" data-id="branch" data-name="branch">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                    </svg>
+                                    <span data-part="branch-text" data-id="branch" data-name="branch">Branch</span>
+                                    <span data-part="branch-indicator" data-id="branch" data-name="branch">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div data-part="branch-content" data-id="branch" data-name="branch">
+                                    <div data-part="branch-indent-guide" data-id="branch" data-name="branch"></div>
+                                    <div data-part="item" data-id="nested-item" data-name="nested-item">
+                                        Nested Item
+                                    </div>
+                                    <div data-part="branch" data-id="sub-branch" data-name="sub-branch">
+                                        <div data-part="branch-control" data-id="sub-branch" data-name="sub-branch">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                            </svg>
+                                            <span data-part="branch-text" data-id="sub-branch"
+                                                data-name="sub-branch" class="text-blue-700 font-semibold">Sub Branch</span>
+                                            <span data-part="branch-indicator" data-id="sub-branch"
+                                                data-name="sub-branch">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div data-part="branch-content" data-id="sub-branch" data-name="sub-branch">
+                                            <div data-part="branch-indent-guide" data-id="sub-branch"
+                                                data-name="sub-branch"></div>
+                                            <div data-part="item" data-id="sub-nested-item" data-name="sub-nested-item">
+                                                Sub Nested Item
+                                            </div>
+                                            <div data-part="branch" data-id="nested-sub-branch"
+                                                data-name="nested-sub-branch" class="text-blue-800">
+                                                <div data-part="branch-control" data-id="nested-sub-branch"
+                                                    data-name="nested-sub-branch">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                                    </svg>
+                                                    <span data-part="branch-text" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch">Nested Sub
+                                                        Branch</span>
+                                                    <span data-part="branch-indicator" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 24" stroke-width="1.5"
+                                                            stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <div data-part="branch-content" data-id="nested-sub-branch"
+                                                    data-name="nested-sub-branch">
+                                                    <div data-part="branch-indent-guide" data-id="nested-sub-branch"
+                                                        data-name="nested-sub-branch"></div>
+                                                    <div data-part="item" data-id="nested-sub-nested-item"
+                                                        data-name="nested-sub-nested-item">
+                                                        Nested Sub Nested Item
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tree-view/custom}}
+        </div>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Tree View components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    <div class="flex flex-wrap justify-center sm:justify-between items-center gap-4 my-8">
+        <a href="/corex/documentation/components/toggle-group" class="link link--lg">
+          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="Packagene" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
+          Toggle Group
+        </a>
+</main>

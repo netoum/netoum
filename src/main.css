@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Noto+Sans+Mono:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@import "@netoum/themex-tailwind";
+
+@import "./css/components/input.css";
+@import "./css/components/layout.css";
+@import "./css/components/typo.css";
+@import "./css/components/code.css";
+@import "./css/components/scrollbar.css";
+
+
+.preview {
+  @apply flex flex-col justify-evenly items-center max-w-4xl my-6 mx-auto
+  border-(color:--border-color) border-(length:--border-width) rounded-(--border-radius) rounded-b-none;
+}
+
+.preview-display {
+  @apply  flex flex-wrap justify-center items-center
+  rounded-(--border-radius)
+  gap-4 p-6 
+   /* shadow-lg */
+   border-b-(color:--border-color) border-b-(length:--border-width) rounded-b-none
+   bg-layer-1
+   w-full;
+
+}
+
+.preview-display > div {
+  @apply flex flex-wrap justify-center items-center space-x-4 w-full;
+}
+
+.preview-code {
+  @apply  max-h-52 overflow-y-scroll;
+}
+
+
+.nav-link {
+  @apply text-accent-2 hover:text-accent-brand-1 active:text-accent-brand-2
+  hover:underline underline-offset-4;
+}
+
+.nav-link[data-selected]{
+  @apply text-accent-brand hover:text-accent-brand-1 underline underline-offset-4;
+}
+.nav-list {
+  @apply space-y-1  border-s-2 ps-2 border-(--border-color);
+}
+
+.nav-title {
+  @apply uppercase font-medium text-base text-accent mt-6 mb-4;
+}
+
+
+.notification {
+  background-color: var(--color-layer-1);
+  color: var(--color-contrast-2);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+  border-left: calc(var(--border-width) * 5) solid var(--border-color);
+  margin: var(--margin-ui);
+  box-shadow: 0 1px 3px  var(--border-color);
+  padding: var(--padding-ui);
+}
+
+
+.dialog--side [data-scope="dialog"][data-part="positioner"] {
+  align-items: start;
+  justify-content: start;
+}
+
+.dialog--side [data-scope="dialog"][data-part="content"] {
+  height: 100vh;
+  padding-top: calc(var(--height) + var(--margin));
+  border-start-start-radius: 0 ;
+  border-end-start-radius: 0;
+  border-inline-start: none;
+
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.box {
+  background: #f5f5f5;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.line {
+  width: 100%;
+  margin: 0.5rem 0;
+  background: #333;
+}
+
+@theme {
+  @keyframes word-slide {
+      0%, 20%  { transform: translateY(0%); }     
+      25%, 45% { transform: translateY(-20%); }  
+      50%, 70% { transform: translateY(-40%); } 
+      75%, 95% { transform: translateY(-60%); } 
+      100%     { transform: translateY(-80%); }  
+  }
+ 
+  @keyframes word-slide-2 {
+    0%, 45% { transform: translateY(0%); }
+    50%, 95% { transform: translateY(-50%); }
+    100% { transform: translateY(0%); }
+}
+
+
+}
+
+.animate-word-slide {
+  animation: word-slide 10s ease-in-out infinite;
+}
+
+.animate-word-slide-2 {
+  animation: word-slide-2 6s ease-in-out infinite;
+}

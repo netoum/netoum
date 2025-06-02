@@ -1,0 +1,647 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Accordion</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/accordion" target="_blank" class="link ">Zag JS Accordion
+                {{> icon/external}}
+            </a>
+        </h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Accordion component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">item</code>
+            <code class="code-js">item-content</code>
+            <code class="code-js">item-trigger</code>
+            <code class="code-js">item-indicator</code>
+        </div>
+        <p>It can include multiple item, item-trigger and item-indicator parts.</p>
+        <p><code class="code-js">data-value</code> is required on all item, item-content, item-trigger and
+            item-indicator parts</p>
+
+        <div class="preview">
+            <div id="accordion-anatomy" class="preview-display">
+                <div class="accordion accordion-js">
+                    <div data-part="root">
+                        <div data-part="item" data-value="item-1">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-1">
+                                    Lorem
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-1">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-2">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-2">
+                                    Duis
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-2">
+                                Duis a sem ut diam interdum ultricies sit amet id arcu.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-3">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-3">
+                                    Donec
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-3">
+                                Donec pretium magna cursus ante tincidunt porta.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/accordion/anatomy}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each accordion can be set with different settings with the following data-attribute.</p>
+        <div class="preview">
+            <div id="accordion-attribute" class="preview-display">
+                <div class="accordion accordion-js" id="custom-accordion" data-default-value="item-1" data-dir="ltr"
+                    data-orientation="vertical" data-collapsible="true" data-disabled="false" data-multiple="true">
+                    <div data-part="root">
+                        <div data-part="item" data-value="item-1">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-1">
+                                    Lorem
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-1">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-2">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-2">
+                                    Duis
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-2">
+                                Duis a sem ut diam interdum ultricies sit amet id arcu.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-3">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-3">
+                                    Donec
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-3">
+                                Donec pretium magna cursus ante tincidunt porta.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{> copy/accordion/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-value</code></td>
+                        <td>string || string list</td>
+                        <td>The initial value(s) of the expanded accordion items. Separated by comma</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-dir</code></td>
+                        <td>ltr | rtl</td>
+                        <td>The orientation of the accordion. Can be `ltr` or `rtl`</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-collapsible</code></td>
+                        <td>boolean</td>
+                        <td>Whether an accordion item can be closed after it has been expanded.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-multiple</code></td>
+                        <td>boolean</td>
+                        <td>Whether multiple accordion items can be expanded at the same time.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-orientation</code></td>
+                        <td>horizontal | vertical</td>
+                        <td>The orientation of the accordion. Can be `horizontal` or `vertical` - `horizontal`: only
+                            left and
+                            right arrow key navigation will work. - `vertical`: only up and down arrow key navigation
+                            will work.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <hr id="callbacks">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each Accordion component can receive callbacks that can be used to respond to user interaction with
+            custom
+            behavior.</p>
+        <p>You must add a custom id for the accordion and a event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+                document.getElementById("my-callback-accordion")
+                ?.addEventListener("my-callback-accordion-event", (event) => {
+                  console.log("Received event:", (event as CustomEvent).detail);
+                });
+            </code></pre>
+
+        <div class="preview">
+            <div id="accordion-callback" class="preview-display">
+                <div id="my-callback-accordion" class="accordion accordion-js"
+                    data-on-value-change="my-callback-accordion-event">
+                    <div data-part="root">
+                        <div data-part="item" data-value="item-1">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-1">
+                                    Lorem
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-1">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-2">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-2">
+                                    Duis
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                </span>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-2">
+                                Duis a sem ut diam interdum ultricies sit amet id arcu. </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/accordion/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when the accordion value changes</p>
+        </div>
+
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-focus-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when a accordion item is focused
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-value-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when a accordion value changes
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <hr id="disabled">
+    <section>
+        <h3>Disabled</h3>
+        <p>Each accordion can be disabled globally or per item.</p>
+        <div class="preview">
+            <div id="accordion-disabled" class="preview-display">
+                <div class="accordion accordion-js" data-disabled="true">
+                    <div data-part="root">
+                        <div data-part="item" data-value="item-1">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-1">
+                                    Lorem
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-1">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-2">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-2">
+                                    Duis
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-2">
+                                Duis a sem ut diam interdum ultricies sit amet id arcu.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-3">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-3">
+                                    Donec
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-3">
+                                Donec pretium magna cursus ante tincidunt porta.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion accordion-js">
+                    <div data-part="root">
+                        <div data-part="item" data-value="item-1">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-1">
+                                    Lorem
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-1">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-2" data-disabled="true">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-2" data-disabled="true">
+                                    Duis
+                                    <span data-part="item-indicator" data-disabled="true">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-2" data-disabled="true">
+                                Duis a sem ut diam interdum ultricies sit amet id arcu.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-3">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-3">
+                                    Donec
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-3">
+                                Donec pretium magna cursus ante tincidunt porta.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{> copy/accordion/disabled}}
+        </div>
+    </section>
+
+    <hr id="attribute">
+    <section>
+        <h3>Orientation</h3>
+        <p>Each accordion can be set as horizontal or vertical.</p>
+        <div class="preview">
+            <div id="accordion-orientation" class="preview-display">
+                <div class="accordion accordion-js" data-orientation="vertical">
+                    <div data-part="root">
+                        <div data-part="item" data-value="item-1">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-1">
+                                    Lorem
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-1">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-2">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-2">
+                                    Duis
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-2">
+                                Duis a sem ut diam interdum ultricies sit amet id arcu.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-3">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-3">
+                                    Donec
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-3">
+                                Donec pretium magna cursus ante tincidunt porta.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion accordion-js" data-orientation="horizontal">
+                    <div data-part="root">
+                        <div data-part="item" data-value="item-1">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-1">
+                                    A
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-1">
+                                a
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-2">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-2">
+                                    B
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-2">
+                                b
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{> copy/accordion/orientation}}
+        </div>
+
+    </section>
+
+    <hr id="rtl">
+    <section>
+        <h3>RTL</h3>
+        <p>RTL support for accordion</p>
+        <div class="preview my-6">
+            <div id="accordion-rtl" dir="rtl" class="preview-display">
+                <div class="accordion accordion-js" data-dir="rtl">
+                    <div data-part="root">
+                        <div data-part="item" data-value="item-1">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-1">
+                                    كلا لم
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-1">
+                                كلا لم قِبل الدّفاع, وصل مع هاربر الأوربيين, على العصبة بالرّغم الأوضاع تم
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-2">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-2">
+                                    لعدم
+                                    <span data-part="item-indicator">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                </span>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-2">
+                                لعدم الهادي واعتلاء لكل قد, فعل في نقطة أفاق </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/accordion/rtl}}
+        </div>
+    </section>
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each accordion and its parts with Tailwind utilities
+        </p>
+        <div class="preview my-6">
+            <div id="accordion-custom" class="preview-display">
+                <div class="accordion accordion-js">
+                    <div data-part="root" class="shadow-xl shadow-ui-brand">
+                        <div data-part="item" data-value="item-1" class="bg-ui-alert">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-1" class="text-contrast-brand">
+                                    Lorem
+                                    <span data-part="item-indicator" class="text-ui-contrast-brand">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-1" class="text-contrast-alert-2">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </div>
+                        <div data-part="item" data-value="item-2" class="bg-ui-brand shadow-xl text-ui-contrast-brand">
+                            <h3>
+                                <button data-part="item-trigger" data-value="item-2" class="text-contrast-alert">
+                                    Duis
+                                    <span data-part="item-indicator" class="text-ui-contrast-brand">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </span>
+                                </button>
+                                </span>
+
+                            </h3>
+                            <div data-part="item-content" data-value="item-2" class="text-contrast-brand-2">
+                                Duis a sem ut diam interdum ultricies sit amet id arcu.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/accordion/custom}}
+        </div>
+    </section>
+    <hr id="templates">
+    <h3>Templates</h3>
+    <p>Accordion components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Color" next="Avatar" prev-path="tokens/color" next-path="components/avatar"}}
+</main>

@@ -1,0 +1,35 @@
+.layout {
+  @apply min-h-screen flex flex-col bg-layer-1;
+}
+
+.layout-header {
+  @apply 
+  sticky top-0
+  py-2 md:py-3
+  flex items-center justify-center w-full
+  bg-layer-2
+  z-10
+  gap-2 md:gap-6;
+}
+
+.layout-wrapper {
+  @apply flex-1 flex flex-col lg:flex-row px-2 md:px-6 bg-layer-2;
+}
+
+.layout-main {
+  @apply flex flex-col flex-1 p-4 md:p-6 bg-layer
+  rounded-xl
+  px-2 sm:px-4 md:px-6 lg:px-8
+  pb-12
+  min-w-0 overflow-hidden;
+}
+
+.layout-main section {
+  @apply mx-auto max-w-7xl min-w-0;
+}
+
+.layout-side {
+  @apply order-first md:min-w-fit hidden lg:block p-6
+  overflow-y-auto sticky top-0 h-screen z-20
+  bg-layer-2;
+}

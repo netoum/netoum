@@ -1,0 +1,658 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Tabs</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/tabs" target="_blank" class="link ">Zag JS Tabs
+                {{> icon/external}}
+            </a>
+        </h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Tabs component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <p>It can include multiple trigger and content parts.</p>
+        <p><code class="code-js">data-value</code> is required on all trigger and content parts</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">list</code>
+            <code class="code-js">trigger</code>
+            <code class="code-js">content</code>
+        </div>
+        <div class="preview">
+            <div id="tabs-anatomy" class="preview-display">
+                <div class="tabs tabs-js" data-default-value="lorem">
+                    <div data-part="root">
+
+                        <div data-part="list">
+                            <button data-part="trigger" data-value="lorem">Lorem</button>
+                            <button data-part="trigger" data-value="duis">Duis</button>
+                            <button data-part="trigger" data-value="donec">Donec</button>
+
+                        </div>
+                        <div data-part="content" data-value="lorem">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                        <div data-part="content" data-value="duis">
+                            <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                            </p>
+                        </div>
+                        <div data-part="content" data-value="donec">
+                            <p>Donec pretium magna cursus ante tincidunt porta. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tabs/anatomy}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each tabs can be set with different settings with the following data-attribute.</p>
+        <div class="preview">
+            <div id="tabs-attribute" class="preview-display">
+                <div class="tabs tabs-js" data-default-value="duis" data-loop-focus="true" data-orientation="vertical"
+                    data-dir="ltr" data-activation-mode="manual" data-composite="true" data-deselectable="false">
+                    <div data-part="root">
+
+                        <div data-part="list">
+                            <button data-part="trigger" data-value="lorem">Lorem</button>
+                            <button data-part="trigger" data-value="duis">Duis</button>
+                            <button data-part="trigger" data-value="donec">Donec</button>
+
+                        </div>
+                        <div data-part="content" data-value="lorem">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                        <div data-part="content" data-value="duis">
+                            <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                            </p>
+                        </div>
+                        <div data-part="content" data-value="donec">
+                            <p>Donec pretium magna cursus ante tincidunt porta. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tabs/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-value</code></td>
+                        <td>string</td>
+                        <td>The initial selected tab value</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-value</code></td>
+                        <td>string</td>
+                        <td>The controlled selected tab value</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-orientation</code></td>
+                        <td>horizontal | vertical</td>
+                        <td>The orientation of the tabs. Can be `horizontal` or `vertical` - `horizontal`: only left and
+                            right arrow key navigation will work. - `vertical`: only up and down arrow key navigation
+                            will work.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-dir</code></td>
+                        <td>ltr | rtl</td>
+                        <td>The orientation of the tabs. Can be `ltr` or `rtl`</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-loop-focus</code></td>
+                        <td>boolean</td>
+                        <td>Whether the keyboard navigation will loop from last tab to first, and vice versa.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-activation-mode</code></td>
+                        <td>"manual", "automatic"</td>
+                        <td>The activation mode of the tabs. Can be `manual` or `automatic` - `manual`: Tabs are
+                            activated when clicked or press `enter` key. - `automatic`: Tabs are activated when
+                            receiving focus</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callbacks">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each Tabs component can receive callbacks that can be used to respond to user interaction with custom
+            behavior.</p>
+        <p>You must add a custom id for the dialog and a event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+                document.getElementById("my-callback-tabs")
+                ?.addEventListener("my-callback-tabs-event", (event) => {
+                  console.log("Received event:", (event as CustomEvent).detail);
+                });
+            </code></pre>
+
+        <div class="preview">
+            <div id="tabs-callback" class="preview-display">
+                <div id="my-callback-tabs" class="tabs tabs-js" data-default-value="lorem"
+                    data-on-value-change="my-callback-tabs-event">
+                    <div data-part="root">
+                        <div data-part="list">
+                            <button data-part="trigger" data-value="lorem">Lorem</button>
+                            <button data-part="trigger" data-value="duis">Duis</button>
+                        </div>
+                        <div data-part="content" data-value="lorem">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                        <div data-part="content" data-value="duis">
+                            <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tabs/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when select a tab</p>
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-value-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when the selected/active tab changes
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-focus-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when the focused tab changes
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-navigate</code></td>
+                        <td>string</td>
+                        <td>Event name to be send to navigate to the selected tab when clicking on it. Useful if tab
+                            triggers are anchor elements.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="modifers">
+    <section>
+        <h3>Modifier</h3>
+        <p>Each tab can be styled with modifiers.</p>
+        <p>You can <a href="#mix" class="link">mix as many modifiers</a> on the same button, however you
+            can choose only one choice per modifer</p>
+        <p>For convenience the default variant name is omited, meaning there is no need to add the default name
+            class</p>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modifier</th>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#variant" class="link">Variant</a></td>
+                        <td>underline (default), accent</td>
+                        <td>Used for different semantic</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#color" class="link">Color</a></td>
+                        <td>base (default), brand, alert</td>
+                        <td>Use any semantic colors</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#size" class="link">Size</a></td>
+                        <td>md (default), sm, lg, xl</td>
+                        <td>Modify the size of the button.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr>
+    <hr id="variant">
+    <section>
+        <h3>Variant</h3>
+        <p>Set the variant of each tab</p>
+        <p>Options: <strong>neutral(default)</strong>, <strong>accent</strong></p>
+        <div class="preview">
+            <div id="tabs-variant" class="preview-display">
+                <div>
+                    <div class="tabs tabs-js" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="tabs tabs-js tabs--accent" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{> copy/tabs/variant}}
+        </div>
+    </section>
+    <hr id="color">
+    <section>
+        <h3>Color</h3>
+        <p>Set the color of each tabs</p>
+        <p>Options: <strong>base(default)</strong>, <strong>brand</strong>, <strong>alert</strong></p>
+        <div class="preview my-6">
+            <div id="tabs-color" class="preview-display">
+                <div>
+                    <div class="tabs tabs-js tabs--brand" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="tabs tabs-js tabs--alert" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="tabs tabs-js tabs--accent tabs--brand" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="tabs tabs-js tabs--accent tabs--alert" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tabs/color}}
+        </div>
+    </section>
+    <hr id="size">
+    <section>
+        <h3>Size</h3>
+        <p>Set the size of each button</p>
+        <p>Options: <strong>md(default)</strong>, <strong>sm</strong>, <strong>lg</strong>, <strong>xl</strong></p>
+        <div class="preview my-6">
+            <div id="tabs-size" class="preview-display">
+                <div>
+                    <div class="tabs tabs-js tabs--sm" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="tabs tabs-js" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="tabs tabs-js tabs--lg" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="tabs tabs-js tabs--xl" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tabs/size}}
+        </div>
+    </section>
+    <hr id="rtl">
+    <section>
+        <h3>RTL</h3>
+        <p>RTL support for tabs</p>
+        <div class="preview my-6">
+            <div id="tabs-rtl" class="preview-display">
+
+                <div dir="rtl">
+                    <div class="tabs tabs-js" data-dir="rtl" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">سقط</button>
+                                <button data-part="trigger" data-value="duis">بين</button>
+                                <button data-part="trigger" data-value="donec">دونيك</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>سقط وبلجيكا، أن ولم, يتم غضون الأوروبية عل, أن بين وقرى مكثّفة</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>ي وبدون الخاسرة الأعمال بعض, عن دول القوى القادة</p>
+                            </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>حتى سعر الجري الرائع قبل بوابة المطورين. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div dir="rtl">
+                    <div class="tabs tabs-js" data-dir="rtl" data-orientation="vertical" data-default-value="lorem">
+                        <div data-part="root">
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">سقط</button>
+                                <button data-part="trigger" data-value="duis">بين</button>
+                                <button data-part="trigger" data-value="donec">دونيك</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>سقط وبلجيكا، أن ولم, يتم غضون الأوروبية عل, أن بين وقرى مكثّفة</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>ي وبدون الخاسرة الأعمال بعض, عن دول القوى القادة</p>
+                            </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>حتى سعر الجري الرائع قبل بوابة المطورين. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tabs/rtl}}
+        </div>
+    </section>
+    <hr id="mix">
+    <section>
+        <h3>Mix</h3>
+        <p>Mix as many modifiers for each tab</p>
+        <div class="preview my-6">
+            <div id="tabs-mix" class="preview-display">
+                <div>
+                    <div class="tabs tabs-js tabs--accent tabs--brand tabs--sm" data-default-value="lorem">
+                        <div data-part="root">
+    
+                            <div data-part="list">
+                                <button data-part="trigger" data-value="lorem">Lorem</button>
+                                <button data-part="trigger" data-value="duis">Duis</button>
+                                <button data-part="trigger" data-value="donec">Donec</button>
+    
+                            </div>
+                            <div data-part="content" data-value="lorem">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div data-part="content" data-value="duis">
+                                <p>Duis a sem ut diam interdum ultricies sit amet id arcu.
+                                </p>
+                            </div>
+                            <div data-part="content" data-value="donec">
+                                <p>Donec pretium magna cursus ante tincidunt porta. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/tabs/mix}}
+        </div>
+    </section>
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each tabs and its parts with Tailwind utilities</p>
+        <div class="preview my-6">
+            <div id="tabs-custom" class="preview-display">
+                <div class="tabs tabs-js" data-default-value="tab1">
+                    <div data-part="root">
+                    <div data-part="list" data-scope="tabs">
+                        <button data-part="trigger" data-value="tab1"
+                            class="border-ui-brand px-4 py-2 font-medium"
+                            data-scope="tabs" data-selected>Lorem</button>
+                        <button data-part="trigger" data-value="tab2"
+                            class="border-2 border-indigo-500 px-4 py-2 font-medium rounded-t-lg text-contrast-1 hover:text-contrast-2"
+                            data-scope="tabs">Duis</button>
+                        <button data-part="trigger" data-value="tab3"
+                        class="border-2 border-indigo-500 px-4 py-2 font-medium rounded-t-lg text-contrast-alert-1 hover:text-contrast-brand-2"
+                        data-scope="tabs">Ipsum</button>
+                    </div>
+                    <div data-part="content" data-value="tab1" class="p-4 rounded-md shadow-sm"
+                        data-scope="tabs">
+                        <p class="text-gray-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation.</p>
+                    </div>
+                    <div data-part="content" data-value="tab2" class=" p-4 bg-white rounded-md shadow-sm"
+                        data-scope="tabs">
+                        <p class="text-gray-800">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                        </p>
+                    </div>
+                    <div data-part="content" data-value="tab3" class=" p-4 bg-white rounded-md shadow-sm"
+                        data-scope="tabs">
+                        <p class="text-gray-800">Ipsum suspendisse ultrices gravida dictum fusce ut. Mauris commodo
+                            quis imperdiet massa tincidunt nunc pulvinar sapien et.</p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+            {{> copy/tabs/custom}}
+        </div>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Tabs components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Switcher" next="Toggle Group" prev-path="components/switcher" next-path="components/toggle-group"}}
+</main>

@@ -1,0 +1,252 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Toggle Group</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/toggle-group" target="_blank" class="link ">Zag JS Toggle Group
+                {{> icon/external}}
+            </a>
+        </h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Toggle Group component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">item</code>
+        </div>
+        <p>It can include multiple item parts.</p>
+        <p><code class="code-js">data-value</code> is required on all item parts</p>
+
+        <div class="preview">
+            <div id="toggle-group-anatomy" class="preview-display">
+                <div class="toggle-group toggle-group-js" data-default-value="a">
+                    <div data-part="root">
+                        <button data-part="item" data-value="a">A</button>
+                        <button data-part="item" data-value="b">B</button>
+                        <button data-part="item" data-value="c">C</button>
+                    </div>
+                </div>
+            </div>
+            {{> copy/toggle-group/anatomy}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each toggle-group can be set with different settings with the following data-attribute.</p>
+        <div class="preview">
+            <div id="toggle-group-attribute" class="preview-display">
+                <div class="toggle-group toggle-group-js" data-default-value="b,c" data-orientation="vertical"
+                    data-dir="ltr" data-deselectable="true" data-loop-focus="false" data-rowing-focus="false"
+                    data-multiple="true">
+                    <div data-part="root">
+                        <button data-part="item" data-value="a">A</button>
+                        <button data-part="item" data-value="b">B</button>
+                        <button data-part="item" data-value="c">C</button>
+                    </div>
+
+                </div>
+            </div>
+            {{> copy/toggle-group/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-value</code></td>
+                        <td>string || string list</td>
+                        <td>The initial selected toggle group value/values. Separated by comma</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-value</code></td>
+                        <td>string || string list</td>
+                        <td>The controled toggle group value/values. Separated by comma</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-orientation</code></td>
+                        <td>horizontal | vertical</td>
+                        <td>The orientation of the toggle-group. Can be `horizontal` or `vertical` - `horizontal`: only
+                            left and
+                            right arrow key navigation will work. - `vertical`: only up and down arrow key navigation
+                            will work.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-dir</code></td>
+                        <td>ltr | rtl</td>
+                        <td>The orientation of the toggle-group. Can be `ltr` or `rtl`</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-loop-focus</code></td>
+                        <td>boolean</td>
+                        <td>Whether the keyboard navigation will loop from last tab to first, and vice versa.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-rowing-focus</code></td>
+                        <td>boolean</td>
+                        <td>Whether to use roving tab index to manage focus.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-multiple</code></td>
+                        <td>boolean</td>
+                        <td>Whether to allow multiple toggles to be selected.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-deselectable</code></td>
+                        <td>boolean</td>
+                        <td>Whether the toggle group allows empty selection. Note: This is ignored if multiple is true
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-disabled</code></td>
+                        <td>boolean</td>
+                        <td>Whether the toggle is disabled.
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callbacks">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each Toggle Group component can receive callbacks that can be used to respond to user interaction with
+            custom
+            behavior.</p>
+        <p>You must add a custom id for the toggle group and a event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+                document.getElementById("my-callback-toggle-group")
+                ?.addEventListener("my-callback-toggle-group-event", (event) => {
+                  console.log("Received event:", (event as CustomEvent).detail);
+                });
+            </code></pre>
+
+        <div class="preview">
+            <div id="toggle-group-callback" class="preview-display">
+                <div id="my-callback-toggle-group" class="toggle-group toggle-group-js" data-default-value="a"
+                    data-on-value-change="my-callback-toggle-group-event">
+                    <div data-part="root">
+                        <button data-part="item" data-value="a">A</button>
+                        <button data-part="item" data-value="b">B</button>
+                        <button data-part="item" data-value="c">C</button>
+                    </div>
+                </div>
+            </div>
+            {{> copy/toggle-group/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when the toggle is clicked</p>
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-value-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when the toogle is clicked
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="duo">
+    <section>
+        <h3>Duo Toggle Group</h3>
+        <p>If you only have 2 values and you wish to hide the active one, you can add the <code class="code-js">toggle-group-duo</code> class</p>
+        <div class="preview my-6">
+            <div id="toggle-group-duo" class="preview-display">
+                <div class="toggle-group toggle-group-js toggle-group--duo" data-default-value="a">
+                    <div data-part="root">
+                        <button data-part="item" data-value="a">A</button>
+                        <button data-part="item" data-value="b">B</button>
+                    </div>
+                </div>
+            </div>
+            {{> copy/toggle-group/duo}}
+        </div>
+    </section>
+    <hr id="rtl">
+    <section>
+        <h3>RTL</h3>
+        <p>RTL support for toggle-group</p>
+        <div class="preview my-6">
+            <div id="toggle-group-rtl" class="preview-display">
+<div dir="rtl">
+                <div class="toggle-group toggle-group-js" data-default-value="a" data-dir="rtl">
+                    <div data-part="root">
+                        <button data-part="item" data-value="a">A
+                            <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                        <button data-part="item" data-value="b">B
+                            <svg  class="item__icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                        <button data-part="item" data-value="c">C
+                            <svg  class="item__icon"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            {{> copy/toggle-group/rtl}}
+        </div>
+    </section>
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each toggle-group and its parts with Tailwind utilities
+        </p>
+        <div class="preview my-6">
+            <div id="toggle-group-custom" class="preview-display">
+                <div class="toggle-group toggle-group-js" data-default-value="a">
+                    <div data-part="root" class="bg-ui-alert shadow-xl rounded-xl">
+                        <button data-part="item" data-value="a"
+                        class="bg-ui-brand data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast-alert data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                        >A</button>
+                        <button data-part="item" data-value="b"
+                        class="bg-ui-alert data-[state=on]:bg-accent-alert data-[state=on]:text-accent-contrast-brand data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                        >B</button>
+                        <button data-part="item" data-value="c"
+                        class="bg-ui data-[state=on]:bg-accent data-[state=on]:text-accent-contrast-brand data-[state=on]:hover:bg-accent-1 data-[state=on]:active:bg-accent-2"
+                        >C</button>
+                    </div>
+                </div>
+            </div>
+            {{> copy/toggle-group/custom}}
+        </div>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Toggle Group components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Tabs" next="Tree View" prev-path="components/tabs" next-path="components/tree-view"}}
+
+</main>

@@ -1,0 +1,582 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Listbox</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/listbox" target="_blank" class="link ">Zag JS Listbox
+                {{> icon/external}}
+            </a>
+        </h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Listbox component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">label</code>
+            <code class="code-js">content</code>
+            <code class="code-js">item</code>
+            <code class="code-js">item-group</code>
+            <code class="code-js">item-group-label</code>
+        </div>
+        <p>It can include multiple item, item-group and item-group-label parts.</p>
+        <p><code class="code-js">data-value</code> is required on all item parts</p>
+
+        <div class="preview">
+            <div id="listbox-anatomy" class="preview-display">
+                <div class="listbox listbox-js">
+                    <div data-part="root">
+                        <label data-part="label">Listbox Label</label>
+                        <ul data-part="content">
+                            <li data-part="item" data-value="a" data-label="item-a">
+                                <span data-part="item-text" data-value="a" data-label="item-a">
+                                    Item A
+                                </span>
+                                <span data-part="item-indicator" data-value="a" data-label="item-a">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+
+
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="b" data-label="item-b">
+                                <span data-part="item-text" data-value="b" data-label="item-b">
+                                    Item B
+                                </span>
+                                <span data-part="item-indicator" data-value="b" data-label="item-b">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="c" data-label="item-c">
+                                <span data-part="item-text" data-value="c" data-label="item-c">
+                                    Item C
+                                </span>
+                                <span data-part="item-indicator" data-value="c" data-label="item-c">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="d" data-label="item-d">
+                                <span data-part="item-text" data-value="d" data-label="item-d">
+                                    Item D
+                                </span>
+                                <span data-part="item-indicator" data-value="d" data-label="item-d">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            {{> copy/listbox/anatomy}}
+        </div>
+    </section>
+    <hr id="group">
+    <section>
+        <h3>Group Items</h3>
+        <p>The Listbox items can be grouped with a label to identify each group</p>
+        <p>Please note you must provide and id to <code class="code-js" data-lang="html">item-group</code> and <code
+                class="code-js" data-lang="html">item-group-label</code> and not a value</p>
+        <div class="preview">
+            <div id="listbox-group" class="preview-display">
+                <div class="listbox listbox-js">
+                    <div data-part="root">
+                        <label data-part="label">Listbox Label</label>
+                        <ul data-part="content">
+                            <div data-part="item-group-label" data-id="group">Group Label</div>
+                            <div data-part="item-group" data-id="group">
+                                <li data-part="item" data-value="a" data-label="item-a">
+                                    <span data-part="item-text" data-value="a" data-label="item-a">
+                                        Item A
+                                    </span>
+                                    <span data-part="item-indicator" data-value="a" data-label="item-a">
+                                        <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+
+
+                                    </span>
+                                </li>
+                                <li data-part="item" data-value="b" data-label="item-b">
+                                    <span data-part="item-text" data-value="b" data-label="item-b">
+                                        Item B
+                                    </span>
+                                    <span data-part="item-indicator" data-value="b" data-label="item-b">
+                                        <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                </li>
+                            </div>
+                            <div data-part="item-group-label" data-id="group-1">Group Label</div>
+                            <div data-part="item-group" data-id="group-1">
+                                <li data-part="item" data-value="c" data-label="item-c">
+                                    <span data-part="item-text" data-value="c" data-label="item-c">
+                                        Item C
+                                    </span>
+                                    <span data-part="item-indicator" data-value="c" data-label="item-c">
+                                        <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li data-part="item" data-value="d" data-label="item-d">
+                                    <span data-part="item-text" data-value="d" data-label="item-d">
+                                        Item D
+                                    </span>
+                                    <span data-part="item-indicator" data-value="d" data-label="item-d">
+                                        <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                </li>
+                            </div>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            {{> copy/listbox/group}}
+        </div>
+    </section>
+    <hr id="column">
+    <section>
+        <h3>Column Layout</h3>
+        <p>The Listbox can use the grid layout by adding <code class="code-js" data-lang="html">data-column-count</code>
+        </p>
+        <p>The column count is available as dynamic css variable<code class="code-js"
+                data-lang="css">--column-count</code> which is used in the component css</p>
+        <div class="preview">
+            <div id="listbox-group" class="preview-display">
+                <div class="listbox listbox-js" data-column-count="3">
+                    <div data-part="root">
+                        <label data-part="label">Listbox Label</label>
+                        <ul data-part="content">
+                            <li data-part="item" data-value="a" data-label="item-a">
+                                <span data-part="item-text" data-value="a" data-label="item-a">
+                                    Item A
+                                </span>
+                                <span data-part="item-indicator" data-value="a" data-label="item-a">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+
+
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="b" data-label="item-b">
+                                <span data-part="item-text" data-value="b" data-label="item-b">
+                                    Item B
+                                </span>
+                                <span data-part="item-indicator" data-value="b" data-label="item-b">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="c" data-label="item-c">
+                                <span data-part="item-text" data-value="c" data-label="item-c">
+                                    Item C
+                                </span>
+                                <span data-part="item-indicator" data-value="c" data-label="item-c">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="d" data-label="item-d">
+                                <span data-part="item-text" data-value="d" data-label="item-d">
+                                    Item D
+                                </span>
+                                <span data-part="item-indicator" data-value="d" data-label="item-d">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            {{> copy/listbox/group}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each listbox can be set with different settings with the following data-attribute.</p>
+        <div class="preview">
+            <div id="listbox-attribute" class="preview-display">
+                <div class="listbox listbox-js" id="custom-listbox" data-default-highlighted-value="a"
+                    data-default-value="b,d" data-dir="ltr" data-orientation="vertical" data-select-on-highlight="true"
+                    data-loop-focus="false" data-typeahead="true" data-deselectable="true" data-disabled="false"
+                    data-disallow-select-all="false" data-selection-mode="extended">
+                    <div data-part="root">
+                        <label data-part="label">Listbox Label</label>
+                        <ul data-part="content">
+                            <div data-part="item-group-label" data-id="group">Group Label</div>
+                            <div data-part="item-group" data-id="group">
+                                <li data-part="item" data-value="a" data-label="item-a">
+                                    <span data-part="item-text" data-value="a" data-label="item-a">
+                                        Item A
+                                    </span>
+                                    <span data-part="item-indicator" data-value="a" data-label="item-a">
+                                        <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+
+
+                                    </span>
+                                </li>
+                                <li data-part="item" data-value="b" data-label="item-b">
+                                    <span data-part="item-text" data-value="b" data-label="item-b">
+                                        Item B
+                                    </span>
+                                    <span data-part="item-indicator" data-value="b" data-label="item-b">
+                                        <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                </li>
+                            </div>
+                            <div data-part="item-group-label" data-id="group-1">Group Label</div>
+                            <div data-part="item-group" data-id="group-1">
+                                <li data-part="item" data-value="c" data-label="item-c">
+                                    <span data-part="item-text" data-value="c" data-label="item-c">
+                                        Item C
+                                    </span>
+                                    <span data-part="item-indicator" data-value="c" data-label="item-c">
+                                        <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li data-part="item" data-value="d" data-label="item-d">
+                                    <span data-part="item-text" data-value="d" data-label="item-d">
+                                        Item D
+                                    </span>
+                                    <span data-part="item-indicator" data-value="d" data-label="item-d">
+                                        <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                </li>
+                            </div>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            {{> copy/listbox/attribute}}
+        </div>
+    </section>
+    <hr id="callbacks">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each Listbox component can receive callbacks that can be used to respond to user interaction with
+            custom
+            behavior.</p>
+        <p>You must add a custom id for the listbox and a event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+                document.getElementById("my-callback-listbox")
+                ?.addEventListener("my-callback-listbox-event", (event) => {
+                  console.log("Received event:", (event as CustomEvent).detail);
+                });
+            </code></pre>
+
+        <div class="preview">
+            <div id="listbox-callback" class="preview-display">
+                <div id="my-callback-listbox" class="listbox listbox-js" data-on-select="my-callback-listbox-event">
+                    <div data-part="root">
+                        <label data-part="label">Listbox Label</label>
+                        <ul data-part="content">
+                            <li data-part="item" data-value="a" data-label="item-a">
+                                <span data-part="item-text" data-value="a" data-label="item-a">
+                                    Item A
+                                </span>
+                                <span data-part="item-indicator" data-value="a" data-label="item-a">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+
+
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="b" data-label="item-b">
+                                <span data-part="item-text" data-value="b" data-label="item-b">
+                                    Item B
+                                </span>
+                                <span data-part="item-indicator" data-value="b" data-label="item-b">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="c" data-label="item-c">
+                                <span data-part="item-text" data-value="c" data-label="item-c">
+                                    Item C
+                                </span>
+                                <span data-part="item-indicator" data-value="c" data-label="item-c">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="d" data-label="item-d">
+                                <span data-part="item-text" data-value="d" data-label="item-d">
+                                    Item D
+                                </span>
+                                <span data-part="item-indicator" data-value="d" data-label="item-d">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            {{> copy/listbox/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when a listbox item is selected</p>
+        </div>
+
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-select</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when a listbox item is selected
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-highlight-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when a listbox item is highlighted
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-value-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when a listbox value changes
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <hr id="rtl">
+    <section>
+        <h3>RTL</h3>
+        <p>RTL support for listbox</p>
+        <div class="preview my-6">
+            <div id="listbox-rtl" class="preview-display">
+                <div dir="rtl">
+                    <div class="listbox listbox-js" data-dir="rtl">
+                        <div data-part="root">
+                            <label data-part="label">Listbox Label</label>
+                            <ul data-part="content">
+                                <li data-part="item" data-value="a" data-label="item-a">
+                                    <span data-part="item-text" data-value="a" data-label="item-a">
+                                        Item A
+                                    </span>
+                                    <span data-part="item-indicator" data-value="a" data-label="item-a">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+
+
+                                    </span>
+                                </li>
+                                <li data-part="item" data-value="b" data-label="item-b">
+                                    <span data-part="item-text" data-value="b" data-label="item-b">
+                                        Item B
+                                    </span>
+                                    <span data-part="item-indicator" data-value="b" data-label="item-b">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li data-part="item" data-value="c" data-label="item-c">
+                                    <span data-part="item-text" data-value="c" data-label="item-c">
+                                        Item C
+                                    </span>
+                                    <span data-part="item-indicator" data-value="c" data-label="item-c">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li data-part="item" data-value="d" data-label="item-d">
+                                    <span data-part="item-text" data-value="d" data-label="item-d">
+                                        Item D
+                                    </span>
+                                    <span data-part="item-indicator" data-value="d" data-label="item-d">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m4.5 12.75 6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/listbox/rtl}}
+        </div>
+    </section>
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each listbox and its parts with Tailwind utilities
+        </p>
+        <div class="preview my-6">
+            <div id="listbox-custom" class="preview-display">
+                <div class="listbox listbox-js">
+                    <div data-part="root" class="bg-red-50 shadow-xl border-2 rounded-xl">
+                        <label data-part="label" class="text-blue-600 px-4">Listbox Label</label>
+                        <ul data-part="content" class="bg-yellow-50 shadow-xl border-2 rounded-xl">
+                            <li data-part="item" data-value="a" data-label="item-a"
+                                class="border-2 rounded-xl border-red-300">
+                                <span data-part="item-text" data-value="a" data-label="item-a">
+                                    Item A
+                                </span>
+                                <span data-part="item-indicator" data-value="a" data-label="item-a"
+                                    class="border-blue-800">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+
+
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="b" data-label="item-b"
+                                class="border-2 rounded-xl border-red-300">
+                                <span data-part="item-text" data-value="b" data-label="item-b">
+                                    Item B
+                                </span>
+                                <span data-part="item-indicator" data-value="b" data-label="item-b"
+                                    class="border-blue-800">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="c" data-label="item-c">
+                                <span data-part="item-text" data-value="c" data-label="item-c">
+                                    Item C
+                                </span>
+                                <span data-part="item-indicator" data-value="c" data-label="item-c">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li data-part="item" data-value="d" data-label="item-d">
+                                <span data-part="item-text" data-value="d" data-label="item-d">
+                                    Item D
+                                </span>
+                                <span data-part="item-indicator" data-value="d" data-label="item-d">
+                                    <svg class="item__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            {{> copy/listbox/custom}}
+        </div>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Listbox components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Link" next="Menu" prev-path="components/link" next-path="components/menu"}}
+</main>

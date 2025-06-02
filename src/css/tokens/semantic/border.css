@@ -1,0 +1,9 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+@theme inline {
+  --border-radius: var(--theme-border-radius);
+  --border-width: var(--theme-border-width);
+  --border-color: var(--theme-border-color);
+}

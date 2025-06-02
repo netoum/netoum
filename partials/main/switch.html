@@ -1,0 +1,622 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Switch</h1>
+        <h2>A pure vanilla JS implementation of <a href="https://zagjs.com/components/react/switch" target="_blank"
+                class="link ">Zag JS Switch
+                {{> icon/external}}
+            </a></h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Switch component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">label</code>
+            <code class="code-js">hidden-input</code>
+            <code class="code-js">control</code>
+            <code class="code-js">thumb</code>
+        </div>
+            <div class="preview">
+            <div id="switch-anatomy" class="preview-display">
+              <div class="switch switch-js">
+                <label data-part="root">
+                  <span data-part="label">Label</span>
+                  <input data-part="hidden-input" />
+                  <span data-part="control">
+                    <span data-part="thumb"></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            {{> copy/switch/anatomy}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each switch can be set with different settings with the following data-attribute.</p>
+        <!-- <div class="notification">
+            <p>We are aware of a bug regarding the default state as indeterminate. It currently sets the state as true instead of "indeterminate".
+              We will update the components as soon as it is resolved on the new version.
+            </p>
+              </div> -->
+        <div class="preview">
+            <div id="switch-attribute" class="preview-display">
+                  <div class="switch switch-js" data-default-checked="true">
+                    <label data-part="root">
+                      <span data-part="label">Checked</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="switch switch-js" data-disabled="true">
+                    <label data-part="root">
+                      <span data-part="label">Disabled</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="switch switch-js" data-invalid="true">
+                    <label data-part="root">
+                      <span data-part="label">Invalid</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="switch switch-js" data-default-checked="true" data-invalid="true">
+                    <label data-part="root">
+                      <span data-part="label">Invalid Checked</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                
+                
+                {{> copy/switch/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-checked</code></td>
+                        <td>boolean || "indeterminate</td>
+                        <td>The initial checked state of the switch</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-checked</code></td>
+                        <td>boolean || "indeterminate</td>
+                        <td>The controlled checked state of the switch</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-dir</code></td>
+                        <td>ltr | rtl</td>
+                        <td>The orientation of the switch. Can be `ltr` or `rtl`</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-disabled</code></td>
+                        <td>string</td>
+                        <td>Whether the switch is disabled</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-invalid</code></td>
+                        <td>boolean</td>
+                        <td>Whether the switch is invalid</td>
+                    </tr>
+                    <tr>
+                        <tr>
+                            <td><code class="code-js select-all">data-required</code></td>
+                            <td>boolean</td>
+                            <td>Whether the switch is required</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-js select-all">data-read-only</code></td>
+                            <td>boolean</td>
+                            <td>Whether the switch is read only</td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-js select-all">data-form</code></td>
+                            <td>string</td>
+                            <td>The id of the form that the switch belongs to.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-js select-all">data-name</code></td>
+                            <td>string</td>
+                            <td>The name of the input field in a switch. Useful for form submission.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code class="code-js select-all">data-value</code></td>
+                            <td>string</td>
+                            <td>The value of switch input. Useful for form submission. Default to "on"</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callback">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each switch component can receive callbacks that can be used to respond to user interaction with custom
+            behavior.</p>
+        <p>You must add a custom id and an event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+            document.getElementById("my-callback-switch")
+            ?.addEventListener("my-callback-switch-event", (event) => {
+              console.log("Received event:", (event as CustomEvent).detail);
+            });
+        </code></pre>
+        <div class="preview">
+            <div id="switch-callback" class="preview-display">
+              <div id="my-callback-switch" class="switch switch-js" data-on-checked-change="my-callback-switch-event">
+                <label data-part="root">
+                  <span data-part="label">Label</span>
+                  <input data-part="hidden-input" />
+                  <span data-part="control">
+                    <span data-part="thumb"></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            {{> copy/switch/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when you check or uncheck the above switch</p>
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-open-change</code></td>
+                        <td>string</td>
+                        <td>Function to call when the switch's open state changes
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="state">
+    <section>
+        <h3>Checked State Control</h3>
+        <p>Switch checked state can be control with data attributes on any element
+        </p>
+        <p>You must set a custom id for your switch, as the default is randomly generated</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-check-switch="switch-id"</code>
+            <code class="code-js">data-uncheck-switch="switch-id"</code>
+        </div>
+        <div class="preview">
+            <div id="switch-state" class="preview-display">
+               <div>
+                <button data-check-switch="my-switch" class="button button--sm">
+                    Check Switch
+                </button>
+                <button data-uncheck-switch="my-switch" class="button button--sm">
+                    Uncheck Switch
+                </button>
+               </div>
+     
+               <div id="my-switch" class="switch switch-js">
+                <label data-part="root">
+                  <span data-part="label">Label</span>
+                  <input data-part="hidden-input" />
+                  <span data-part="control">
+                    <span data-part="thumb"></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            {{> copy/switch/state}}
+
+        </div>
+        <p>You also dispatch an event named <code class="code-js" data-lang="html">switch:set-checked</code> to the switch id with a boolean value</p>
+        <pre><code class="code-js" data-lang="js">
+            const el = document.getElementById("my-switch");
+            if (el) {
+              el.dispatchEvent(
+                new CustomEvent("switch:set-checked", {
+                  detail: { value: true },
+                })
+              );
+            } else {
+              console.warn("Element with ID 'my-switch' not found");
+            }
+        </code></pre>
+
+    </section>
+    <hr id="form">
+    <section>
+        <h3>Use with Form</h3>
+        <p>Switch can be used inside a form</p>
+        <p>You must set the id of the form and the name of the switch</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-form="form-id"</code>
+            <code class="code-js">data-name="switch-name"</code>
+        </div>
+        <p>You can also add the value of the switch. Default to : "on"</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-value="yes"</code>
+        </div>
+        <div class="preview">
+            <div id="switch-form" class="preview-display">
+                <form id="my-form">
+                  <div class="switch switch-js" data-form="my-form" data-name="newsletter" data-value="yes">
+                    <label data-part="root">
+                      <span data-part="label">Receive Newsletter ?</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                    <button class="button button--accent" type="submit">Submit</button>
+                  </form>
+                
+                  <div id="result"></div>
+            </div>
+            {{> copy/switch/form}}
+
+        </div>
+        <p>You can use the results from the form as you wish</p>
+        <pre><code class="code-js" data-lang="js">
+            form.addEventListener('submit', (e: Event) => {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const newsletter = (formData.get('newsletter') as string) || 'no';
+                result.textContent = `Submitted: newsletter: ${newsletter}`;
+              });
+        </code></pre>
+
+    </section>
+    <hr id="modifers">
+    <section>
+        <h3>Modifier</h3>
+        <p>Each switch can be styled with modifiers.</p>
+        <p>You can <a href="#mix" class="link">mix as many modifiers</a> on the same switch, however you
+            can choose only one choice per modifer</p>
+        <p>For convenience the default variant name is omited, meaning there is no need to add the default name
+            class</p>
+        <div class="notification">
+            You may have noticed the double dash before the modifier name — this follows the
+            <a class="link" href="https://en.bem.info/methodology/quick-start/" target="_blank">BEM (Block Element
+                Modifier)
+                <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor">
+                    <title>Opens in a new window</title>
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+            </a> naming convention
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modifier</th>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#color" class="link">Color</a></td>
+                        <td>base (default), brand, alert</td>
+                        <td>Use any semantic colors</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#size" class="link">Size</a></td>
+                        <td>md (default), sm, lg, xl</td>
+                        <td>Modify the size of the switch.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#shape" class="link">Shape</a></td>
+                        <td>square (default), circle</td>
+                        <td>Modify the shape of the switch.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="color">
+    <section>
+        <h3>Color</h3>
+        <p>Set the color of each button</p>
+        <p>Options: <strong>base(default)</strong>, <strong>brand</strong>, <strong>alert</strong></p>
+        <div class="preview">
+            <div id="switch-color" class="preview-display">
+                
+                <div>
+                  <div class="switch switch-js">
+                    <label data-part="root">
+                      <span data-part="label">Label</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="switch switch-js switch--brand">
+                    <label data-part="root">
+                      <span data-part="label">Label</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="switch switch-js switch--alert">
+                    <label data-part="root">
+                      <span data-part="label">Label</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+            </div>
+            {{>copy/switch/color}}
+        </div>
+    </section>
+    <hr id="size">
+    <section>
+        <h3>Size</h3>
+        <p>Set the size of each button</p>
+        <p>Options: <strong>md(default)</strong>, <strong>sm</strong>, <strong>lg</strong>, <strong>xl</strong></p>
+        <div class="preview">
+            <div id="switch-size" class="preview-display">
+                <div>
+                  <div class="switch switch-js switch--sm">
+                    <label data-part="root">
+                      <span data-part="label">Label</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="switch switch-js">
+                    <label data-part="root">
+                      <span data-part="label">Label</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="switch switch-js switch--lg">
+                    <label data-part="root">
+                      <span data-part="label">Label</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="switch switch-js switch--xl">
+                    <label data-part="root">
+                      <span data-part="label">Label</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+            </div>
+            </div>
+            {{>copy/switch/size}}
+        </div>
+    </section>
+    <hr id="shape">
+    <section>
+        <h3>Shape</h3>
+        <p>Set the shape of each button</p>
+        <p>Options: <strong>inherit(default)</strong>, <strong>circle</strong></p>
+        <div class="preview">
+            <div id="switch-shape" class="preview-display">
+                <div>
+                  <div class="switch switch-js">
+                    <label data-part="root">
+                      <span data-part="label">Label</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="switch switch-js switch--circle">
+                    <label data-part="root">
+                      <span data-part="label">Label</span>
+                      <input data-part="hidden-input" />
+                      <span data-part="control">
+                        <span data-part="thumb"></span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+            </div>
+            {{>copy/switch/shape}}
+        </div>
+    </section>
+    <hr id="mix">
+    <section>
+        <h3>Mix</h3>
+        <p>Mix as many modifiers for each button</p>
+        <div class="preview">
+            <div id="switch-mix" class="preview-display">
+ 
+              <div>
+                <div class="switch switch-js switch--sm">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+                <div class="switch switch-js switch--sm switch--brand">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+                <div class="switch switch-js switch--sm switch--alert">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <div class="switch switch-js switch--circle switch--sm">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+                <div class="switch switch-js switch--circle switch--sm switch--brand">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+                <div class="switch switch-js switch--circle switch--sm switch--alert">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <div class="switch switch-js switch--lg">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+                <div class="switch switch-js switch--lg switch--brand">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+                <div class="switch switch-js switch--lg switch--alert">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <div class="switch switch-js switch--circle switch--lg">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+                <div class="switch switch-js switch--circle switch--lg switch--brand">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+                <div class="switch switch-js switch--circle switch--lg switch--alert">
+                  <label data-part="root">
+                    <span data-part="label">Label</span>
+                    <input data-part="hidden-input" />
+                    <span data-part="control">
+                      <span data-part="thumb"></span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            {{>copy/switch/mix}}
+        </div>
+    </section>
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each switch with Tailwind utilities</p>
+        <div class="preview">
+            <div id="switch-custom" class="preview-display">
+              <div class="switch switch-js">
+                <label data-part="root">
+                  <span data-part="label" class="text-contrast-brand-2">Label</span>
+                  <input data-part="hidden-input" />
+                  <span data-part="control" class="rounded-lg text-accent-contrast-alert bg-ui-brand  data-[state=checked]:bg-accent-brand border-contrast-alert border-2 ">
+                    <span data-part="thumb" class="bg-ui-contrast-alert data-[state=checked]:bg-accent-contrast-alert"></span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            {{>copy/switch/custom}}
+        </div>
+    </section>
+    <h3>Templates</h3>
+    <p>Switch components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Clipboard" next="Link" prev-path="components/clipboard" next-path="components/link"}}
+</main>

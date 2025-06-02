@@ -1,0 +1,620 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Badge</h1>
+        <h2>A pure CSS component</h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>There are 4 different badge anatomies, each requiring specific accessibility attributes.</p>
+        <div class="preview">
+            <div id="badge-anatomy" class="preview-display">
+                <span class="badge">
+                    <span>Text</span>
+                </span>
+                <span class="badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge  badge--square" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square" aria-label="Info about icon only badge">
+                    B
+                </span>
+            </div>
+            {{>copy/badge/anatomy}}
+        </div>
+        <h4>Text</h4>
+        <p>Text badge do not require additonal attibutes</p>
+        <h4>Text and SVG</h4>
+        <p><code data-lang="html" class="code-js select-all">svg</code> tag requires <code data-lang="html"
+                class="code-js select-all">aria-hidden="true"</code>
+            to hide it from screen readers as the the text already include the necessary information
+        </p>
+        <p><code data-lang="html" class="code-js select-all">svg</code> tag requires <code data-lang="html"
+                class="code-js select-all">class="badge__icon"</code>
+        </p>
+        <h4>SVG</h4>
+        <p><code data-lang="html" class="code-js select-all">a</code> tag requires <code data-lang="html"
+                class="code-js select-all">aria-label="Login to your account"</code>
+            to indicate indicate the action to the user
+        </p>
+        <p><code data-lang="html" class="code-js select-all">svg</code> tag requires <code data-lang="html"
+                class="code-js select-all">aria-hidden="true"</code>
+            to hide it from screen readers as the the text already include the necessary information
+        </p>
+        <p><code data-lang="html" class="code-js select-all">svg</code> tag requires <code data-lang="html"
+                class="code-js select-all">class="badge__icon"</code>
+        </p>
+        <h4>One caracter</h4>
+        <p><code data-lang="html" class="code-js select-all">a</code> tag requires <code data-lang="html"
+                class="code-js select-all">aria-label="Login to your account"</code>
+            to indicate indicate the action to the user
+        </p>
+    </section>
+    <hr id="modifers">
+    <section>
+        <h3>Modifier</h3>
+        <p>Each badge can be styled with modifiers.</p>
+        <p>You can <a href="#mix" class="link">mix as many modifiers</a> on the same badge, however you
+            can choose only one choice per modifer</p>
+        <p>For convenience the default variant name is omited, meaning there is no need to add the default name
+            class</p>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modifier</th>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#variant" class="link">Variant</a></td>
+                        <td>neutral (default), accent</td>
+                        <td>Used for different types of meanings</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#color" class="link">Color</a></td>
+                        <td>base (default), brand, alert</td>
+                        <td>Use any semantic colors</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#font-color" class="link">Font Color</a></td>
+                        <td>base (default), brand, alert</td>
+                        <td>Use any semantic colors.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#size" class="link">Size</a></td>
+                        <td>md (default), sm, lg, xl</td>
+                        <td>Modify the size of the badge.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#shape" class="link">Shape</a></td>
+                        <td>rectangular (default), square, circle</td>
+                        <td>Modify the shape of the badge.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="variant">
+    <section>
+        <h3>Variant</h3>
+        <p>Set the variant of each badge</p>
+        <p>Options: <strong>neutral(default)</strong>, <strong>accent</strong></p>
+        <div class="preview">
+            <div id="badge-variant" class="preview-display">
+                <span class="badge">
+                    <span>Text</span>
+                </span>
+                <span class="badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge  badge--square" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--accent">
+                    <span>Text</span>
+                </span>
+                <span class="badge  badge--accent">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge  badge--square  badge--accent" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--accent" aria-label="Info about icon only badge">
+                    B
+                </span>
+            </div>
+            {{>copy/badge/variant}}
+        </div>
+    </section>
+    <hr id="color">
+    <section>
+        <h3>Color</h3>
+        <p>Set the color of each badge</p>
+        <p>Options: <strong>base(default)</strong>, <strong>brand</strong>, <strong>alert</strong></p>
+        <div class="preview my-6">
+            <div id="badge-color" class="preview-display">
+                <span class="badge  badge--brand">
+                    <span>Text</span>
+                </span>
+                <span class="badge  badge--alert">
+                    <span>Text</span>
+                </span>
+                <span class="badge  badge--brand">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge  badge--alert">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge  badge--square  badge--brand" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--alert" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--brand" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--square  badge--alert" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--accent  badge--brand">
+                    <span>Text</span>
+                </span>
+                <span class="badge  badge--accent  badge--alert">
+                    <span>Text</span>
+                </span>
+                <span class="badge  badge--accent  badge--brand">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge  badge--accent  badge--alert">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge  badge--square  badge--accent  badge--brand" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--accent  badge--alert" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--accent  badge--brand" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--square  badge--accent  badge--alert" aria-label="Info about icon only badge">
+                    B
+                </span>
+            </div>
+            {{>copy/badge/color}}
+        </div>
+    </section>
+    <hr id="font-color">
+    <section>
+        <h3>Font Color</h3>
+        <p>Set the font color of each badge</p>
+        <p>Options: <strong>base(default)</strong>, <strong>brand</strong>, <strong>alert</strong></p>
+        <div class="preview my-6">
+            <div id="badge-font-color" class="preview-display">
+                <span class="badge badge--font-brand">
+                    <span>Text</span>
+                </span>
+                <span class="badge badge--font-alert">
+                    <span>Text</span>
+                </span>
+                <span class="badge badge--font-brand">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge badge--font-alert">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge  badge--square badge--font-brand" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square badge--font-alert" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square badge--font-brand" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--square badge--font-alert" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--accent badge--font-brand">
+                    <span>Text</span>
+                </span>
+                <span class="badge  badge--accent badge--font-alert">
+                    <span>Text</span>
+                </span>
+                <span class="badge  badge--accent badge--font-brand">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge  badge--accent badge--font-alert">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Text and SVG</span>
+                </span>
+                <span class="badge  badge--square  badge--accent badge--font-brand"
+                    aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--accent badge--font-alert"
+                    aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--accent badge--font-brand"
+                    aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--square  badge--accent badge--font-alert"
+                    aria-label="Info about icon only badge">
+                    B
+                </span>
+            </div>
+            {{>copy/badge/font-color}}
+        </div>
+    </section>
+    <hr id="size">
+    <section>
+        <h3>Size</h3>
+        <p>Set the size of each badge</p>
+        <p>Options: <strong>md(default)</strong>, <strong>sm</strong>, <strong>lg</strong>, <strong>xl</strong></p>
+        <div class="preview my-6">
+            <div id="badge-size" class="preview-display">
+                <span class="badge  badge--sm">
+                    Badge SM
+                </span>
+                <span class="badge  badge--sm">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    Badge SM
+                </span>
+                <span class="badge  badge--square  badge--sm" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--sm" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge">
+                    <span>Badge MD</span>
+                </span>
+                <span class="badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Badge MD</span>
+                </span>
+                <span class="badge  badge--square" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--lg">
+                    <span>Badge LG</span>
+                </span>
+                <span class="badge  badge--lg">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Badge LG</span>
+                </span>
+                <span class="badge  badge--square  badge--lg" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--lg" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--xl">
+                    <span>Badge XL</span>
+                </span>
+                <span class="badge  badge--xl">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <span>Badge XL</span>
+                </span>
+                <span class="badge  badge--square  badge--xl" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--xl" aria-label="Info about icon only badge">
+                    B
+                </span>
+            </div>
+            {{>copy/badge/size}}
+        </div>
+    </section>
+    <hr id="shape">
+    <section>
+        <h3>Shape</h3>
+        <p>Set the shape of each button</p>
+        <p>Options: <strong>rectangular(default)</strong>, <strong>square</strong>, <strong>circle</strong></p>
+        <div class="preview my-6">
+            <div id="badge-shape" class="preview-display">
+                <span class="badge  badge--square" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--circle" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--circle" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--square  badge--accent" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square  badge--accent" aria-label="Info about icon only badge">
+                    B
+                </span>
+                <span class="badge  badge--circle  badge--accent" aria-label="Info about icon only badge">
+                    <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                </span>
+                <span class="badge  badge--circle  badge--accent" aria-label="Info about icon only badge">
+                    B
+                </span>
+            </div>
+            {{>copy/badge/shape}}
+        </div>
+    </section>
+    <hr>
+    <section>
+        <h3>RTL</h3>
+        <p>RTL support for button with icon</p>
+        <div class="preview my-6">
+            <div id="badge-rtl" class="preview-display">
+                <div dir="rtl">
+                    <span class="badge">
+                        <span>النص والرمز</span>
+                        <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </span>
+                    <span class="badge  badge--square" aria-label="معلومات حول شارة الرمز فقط">
+                        <svg class="badge__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            {{>copy/badge/rtl}}
+        </div>
+    </section>
+    <hr id="mix">
+    <section>
+        <h3>Mix</h3>
+        <p>Mix as many modifiers for each badge</p>
+        <div class="preview my-6">
+            <div id="badge-mix" class="preview-display">
+                <span class="badge"><span>Base Font-Base</span></span>
+                <span class="badge badge--font-brand"><span>Base Font-Brand</span></span>
+                <span class="badge badge--font-alert"><span>Base Font-Alert</span></span>
+                <span class="badge  badge--brand"><span>Brand Font-Base</span></span>
+                <span class="badge  badge--brand badge--font-brand"><span>Brand Font-Brand</span></span>
+                <span class="badge  badge--brand badge--font-alert"><span>Brand Font-Alert</span></span>
+                <span class="badge  badge--alert"><span>Alert Font-Base</span></span>
+                <span class="badge  badge--alert badge--font-brand"><span>Alert Font-Brand</span></span>
+                <span class="badge  badge--alert badge--font-alert"><span>Alert Font-Alert</span></span>
+                <span class="badge  badge--accent"><span>Accent Base Font-Base</span></span>
+                <span class="badge  badge--accent badge--font-brand"><span>Accent Base Font-Brand</span></span>
+                <span class="badge  badge--accent badge--font-alert"><span>Accent Base Font-Alert</span></span>
+                <span class="badge  badge--accent  badge--brand"><span>Accent Brand Font-Base</span></span>
+                <span class="badge  badge--accent  badge--brand badge--font-brand"><span>Accent Brand
+                        Font-Brand</span></span>
+                <span class="badge  badge--accent  badge--brand badge--font-alert"><span>Accent Brand
+                        Font-Alert</span></span>
+                <span class="badge  badge--accent  badge--alert"><span>Accent Alert Font-Base</span></span>
+                <span class="badge  badge--accent  badge--alert badge--font-brand"><span>Accent Alert
+                        Font-Brand</span></span>
+                <span class="badge  badge--accent  badge--alert badge--font-alert"><span>Accent Alert
+                        Font-Alert</span></span>
+            </div>
+            {{>copy/badge/mix}}
+        </div>
+    </section>
+    <hr id="variant">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each button with Tailwind utilities</p>
+        <div class="preview my-6">
+            <div id="badge-custom" class="preview-display">
+                <span class="badge text-blue-600 border-yellow-700 [&_svg]:text-purple-700">
+                    Text and SVG
+                    <svg class="badge__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square ring-2 ring-slate-300" aria-label="Button text">
+                    <svg class="badge__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-indigo-600">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </span>
+                <span class="badge  badge--square bg-gray-100 text-gray-800 shadow-sm" aria-label="Button text">
+                    B
+                </span>
+                <span class="badge  badge--accent [&_svg]:text-amber-600">
+                    Text and SVG
+                    <svg class="badge__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </span>
+                <span class="badge  badge--accent  badge--square ring-2 ring-rose-400" aria-label="Button text">
+                    <svg class="badge__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </span>
+                <span class="badge  badge--accent  badge--square font-bold border-2 border-accent"
+                    aria-label="Button text">
+                    B
+                </span>
+                <span class="badge  badge--alert rounded-full mx-6 text-base-1 bg-green-700 justify-between">
+                    Text and SVG
+                    <svg class="badge__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </span>
+            </div>
+            {{>copy/badge/custom}}
+        </div>
+    </section>
+    <hr>
+    <section>
+        <h3>Templates</h3>
+        <p>Button components is available in the followng templates</p>
+        {{>styling}}
+    </section>
+    {{> skip prev="Avatar" next="Button" prev-path="components/avatar" next-path="components/button"}}
+</main>

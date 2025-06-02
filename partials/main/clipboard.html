@@ -1,0 +1,217 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Clipboard</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/clipboard" target="_blank" class="link ">Zag JS Clipboard
+                {{> icon/external}}
+            </a>
+        </h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Clipboard component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">control</code>
+            <code class="code-js">trigger</code>
+            <code class="code-js">label</code>
+            <code class="code-js">input</code>
+            <code class="code-js">indicator</code>
+        </div>
+        <p>To hide and show the icons on copy state you must add <code
+                class="code-js">id="clipboard-copy" </code> and <code
+                class="code-js">id="clipboard-copied"</code> to the respective icons</p>
+        <div class="preview">
+            <div id="clipboard-anatomy" class="preview-display">
+                <div class="clipboard clipboard-js" data-default-value="info@netoum.com">
+                    <div data-part="root">
+                        <label data-part="label">Contact Netoum</label>
+                        <div data-part="control">
+                            <input data-part="input" />
+                            <button data-part="trigger" class="button button--square">
+                                <svg id="clipboard-copy" class="button__icon" stroke="currentColor" fill="none"
+                                    stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                    </path>
+                                </svg>
+                                <svg id="clipboard-copied" class="button__icon" stroke="currentColor" fill="currentColor"
+                                    stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/clipboard/anatomy}}
+        </div>
+        <div class="notification">
+            <p> Select the input text and press Ctrl + C to experience the accessibility feature.</p>
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each clipboard can be set with different settings with the following data-attribute.</p>
+
+        <div class="preview">
+            <div id="clipboard-attribute" class="preview-display">
+                <div class="clipboard clipboard-js" data-default-value="info@netoum.com" data-timeout="500">
+                    <div data-part="root">
+                        <label data-part="label">Contact Netoum</label>
+                        <div data-part="control">
+                            <input data-part="input" />
+                            <button data-part="trigger" class="button button--square">
+                                <svg id="clipboard-copy" class="button__icon" class="clipboard_trigger_icon"
+                                    stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                    aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                    </path>
+                                </svg>
+                                <svg id="clipboard-copied" class="button__icon" class="clipboard_trigger_icon"
+                                    stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20"
+                                    aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/clipboard/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-value</code></td>
+                        <td>string</td>
+                        <td>The initial value to be copied to the clipboard when rendered. Use when you don't need to
+                            control the value of the clipboard. </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-value</code></td>
+                        <td>string</td>
+                        <td>The controlled value of the clipboard</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-timeout</code></td>
+                        <td>number</td>
+                        <td>The timeout for the copy operation .
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callbacks">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each Clipboard component can receive callbacks that can be used to respond to user interaction with
+            custom
+            behavior.</p>
+        <p>You must add a custom id for the clipboard and a event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+                document.getElementById("my-callback-clipboard")
+                ?.addEventListener("my-callback-clipboard-event", (event) => {
+                  console.log("Received event:", (event as CustomEvent).detail);
+                });
+            </code></pre>
+        <div class="preview">
+            <div id="clipboard-callback" class="preview-display">
+                <div id="my-callback-clipboard" class="clipboard clipboard-js" data-default-value="info@netoum.com"
+                    data-on-status-change="my-callback-clipboard-event">
+                    <div data-part="root">
+                        <label data-part="label">Contact Netoum</label>
+                        <div data-part="control">
+                            <input data-part="input" />
+                            <button data-part="trigger" class="button button--square">
+                                <svg id="clipboard-copy" class="button__icon" class="clipboard_trigger_icon"
+                                    stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                    aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                    </path>
+                                </svg>
+                                <svg id="clipboard-copied" class="button__icon" class="clipboard_trigger_icon"
+                                    stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20"
+                                    aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/clipboard/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when the clipboard is copied</p>
+        </div>
+    </section>
+
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each clipboard and its parts with Tailwind utilities
+        </p>
+        <div class="preview my-6">
+            <div id="clipboard-custom" class="preview-display">
+                <div class="clipboard clipboard-js" data-default-value="info@netoum.com">
+                    <div data-part="root" class="bg-red-700 rounded-xl p-2">
+                        <label data-part="label" class="!text-white">Contact Netoum</label>
+                        <div data-part="control">
+                            <input data-part="input" />
+                            <button data-part="trigger" class="button button--square" class="rounded-full bg-blue-100">
+                                <svg id="clipboard-copy" class="button__icon" class="clipboard_trigger_icon"
+                                    stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                    aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                    </path>
+                                </svg>
+                                <svg id="clipboard-copied" class="button__icon" class="clipboard_trigger_icon"
+                                    stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20"
+                                    aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/clipboard/custom}}
+        </div>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Clipboard components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Button" next="Collapsible" prev-path="components/button" next-path="components/collapsible"}}
+</main>

@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+@theme inline {
+  --ratio-xs: 0.6;
+  --ratio-sm: 0.8;
+  --ratio-lg: 1.2;
+  --ratio-xl: 1.4;
+  --height: var(--theme-height);
+  --padding: var(--theme-padding);
+  --margin: var(--theme-margin);
+  --gap: var(--theme-gap);
+}

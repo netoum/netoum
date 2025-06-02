@@ -1,0 +1,372 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Menu</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/menu" target="_blank" class="link ">Zag JS Menu
+                {{> icon/external}}
+            </a>
+        </h2>
+        <p>An accessible dropdown and context menu that is used to display a list of actions or options that a user can
+            choose.</p>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Menu component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">trigger</code>
+            <code class="code-js">indicator</code>
+            <code class="code-js">positioner</code>
+            <code class="code-js">content</code>
+            <code class="code-js">separator</code>
+            <code class="code-js">item</code>
+            <code class="code-js">item-group</code>
+            <code class="code-js">item-group-label</code>
+
+        </div>
+        <p>It can include multiple separator, item, item-group and item-group-label parts.</p>
+        <p><code class="code-js">data-value</code> is required on all item parts</p>
+
+        <div class="preview">
+            <div id="menu-anatomy" class="preview-display">
+                <div class="menu menu-js">
+                    <button data-part="trigger" class="button ">
+                        Menu
+                        <span data-part="indicator">
+                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div data-part="positioner">
+                        <ul data-part="content">
+                            <li data-part="item" data-value="account">
+                                Account
+                            </li>
+                            <li data-part="item" data-value="profile">
+                                Profile
+                            </li>
+                            <div data-part="separator"></div>
+                            <li data-part="item" data-value="logout">
+                                Logout
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu menu-js">
+                    <div data-part="context-trigger">
+                        <div>Context menu</div>
+                    </div>
+                    <div data-part="positioner">
+                        <ul data-part="content">
+                            <li data-part="item" data-value="account">
+                                Account
+                            </li>
+                            <li data-part="item" data-value="profile">
+                                Profile
+                            </li>
+                            <div data-part="separator"></div>
+                            <li data-part="item" data-value="logout">
+                                Logout
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {{> copy/menu/anatomy}}
+        </div>
+    </section>
+    <hr id="group">
+    <section>
+        <h3>Group Items</h3>
+        <p>The Menu items can be grouped with a label to identify each group</p>
+        <p>Please note you must provide and id to <code class="code-js" data-lang="html">item-group</code> and <code
+                class="code-js" data-lang="html">item-group-label</code> and not a value</p>
+        <div class="preview">
+            <div id="menu-group" class="preview-display">
+                <div class="menu menu-js" data-highlighted-value="profile">
+                    <button data-part="trigger" class="button ">
+                        Menu
+                        <span data-part="indicator">
+                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div data-part="positioner">
+                        <div data-part="content">
+                            <div data-part="item-group-label" data-id="account">Account</div>
+                            <div data-part="item-group" data-id="account">
+                                <li data-part="item" data-value="account-profile">
+                                    Profile
+                                </li>
+                                <li data-part="item" data-value="account-settings">
+                                    Settings
+                                </li>
+                            </div>
+                            <div data-part="separator"></div>
+                            <div data-part="item-group-label" data-id="account">Feed</div>
+                            <div data-part="item-group" data-id="feed">
+                                <li data-part="item" data-value="feed-new">
+                                    New
+                                </li>
+                                <li data-part="item" data-value="account-favorite">
+                                    Favorite
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu menu-js" data-highlighted-value="profile">
+                    <div data-part="context-trigger">
+                        <div>Context menu</div>
+                    </div>
+                    <div data-part="positioner">
+                        <div data-part="content">
+                            <div data-part="item-group-label" data-id="account">Account</div>
+                            <div data-part="item-group" data-id="account">
+                                <li data-part="item" data-value="account-profile">
+                                    Profile
+                                </li>
+                                <li data-part="item" data-value="account-settings">
+                                    Settings
+                                </li>
+                            </div>
+                            <div data-part="separator"></div>
+                            <div data-part="item-group-label" data-id="account">Feed</div>
+                            <div data-part="item-group" data-id="feed">
+                                <li data-part="item" data-value="feed-new">
+                                    New
+                                </li>
+                                <li data-part="item" data-value="account-favorite">
+                                    Favorite
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/menu/group}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each menu can be set with different settings with the following data-attribute.</p>
+        <div class="preview">
+            <div id="menu-attribute" class="preview-display">
+                <div class="menu menu-js" data-aria-label="Demo menu" data-close-on-select="false" data-composite="true"
+                    data-default-highlighted-value="profile" data-highlighted-value="profile" data-default-open="true" data-dir="ltr"
+                    data-loop-focus="false" data-typehead="true" data-placement="top-end" data-strategy="absolute"
+                    data-flip="true" data-hide-when-detached="true" data-gutter="1" data-arrow-padding="1"
+                    data-overflow-padding="1" data-slide="true" data-fit-viewport="true" data-overlap="true"
+                    data-same-width="true">
+                    <button data-part="trigger" class="button ">
+                        Menu
+                        <span data-part="indicator">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div data-part="positioner">
+                        <ul data-part="content">
+                            <li data-part="item" data-value="account">
+                                Account
+                            </li>
+                            <li data-part="item" data-value="profile">
+                                Profile
+                            </li>
+                            <div data-part="separator"></div>
+                            <li data-part="item" data-value="logout">
+                                Logout
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="menu menu-js" data-aria-label="Demo menu" data-close-on-select="false" data-composite="true"
+                    data-default-highlighted-value="profile" data-default-highlighted-value="profile" data-highlighted-value="profile" data-default-open="true" data-dir="ltr"
+                    data-loop-focus="false" data-typehead="true" data-placement="top-end" data-strategy="absolute"
+                    data-flip="true" data-hide-when-detached="true" data-gutter="1" data-arrow-padding="1"
+                    data-overflow-padding="1" data-slide="true" data-fit-viewport="true" data-overlap="true"
+                    data-same-width="true">
+                    <div data-part="context-trigger">
+                        <div>Context menu</div>
+                    </div>
+                    <div data-part="positioner">
+                        <ul data-part="content">
+                            <li data-part="item" data-value="account">
+                                Account
+                            </li>
+                            <li data-part="item" data-value="profile">
+                                Profile
+                            </li>
+                            <div data-part="separator"></div>
+                            <li data-part="item" data-value="logout">
+                                Logout
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {{> copy/menu/attribute}}
+        </div>
+    </section>
+    <hr id="callbacks">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each Menu component can receive callbacks that can be used to respond to user interaction with
+            custom
+            behavior.</p>
+        <p>You must add a custom id for the menu and a event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+                document.getElementById("my-callback-menu")
+                ?.addEventListener("my-callback-menu-event", (event) => {
+                  console.log("Received event:", (event as CustomEvent).detail);
+                });
+            </code></pre>
+
+        <div class="preview">
+            <div id="menu-callback" class="preview-display">
+                <div id="my-callback-menu" class="menu menu-js" data-on-open-change="my-callback-menu-event">
+                    <button data-part="trigger" class="button ">
+                        Menu
+                        <span data-part="indicator">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div data-part="positioner">
+                        <ul data-part="content">
+                            <li data-part="item" data-value="account">
+                                Account
+                            </li>
+                            <li data-part="item" data-value="profile">
+                                Profile
+                            </li>
+                            <div data-part="separator"></div>
+                            <li data-part="item" data-value="logout">
+                                Logout
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {{> copy/menu/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when the menu is open or closed</p>
+        </div>
+    </section>
+
+    <hr id="rtl">
+    <section>
+        <h3>RTL</h3>
+        <p>RTL support for menu</p>
+        <div class="preview my-6">
+            <div id="menu-rtl" class="preview-display">
+                <div dir="rtl">
+                    <div class="menu menu-js" data-dir="rtl">
+                        <button data-part="trigger" class="button ">
+                            قائمة طعام
+                            <span data-part="indicator">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div data-part="positioner">
+                            <ul data-part="content">
+                                <li data-part="item" data-value="account">
+                                    الحساب
+                                </li>
+                                <li data-part="item" data-value="profile">
+                                    الملف الشخصي
+                                </li>
+                                <div data-part="separator"></div>
+                                <li data-part="item" data-value="logout">
+                                    تسجيل الخروج
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div dir="rtl">
+
+                    <div class="menu menu-js" data-dir="rtl">
+                        <div data-part="context-trigger">
+                            <div>قائمة السياق</div>
+                        </div>
+                        <div data-part="positioner">
+                            <ul data-part="content">
+                                <li data-part="item" data-value="account">
+                                    الحساب
+                                </li>
+                                <li data-part="item" data-value="profile">
+                                    الملف الشخصي
+                                </li>
+                                <div data-part="separator"></div>
+                                <li data-part="item" data-value="logout">
+                                    تسجيل الخروج
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            {{> copy/menu/rtl}}
+        </div>
+    </section>
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each menu and its parts with Tailwind utilities
+        </p>
+        <div class="preview my-6">
+            <div id="menu-custom" class="preview-display">
+                <div class="menu menu-js">
+                    <button data-part="trigger" class="button button--brand">
+                        Menu
+                        <span data-part="indicator" class="text-red-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div data-part="positioner">
+                        <ul data-part="content" class="bg-blue-100">
+                            <li data-part="item" data-value="account" class="border-yellow-100">
+                                Account
+                            </li>
+                            <li data-part="item" data-value="profile" class="border-yellow-100 p-3">
+                                Profile
+                            </li>
+                            <div data-part="separator"></div>
+                            <li data-part="item" data-value="logout" class="border-red-100 my-2">
+                                Logout
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {{> copy/menu/custom}}
+        </div>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Menu components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Listbox" next="Switcher" prev-path="components/listbox" next-path="components/switcher"}}
+</main>

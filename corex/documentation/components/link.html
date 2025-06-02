@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/images/corex.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Link component- Corex</title>
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body class="layout scrollbar">
+  {{> header page="link"}}
+  <div class="layout-wrapper">
+    {{> side-menu page="link"}}
+    
+      {{> main/link }}
+      {{> aside}}
+    </div>
+  </div>
+</body>
+</html>

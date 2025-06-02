@@ -1,0 +1,71 @@
+<main class="layout-main scrollbar">
+  <section>
+    <h1>Installation</h1>
+    <p>Corex is a pure HTML, JS and CSS ui components, it means that you can install it anywhere from a static website
+      to SSR frameworks</p>
+    <div class="notification">
+      <p>If you dont know how to start we recommend you our <a class="link" href="/corex/documentation/starters">Starters
+        
+        </a> to get you up and running with Vanilla JS and Typescript</p>
+    </div>
+
+    <h2>Corex</h2>
+    <h3>Add Corex in your project</h3>
+    <code data-lang="sh" class="select-all code-js">npm install @netoum/corex</code>
+    <p>In you main TS file import all Corex UI components or only some components</p>
+    <pre>
+      <code data-lang="js" class="code-js">import "@netoum/corex";
+      </code>
+    </pre>
+
+    <p>If you wish to use the <strong>components unstyled</strong> you can jump to <a
+        href="/corex/documentation/components/accordion" class="link">the components section</a></p>
+
+    <h2>Styling</h2>
+    <p>For styling, Corex takes a new approch to design sytem</p>
+    <p>Every component can be styled using templates and each template is available either in CSS or Tailwind</p>
+    <p>You can read more <a href="/corex/documentation/templates" class="link">about templates</a></p>
+    <p>We will start by importing the default Corex templates</p>
+    <div class="tabs tabs-js" data-default-value="css">
+      <div data-part="root">
+        <div data-part="list">
+          <button data-part="trigger" data-value="css">CSS</button>
+          <button data-part="trigger" data-value="tailwind">Tailwind</button>
+        </div>
+        <div data-part="content" data-value="css">
+          <h3>Corex CSS</h3>
+          <code data-lang="js" class="select-all code-js">npm install @netoum/corex-css</code>
+          <p>In you main CSS file import all Corex CSS components</p>
+          <pre>
+     <code data-lang="css" class="code-js">@import "@netoum/corex-css";
+     </code>
+   </pre>
+        </div>
+        <div data-part="content" data-value="tailwind">
+
+          <h3>Corex Tailwind</h3>
+          <code data-lang="js" class="select-all code-js">npm install @netoum/corex-tailwind</code>
+          <p>In you main CSS file import all Corex CSS components</p>
+          <pre>
+         <code data-lang="css" class="code-js">@import "@netoum/corex-tailwind";
+         </code>
+       </pre>
+
+        </div>
+      </div>
+
+      <h2>Fonts</h2>
+
+      <p>By default all templates use Google Fonts for differents themes. For now import all 4 fonts:
+        <strong>Outfit</strong>, <strong>Karla</strong>,  <strong>Noto Serif</strong> and <strong>Noto Mono</strong>.
+       </p>
+       <p>Please note that the font import should be placed at the very top of your main CSS file</p>
+       <pre>
+        <code data-lang="css" class="code-js">@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Noto+Sans+Mono:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+        </code>
+      </pre>
+    </div>
+
+  </section>
+  {{> skip prev="Introduction" prev-path="introduction" next="Templates" next-path="templates"}}
+</main>

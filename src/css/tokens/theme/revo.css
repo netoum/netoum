@@ -1,0 +1,19 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-theme=revo] {
+  --theme-font-family: var(--font-geometric-humanist);
+  --theme-font-family-code: var(--font-monospace-slab-serif);
+  --theme-font-size: var(--font-size-3);
+  --theme-font-line-height: var(--font-line-height-3);
+  --theme-border-radius: var(--border-radius-5);
+  --theme-border-width: var(--border-width-1);
+  --theme-height: var(--size-14);
+  --theme-padding: var(--size-7);
+  --theme-margin: var(--size-9);
+  --theme-gap: var(--size-7);
+  --theme-color-border-1: var(--color-base-6);
+  --theme-color-border: var(--color-base-5);
+  --theme-border-color: var(--color-border);
+}

@@ -1,0 +1,59 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+@theme inline {
+  --font-system-base: system-base, sans-serif;
+  --font-transitional: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  --font-old-style: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  --font-humanist: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+  --font-geometric-humanist: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  --font-classical-humanist: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+  --font-neo-grotesque: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  --font-monospace-slab-serif: 'Nimbus Mono PS', 'Courier New', monospace;
+  --font-monospace-code: base-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --font-industrial-display: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+  --font-rounded-sans: base-rounded, 'Hiragino Maru Gothic ProN', Qbasecksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+  --font-slab-serif: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+  --font-antique: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
+  --font-didone: Didot, 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', P052, Sylfaen, serif;
+  --font-handwritten: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
+  --font-weight-1: 100;
+  --font-weight-2: 200;
+  --font-weight-3: 300;
+  --font-weight-4: 400;
+  --font-weight-5: 500;
+  --font-weight-6: 600;
+  --font-weight-7: 700;
+  --font-weight-8: 800;
+  --font-weight-9: 900;
+  --font-line-height-1: 1.3333;
+  --font-line-height-2: 1.4286;
+  --font-line-height-3: 1.5;
+  --font-line-height-4: 1.5556;
+  --font-line-height-6: 1.3333;
+  --font-line-height-7: 1.2;
+  --font-line-height-8: 1.1111;
+  --font-line-height-9: 1;
+  --font-letter-spacing-0: -0.05px;
+  --font-letter-spacing-1: 0.025px;
+  --font-letter-spacing-2: 0.05px;
+  --font-letter-spacing-3: 0.075px;
+  --font-letter-spacing-4: 0.15px;
+  --font-letter-spacing-5: 0.5px;
+  --font-letter-spacing-6: 0.75px;
+  --font-letter-spacing-7: 1px;
+  --font-size-1: 0.75rem;
+  --font-size-2: 0.875rem;
+  --font-size-3: 1rem;
+  --font-size-4: 1.125rem;
+  --font-size-5: 1.25rem;
+  --font-size-6: 1.5rem;
+  --font-size-7: 1.875rem;
+  --font-size-8: 2.25rem;
+  --font-size-9: 3rem;
+  --font-size-10: 3.75rem;
+  --font-size-11: 4.5rem;
+  --font-size-12: 6rem;
+  --font-size-13: 8rem;
+}

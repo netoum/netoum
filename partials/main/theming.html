@@ -1,0 +1,161 @@
+<main class="layout-main scrollbar">
+  <section>
+    <h1>Theming</h1>
+    <p>Corex is available in 3 differents themes <strong>Neo</strong>, <strong>Revo</strong> and <strong>Uno</strong></p>
+
+    <p>Each theme is available in 2 different modes <strong>Light</strong> and <strong>Dark</strong></p>
+    <p>Depending on the template used, imports and theming options will vary, see below the details for each Corex
+      template</p>
+
+    <h2>Corex</h2>
+    <p>
+      Despite the template not having the ability for the user to switch between themes and modes, the template is
+      still available in each theme and mode
+    </p>
+    <p>By default the themes <strong>Neo</strong> and the default mode <strong>Light</strong> are used</p>
+    <div id="tab" class="tabs tabs-js" data-default-value="css" data-composite="true">
+      <div data-part="root">
+        <div data-part="list">
+          <button data-part="trigger" data-value="css">CSS</button>
+          <button data-part="trigger" data-value="tailwind">Tailwind</button>
+        </div>
+        <div data-part="content" data-value="css">
+          <pre> <code data-lang="css" class="code-js"> 
+                  @import "@netoum/corex-css";
+                  or
+                  @import "@netoum/corex-css/neo.css";
+                  or
+                  @import "@netoum/corex-css/neo/light.css";
+                  or
+                  @import "@netoum/corex-css/neo/dark.css";
+                  or
+                  @import "@netoum/corex-css/revo.css";
+                  or
+                  @import "@netoum/corex-css/revo/light.css";
+                  or
+                  @import "@netoum/corex-css/revo/dark.css";
+                  or
+                  @import "@netoum/corex-css/uno.css";
+                  or
+                  @import "@netoum/corex-css/uno/light.css";
+                  or
+                  @import "@netoum/corex-css/uno/dark.css";
+                </code></pre>
+        </div>
+        <div data-part="content" data-value="tailwind">
+          <pre> <code data-lang="css" class="code-js"> 
+            @import "@netoum/corex-tailwind";
+            or
+            @import "@netoum/corex-tailwind/neo.css";           
+            or
+            @import "@netoum/corex-tailwind/neo/light.css";
+            or
+            @import "@netoum/corex-tailwind/neo/dark.css";
+            or
+            @import "@netoum/corex-tailwind/revo.css";         
+            or
+            @import "@netoum/corex-tailwind/revo/light.css";
+            or
+            @import "@netoum/corex-tailwind/revo/dark.css";
+            or
+            @import "@netoum/corex-tailwind/uno.css";        
+            or
+            @import "@netoum/corex-tailwind/uno/light.css";
+            or
+            @import "@netoum/corex-tailwind/uno/dark.css";
+          </code></pre>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Modex</h2>
+    <p>
+      Modex template is available in all 3 themes and offers the possibility for the user to switch between light and dark mode
+    </p>
+    <p>By default the themes <strong>Neo</strong> is used</p>
+    <div id="tab" class="tabs tabs-js" data-default-value="css" data-composite="true">
+      <div data-part="root">
+        <div data-part="list">
+          <button data-part="trigger" data-value="css">CSS</button>
+          <button data-part="trigger" data-value="tailwind">Tailwind</button>
+        </div>
+        <div data-part="content" data-value="css">
+          <pre> <code data-lang="css" class="code-js"> 
+                  @import "@netoum/modex-css";
+                  or
+                  @import "@netoum/modex-css/neo.css";
+                  or
+                  @import "@netoum/modex-css/revo.css";
+                  or
+                  @import "@netoum/modex-css/uno.css";
+                </code></pre>
+        </div>
+        <div data-part="content" data-value="tailwind">
+          <pre> <code data-lang="css" class="code-js"> 
+            @import "@netoum/modex-tailwind";
+            or
+            @import "@netoum/modex-tailwind/neo.css";
+            or
+            @import "@netoum/modex-tailwind/revo.css";
+            or
+            @import "@netoum/modex-tailwind/uno.css";
+          </code></pre>
+        </div>
+      </div>
+
+    </div>
+
+    <p>You must then add the mode data attribute</p>
+    <code data-lang="html" class="code-js">data-mode="light"</code>
+    <code data-lang="html" class="code-js">data-mode="dark"</code>
+
+      <p>
+        You can also use <a class="link" href="/corex/documentation/components/switcher">Corex Switcher</a> to allow users to switch between modes, save their preferences in local storage and retreive it on page reload
+      </p> 
+      
+      
+      <h2>Themex</h2>
+    <p>
+      Themex template offers the possibility for the user to switch all themes and modes
+    </p>
+    <div id="tab" class="tabs tabs-js" data-default-value="css" data-composite="true">
+      <div data-part="root">
+        <div data-part="list">
+          <button data-part="trigger" data-value="css">CSS</button>
+          <button data-part="trigger" data-value="tailwind">Tailwind</button>
+        </div>
+        <div data-part="content" data-value="css">
+          <pre> <code data-lang="css" class="code-js"> 
+                  @import "@netoum/themex-css";
+                  </code>
+          </pre>
+        </div>
+        <div data-part="content" data-value="tailwind">
+          <pre> <code data-lang="css" class="code-js"> 
+            @import "@netoum/themex-tailwind";
+          </code></pre>
+        </div>
+      </div>
+
+    </div>
+
+    <p>You must then add the theme and mode data attribute</p>
+    <div class="space-y-4 flex flex-col mx-auto w-fit ">
+      <code data-lang="html" class="code-js">data-theme="neo" data-mode="light"</code>
+      <code data-lang="html" class="code-js">data-theme="neo" data-mode="dark"</code>
+      <code data-lang="html" class="code-js">data-theme="revo" data-mode="light"</code>
+      <code data-lang="html" class="code-js">data-theme="revo" data-mode="dark"</code>
+      <code data-lang="html" class="code-js">data-theme="uno" data-mode="light"</code>
+      <code data-lang="html" class="code-js">data-theme="uno" data-mode="dark"</code>
+    </div>
+    
+<div class="notification">
+  <p>
+    You can also use <a class="link" href="/corex/documentation/components/switcher">Corex Switcher</a> to allow users to switch between themes and modes, save their preferences in local storage and retreive it on page reload
+  </p>  
+</div>
+       
+  </section>
+  {{> skip prev="Templates" prev-path="templates" next="Starters" next-path="starters"}}
+</main>
