@@ -132,7 +132,7 @@ function getHtmlInputs(baseDir) {
 const corexHtmlInputs = getHtmlInputs(resolve(__dirname, 'corex'));
 
 export default defineConfig({
-  base: '/netoum/',
+  base: '/',
   plugins: [
     {
       name: 'html-entry-redirect',
