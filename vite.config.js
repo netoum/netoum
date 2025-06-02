@@ -132,6 +132,7 @@ function getHtmlInputs(baseDir) {
 const corexHtmlInputs = getHtmlInputs(resolve(__dirname, 'corex'));
 
 export default defineConfig({
+  base: '/netoum/',
   plugins: [
     {
       name: 'html-entry-redirect',
@@ -178,13 +179,12 @@ export default defineConfig({
     })
   ],
   build: {
-    cssMinify: false,
+    cssMinify: true,
     rollupOptions: {
       input: {
         ...corexHtmlInputs,
         index: resolve(__dirname, 'index.html'), // if needed
         corex: resolve(__dirname, 'corex.html'), // if needed
-
       },
     },
   }
