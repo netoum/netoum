@@ -8,7 +8,6 @@
     "outDir": "dist",
     "rootDir": "src",
     "esModuleInterop": true,
-    "types": ["prismjs"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
