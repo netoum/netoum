@@ -1,29 +1,29 @@
 <!doctype html>
 <html lang="en" dir="ltr">
+
 <head>
-  <meta charset="UTF-8" /> 
- <script>
+  <meta charset="UTF-8" />
+  <script>
     try {
       const mode = localStorage.getItem("mode") || "light";
       const theme = localStorage.getItem("theme") || "neo";
       const html = document.documentElement;
       html.setAttribute("data-mode", mode);
       html.setAttribute("data-theme", theme);
-    } catch (_) {}
+    } catch (_) { }
   </script>
   <link rel="icon" type="image/svg+xml" href="/images/corex.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Theming- Corex</title>
   <script type="module" src="/src/main.ts"></script>
 </head>
+
 <body class="layout scrollbar">
   {{> header}}
   <div class="layout-wrapper">
     {{> side-menu page="theming"}}
-
-    
-      {{> main/theming }}
-
+    {{> main/theming }}
   </div>
 </body>
+
 </html>
