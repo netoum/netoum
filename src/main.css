@@ -5,19 +5,12 @@
 @import "@netoum/themex-tailwind";
 
 @import "./css/components/layout.css";
-
 @import "./css/components/input.css";
-/* @import "./css/components/layout.css";
-@import "./css/components/typo.css";
-@import "./css/components/code.css";
-@import "./css/components/scrollbar.css"; */
 
 
 .preview {
   @apply flex flex-col justify-evenly items-center max-w-4xl my-6 mx-auto
   border-(color:--border-color) border-(length:--border-width) rounded-(--border-radius) rounded-b-none;
-
-
 }
 
 .preview-display {
@@ -130,5 +123,4 @@ width: 100%;
 body {
   min-height: 100vh;
   background: var(--color-layer);
-  color: var(--color-contrast-2);
 }
