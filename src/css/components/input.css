@@ -29,21 +29,13 @@
       inset 0 0 0 1px var(--color-layer-2);
   }
 
-  /* .input:active {
-    background-color: var(--color-layer-2);
-  } */
 
   .input::placeholder {
     color: var(--color-contrast);
   }
   
-  /* .input:hover::placeholder {
-    color: var(--color-ui-contrast-1);
-  } */
-  
   .input:placeholder-shown {
     background-color: var(--color-layer-2);
-    /* color: var(--color-contrast); */
   }
   
   .input:hover:placeholder-shown {

@@ -1,0 +1,36 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Typo</h1>
+        <h2>A pure CSS component</h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Typo component is used as a base for font managment and basic html tags used in all components</p>
+        <div class="preview">
+            <div id="typo-anatomy" class="preview-display">
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <p>This is a paragraph to demonstrate the base font size and line height. It should look readable and
+                    well-spaced. 
+                <small>This is some small text.</small>
+            </div>
+            {{> copy/typo/anatomy}}
+        </div>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Typo components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    <section class="flex flex-wrap justify-between items-center gap-4 my-8">
+        <a href="/corex/documentation/components/tree-view" class="link">
+            <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+              </svg>
+Tree View
+        </a>
+      </section>
+    </main>

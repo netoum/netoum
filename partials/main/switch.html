@@ -289,12 +289,17 @@
         </div>
         <p>You can use the results from the form as you wish</p>
         <pre><code class="code-js" data-lang="js">
+          const form = document.getElementById('my-form') as HTMLFormElement | null;
+          const result = document.getElementById('result') as HTMLDivElement | null;
+          
+          if (form && result) {
             form.addEventListener('submit', (e: Event) => {
-                e.preventDefault();
-                const formData = new FormData(form);
-                const newsletter = (formData.get('newsletter') as string) || 'no';
-                result.textContent = `Submitted: newsletter: ${newsletter}`;
-              });
+              e.preventDefault();
+              const formData = new FormData(form);
+              const newsletter = (formData.get('newsletter') as string) || 'no';
+              result.textContent = `Submitted: newsletter: ${newsletter}`;
+            });
+          }
         </code></pre>
 
     </section>
@@ -618,5 +623,5 @@
     <p>Switch components is available in the followng templates</p>
     {{> styling}}
     </section>
-    {{> skip prev="Clipboard" next="Link" prev-path="components/clipboard" next-path="components/link"}}
+    {{> skip prev="Scrollbar" next="Switcher" prev-path="components/scrollbar" next-path="components/switcher"}}
 </main>

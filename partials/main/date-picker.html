@@ -1,0 +1,988 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Date Picker</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/date-picker" target="_blank" class="link ">Zag JS Date Picker
+                {{> icon/external}}
+            </a>
+        </h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Date Picker component consists of the following views</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">day</code>
+            <code class="code-js">month</code>
+            <code class="code-js">year</code>
+        </div>
+        <div class="preview">
+            <div id="date-picker-anatomy" class="preview-display">
+                <div class="date-picker date-picker-js">
+                    <div data-part="control">
+                        <input data-part="input" />
+                        <button data-part="trigger" class="button button--square" aria-label="Button text">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div data-part="positioner">
+                        <div data-part="content">
+                            <div class="date-picker__day-view">
+                                <div data-part="view-control" data-view="day">
+                                    <button class="button button--sm button--square" data-part="prev-trigger"
+                                        data-view="day">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="day" class="button button--sm">
+                                    </button>
+                                    <button class="button button--sm button--square" data-part="next-trigger"
+                                        data-view="day">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="day">
+                                    <thead data-part="table-header" data-view="day">
+                                    </thead>
+                                    <tbody data-part="table-body" data-view="day">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="date-picker__month-view">
+                                <div data-part="view-control" data-view="month">
+                                    <button class="button button--sm button--square" data-part="prev-trigger"
+                                        data-view="month">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="month" class="button button--sm">
+                                    </button>
+                                    <button class="button button--sm button--square" data-part="next-trigger"
+                                        data-view="month">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="month" data-columns="4">
+                                    <tbody data-part="table-body" data-view="month">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="date-picker__year-view">
+                                <div data-part="view-control" data-view="year">
+                                    <button class="button button--sm button--square" data-part="prev-trigger"
+                                        data-view="year">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="year" class="button button--sm">
+                                    </button>
+                                    <button class="button button--sm button--square" data-part="next-trigger"
+                                        data-view="year">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="year" data-columns="4">
+                                    <tbody data-part="table-body" data-view="year">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/date-picker/anatomy}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each date-picker can be set with different settings with the following data-attribute.</p>
+        <div class="preview">
+            <div id="date-picker-attribute" class="preview-display">
+                <div class="date-picker date-picker-js" data-no-weekend="true" data-close-on-select="false"
+                    data-default-value="2025-06-10" data-default-focused-value="2025-06-12" data-format="medium"
+                    data-default-view="month" data-fixed-weeks="true">
+                    <div data-part="control">
+                        <input data-part="input" />
+                        <button data-part="trigger" class="button button--square" aria-label="Button text">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div data-part="positioner">
+                        <div data-part="content">
+                            <div class="date-picker__day-view">
+                                <div data-part="view-control" data-view="day">
+                                    <button class="button button--sm button--square" data-part="prev-trigger"
+                                        data-view="day">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="day" class="button button--sm">
+                                    </button>
+                                    <button class="button button--sm button--square" data-part="next-trigger"
+                                        data-view="day">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="day">
+                                    <thead data-part="table-header" data-view="day">
+                                    </thead>
+                                    <tbody data-part="table-body" data-view="day">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="date-picker__month-view">
+                                <div data-part="view-control" data-view="month">
+                                    <button class="button button--sm button--square" data-part="prev-trigger"
+                                        data-view="month">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="month" class="button button--sm">
+                                    </button>
+                                    <button class="button button--sm button--square" data-part="next-trigger"
+                                        data-view="month">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="month" data-columns="4">
+                                    <tbody data-part="table-body" data-view="month">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="date-picker__year-view">
+                                <div data-part="view-control" data-view="year">
+                                    <button class="button button--sm button--square" data-part="prev-trigger"
+                                        data-view="year">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="year" class="button button--sm">
+                                    </button>
+                                    <button class="button button--sm button--square" data-part="next-trigger"
+                                        data-view="year">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="year" data-columns="4">
+                                    <tbody data-part="table-body" data-view="year">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/date-picker/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-locale</code></td>
+                        <td>string</td>
+                        <td>The locale (BCP 47 language tag) to use when formatting the date. Default "en-US"</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-dir</code></td>
+                        <td>ltr | rtl</td>
+                        <td>The orientation of the checkbox. Can be `ltr` or `rtl`</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-open</code></td>
+                        <td>boolean</td>
+                        <td>The initial open state of the date picker when rendered. Use when you don't need to control
+                            the open state of the date picker.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-close-on-select</code></td>
+                        <td>boolean</td>
+                        <td>Whether the calendar should close after the date selection is complete. This is ignored when
+                            the selection mode is multiple.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-placeholder</code></td>
+                        <td>string</td>
+                        <td>The placeholder text to display in the input.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-selection-mode</code></td>
+                        <td>"single" || "multiple" || "range"</td>
+                        <td>The selection mode of the calendar.
+                            single - only one date can be selected
+                            multiple - multiple dates can be selected
+                            range - a range of dates can be selected
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-value</code></td>
+                        <td>string || string list</td>
+                        <td>The initial selected date(s) when rendered. Use when you don't need to control the selected
+                            date(s) of the date picker.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-view</code></td>
+                        <td>"day"|| "month" || "year"</td>
+                        <td>The default view of the calendar</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-min-view</code></td>
+                        <td>"day"|| "month" || "year"</td>
+                        <td>The min view of the calendar</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-max-view</code></td>
+                        <td>"day"|| "month" || "year"</td>
+                        <td>The max view of the calendar</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-disabled</code></td>
+                        <td>boolean</td>
+                        <td>Whether the calendar is disabled.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-fixed-weeks</code></td>
+                        <td>boolean</td>
+                        <td>Whether the calendar should have a fixed number of weeks. This renders the calendar with 6
+                            weeks instead of 5 or 6..</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-focused-value</code></td>
+                        <td>string</td>
+                        <td>The controlled focused date.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-format</code></td>
+                        <td>"short"|| "medium" || "long" || "full"</td>
+                        <td>The format of the date to display in the input. </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-min</code></td>
+                        <td>string || "today"</td>
+                        <td>The minimum date that can be selected.
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-max</code></td>
+                        <td>string || "today"</td>
+                        <td>The maximum date that can be selected
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-name</code></td>
+                        <td>string</td>
+                        <td>The name attribute of the input element.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-num-of-months</code></td>
+                        <td>number</td>
+                        <td>The number of months to display.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-outside-day-selectable</code></td>
+                        <td>boolean</td>
+                        <td>Whether day outside the visible range can be selected.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-read-only</code></td>
+                        <td>boolean</td>
+                        <td>Whether the calendar is read only.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-start-of-week</code></td>
+                        <td>number</td>
+                        <td>The first day of the week. 0 - Sunday 1 - Monday 2 - Tuesday 3 - Wednesday 4 - Thursday 5 -
+                            Friday 6 - Saturday
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-time-zone</code></td>
+                        <td>string</td>
+                        <td>The Time zone to use. Default to "UTC"
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-no-weekend</code></td>
+                        <td>boolean</td>
+                        <td>Make weekends dates not available
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callbacks">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each Date Picker component can receive callbacks that can be used to respond to user interaction with
+            custom
+            behavior.</p>
+        <p>You must add a custom id for the date-picker and a event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+                document.getElementById("my-callback-date-picker")
+                ?.addEventListener("my-callback-date-picker-event", (event) => {
+                  console.log("Received event:", (event as CustomEvent).detail);
+                });
+            </code></pre>
+        <div class="preview">
+            <div id="date-picker-callback" class="preview-display">
+                <div id="my-callback-date-picker" class="date-picker date-picker-js"
+                    data-on-value-change="my-callback-date-picker-event">
+                    <div data-part="control">
+                        <input data-part="input" />
+                        <button data-part="trigger" class="button button--square" aria-label="Button text">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div data-part="positioner">
+                        <div data-part="content">
+                            <div class="date-picker__day-view">
+                                <div data-part="view-control" data-view="day">
+                                    <button class="button button--sm button--square" data-part="prev-trigger"
+                                        data-view="day">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="day" class="button button--sm">
+                                    </button>
+                                    <button class="button button--sm button--square" data-part="next-trigger"
+                                        data-view="day">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="day">
+                                    <thead data-part="table-header" data-view="day">
+                                    </thead>
+                                    <tbody data-part="table-body" data-view="day">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="date-picker__month-view">
+                                <div data-part="view-control" data-view="month">
+                                    <button class="button button--sm button--square" data-part="prev-trigger"
+                                        data-view="month">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="month" class="button button--sm">
+                                    </button>
+                                    <button class="button button--sm button--square" data-part="next-trigger"
+                                        data-view="month">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="month" data-columns="4">
+                                    <tbody data-part="table-body" data-view="month">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="date-picker__year-view">
+                                <div data-part="view-control" data-view="year">
+                                    <button class="button button--sm button--square" data-part="prev-trigger"
+                                        data-view="year">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="year" class="button button--sm">
+                                    </button>
+                                    <button class="button button--sm button--square" data-part="next-trigger"
+                                        data-view="year">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="year" data-columns="4">
+                                    <tbody data-part="table-body" data-view="year">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {{> copy/date-picker/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when a date is selected</p>
+        </div>
+
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-value-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when the value changes
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-focus-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when the focused date changes
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-open-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when the calendar is opened or closed
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-view-change</code></td>
+                        <td>string</td>
+                        <td>Event name to be send when the view changes
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+    <hr id="locale">
+    <section>
+        <h3>Locale</h3>
+        <p>You can select locale to be displayed
+        </p>
+        <div class="preview my-6">
+            <div id="date-picker-locale" class="preview-display">
+
+                <div class="date-picker date-picker-js" data-locale="ja" data-open="true" data-fixed-weeks="true" data-close-on-select="false">
+                    <div data-part="content">
+                        <div class="date-picker__day-view">
+                            <div data-part="view-control" data-view="day">
+                                <button class="button button--sm button--square" data-part="prev-trigger"
+                                    data-view="day">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button data-part="view-trigger" data-view="day" class="button button--sm">
+                                </button>
+                                <button class="button button--sm button--square" data-part="next-trigger"
+                                    data-view="day">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <table data-part="table" data-view="day">
+                                <thead data-part="table-header" data-view="day">
+                                </thead>
+                                <tbody data-part="table-body" data-view="day">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="date-picker__month-view">
+                            <div data-part="view-control" data-view="month">
+                                <button class="button button--sm button--square" data-part="prev-trigger"
+                                    data-view="month">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button data-part="view-trigger" data-view="month" class="button button--sm">
+                                </button>
+                                <button class="button button--sm button--square" data-part="next-trigger"
+                                    data-view="month">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <table data-part="table" data-view="month" data-columns="4">
+                                <tbody data-part="table-body" data-view="month">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="date-picker__year-view">
+                            <div data-part="view-control" data-view="year">
+                                <button class="button button--sm button--square" data-part="prev-trigger"
+                                    data-view="year">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button data-part="view-trigger" data-view="year" class="button button--sm">
+                                </button>
+                                <button class="button button--sm button--square" data-part="next-trigger"
+                                    data-view="year">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <table data-part="table" data-view="year" data-columns="4">
+                                <tbody data-part="table-body" data-view="year">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="date-picker date-picker-js" data-locale="ar" data-fixed-weeks="true" dir="rtl" data-open="true" data-close-on-select="false">
+                    <div data-part="content">
+                        <div class="date-picker__day-view">
+                            <div data-part="view-control" data-view="day">
+                                <button class="button button--sm button--square" data-part="prev-trigger"
+                                    data-view="day">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button data-part="view-trigger" data-view="day" class="button button--sm">
+                                </button>
+                                <button class="button button--sm button--square" data-part="next-trigger"
+                                    data-view="day">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <table data-part="table" data-view="day">
+                                <thead data-part="table-header" data-view="day">
+                                </thead>
+                                <tbody data-part="table-body" data-view="day">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="date-picker__month-view">
+                            <div data-part="view-control" data-view="month">
+                                <button class="button button--sm button--square" data-part="prev-trigger"
+                                    data-view="month">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button data-part="view-trigger" data-view="month" class="button button--sm">
+                                </button>
+                                <button class="button button--sm button--square" data-part="next-trigger"
+                                    data-view="month">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <table data-part="table" data-view="month" data-columns="4">
+                                <tbody data-part="table-body" data-view="month">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="date-picker__year-view">
+                            <div data-part="view-control" data-view="year">
+                                <button class="button button--sm button--square" data-part="prev-trigger"
+                                    data-view="year">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button data-part="view-trigger" data-view="year" class="button button--sm">
+                                </button>
+                                <button class="button button--sm button--square" data-part="next-trigger"
+                                    data-view="year">
+                                    <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <table data-part="table" data-view="year" data-columns="4">
+                                <tbody data-part="table-body" data-view="year">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/date-picker/locale}}
+        </div>
+    </section>
+
+    <hr id="form">
+    <section>
+        <h3>Use with Form</h3>
+        <p>Date Picker can be used inside a form</p>
+        <p>You must set the name of the field</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-name="date-picker-name"</code>
+        </div>
+        <!-- <p>You can also add the value of the checkbox. Default to : "on"</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-value="yes"</code>
+        </div> -->
+        <div class="preview">
+            <div id="checkbox-form" class="preview-display">
+                <form id="my-form-birth">
+                    <div class="date-picker date-picker-js" data-name="date-of-birth" data-placeholder="Your date of birth" data-max="today" data-default-value="1980-01-01">
+                        <div data-part="control">
+                            <input data-part="input" required/>
+                            <button data-part="trigger" class="button button--square" aria-label="Button text">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="button__icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div data-part="positioner">
+                            <div data-part="content">
+                                <div class="date-picker__day-view">
+                                    <div data-part="view-control" data-view="day">
+                                        <button class="button button--sm button--square" data-part="prev-trigger"
+                                            data-view="day">
+                                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </button>
+                                        <button data-part="view-trigger" data-view="day" class="button button--sm">
+                                        </button>
+                                        <button class="button button--sm button--square" data-part="next-trigger"
+                                            data-view="day">
+                                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <table data-part="table" data-view="day">
+                                        <thead data-part="table-header" data-view="day">
+                                        </thead>
+                                        <tbody data-part="table-body" data-view="day">
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="date-picker__month-view">
+                                    <div data-part="view-control" data-view="month">
+                                        <button class="button button--sm button--square" data-part="prev-trigger"
+                                            data-view="month">
+                                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </button>
+                                        <button data-part="view-trigger" data-view="month" class="button button--sm">
+                                        </button>
+                                        <button class="button button--sm button--square" data-part="next-trigger"
+                                            data-view="month">
+                                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <table data-part="table" data-view="month" data-columns="4">
+                                        <tbody data-part="table-body" data-view="month">
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="date-picker__year-view">
+                                    <div data-part="view-control" data-view="year">
+                                        <button class="button button--sm button--square" data-part="prev-trigger"
+                                            data-view="year">
+                                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </button>
+                                        <button data-part="view-trigger" data-view="year" class="button button--sm">
+                                        </button>
+                                        <button class="button button--sm button--square" data-part="next-trigger"
+                                            data-view="year">
+                                            <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <table data-part="table" data-view="year" data-columns="4">
+                                        <tbody data-part="table-body" data-view="year">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button button--accent" type="submit">Submit</button>
+                  </form>
+                
+                  <div id="result"></div>
+            </div>
+            {{> copy/checkbox/form}}
+
+        </div>
+        <p>You can use the results from the form as you wish</p>
+        <pre><code class="code-js" data-lang="js">
+            const formBirth = document.getElementById('my-form-birth') as HTMLFormElement | null;
+            const resultBirth = document.getElementById('result') as HTMLDivElement | null;
+            
+            if (formBirth && resultBirth) {
+              formBirth.addEventListener('submit', (e: Event) => {
+                e.preventDefault();
+                const formData = new FormData(formBirth);
+                const dateOfBirth = (formData.get('date-of-birth') as string);
+                resultBirth.textContent = `Submitted: birth day: ${dateOfBirth}`;
+              });
+            }
+        </code></pre>
+
+    </section>
+
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each date-picker and its parts with Tailwind utilities
+        </p>
+        <div class="preview my-6">
+            <div id="date-picker-custom" class="preview-display">
+                <div class="date-picker date-picker-js">
+                    <div data-part="control">
+                        <input data-part="input" class="rounded-full border-contrast-brand text-contrast-brand" />
+                        <button data-part="trigger"
+                            class="button rounded-full border-contrast-brand text-contrast-brand"
+                            aria-label="Button text">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div data-part="positioner">
+                        <div data-part="content">
+                            <div class="date-picker__day-view">
+                                <div data-part="view-control" data-view="day">
+                                    <button
+                                        class="button button--sm button--square rounded-full border-contrast-brand text-contrast-brand"
+                                        data-part="prev-trigger" data-view="day">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="day"
+                                        class="button button--sm rounded-full border-contrast-brand text-contrast-brand">
+                                    </button>
+                                    <button
+                                        class="button button--sm button--square rounded-full border-contrast-brand text-contrast-brand"
+                                        data-part="next-trigger" data-view="day">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="day">
+                                    <thead data-part="table-header" data-view="day" class="text-contrast-brand">
+                                    </thead>
+                                    <tbody data-part="table-body" data-view="day">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="date-picker__month-view">
+                                <div data-part="view-control" data-view="month">
+                                    <button
+                                        class="button button--sm button--square rounded-full border-contrast-brand text-contrast-brand"
+                                        data-part="prev-trigger" data-view="month">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="month"
+                                        class="button button--sm rounded-full border-contrast-brand text-contrast-brand">
+                                    </button>
+                                    <button
+                                        class="button button--sm button--square rounded-full border-contrast-brand text-contrast-brand"
+                                        data-part="next-trigger" data-view="month">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="month" data-columns="4">
+                                    <tbody data-part="table-body" data-view="month">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="date-picker__year-view">
+                                <div data-part="view-control" data-view="year">
+                                    <button
+                                        class="button button--sm button--square rounded-full border-contrast-brand text-contrast-brand"
+                                        data-part="prev-trigger" data-view="year">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15.75 19.5 8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button data-part="view-trigger" data-view="year"
+                                        class="button button--sm rounded-full border-contrast-brand text-contrast-brand">
+                                    </button>
+                                    <button
+                                        class="button button--sm button--square rounded-full border-contrast-brand text-contrast-brand"
+                                        data-part="next-trigger" data-view="year">
+                                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table data-part="table" data-view="year" data-columns="4">
+                                    <tbody data-part="table-body" data-view="year">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/date-picker/custom}}
+        </div>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Date Picker components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Collapsible" next="Dialog" prev-path="components/collapsible" next-path="components/dialog"}}
+</main>

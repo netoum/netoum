@@ -33,3 +33,7 @@
   overflow-y-auto sticky top-0 h-screen z-20
   bg-layer-2;
 }
+
+section {
+  width: 100%;
+}

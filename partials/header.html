@@ -35,7 +35,7 @@
     </svg>
   </a>
   <span class="badge badge--sm badge--brand  badge--accent">
-    0.0.2
+    0.0.3
     </span>
   </div>
 
@@ -71,7 +71,7 @@
         </svg>
       </button>
 
-      <nav class="h-full overflow-y-auto scrollbar scrollbar--sm z-20 scrollbar scrollbar--sm p-4 mt-12 pb-(--height-ui)" role="navigation" aria-labelledby="sidebar-title">
+      <nav class="h-full overflow-y-auto scrollbar scrollbar--sm z-20 scrollbar scrollbar--sm p-4 pb-24 mb-24 mt-(--height-ui)" role="navigation" aria-labelledby="sidebar-title">
 
         <div class="flex flex-wrap gap-2">
           <div id="mode-switcher-header" class="switcher switcher-js switcher--duo switcher--circle" data-default-value="light" data-key="mode" data-on-value-change="update-mode-switcher">
@@ -147,42 +147,65 @@
  
         <ul class="nav-list">
           <li><a href="/corex/documentation/components/accordion" class="nav-link" {{#if (eq page "accordion"
-              )}}data-selected{{/if}}>Accordion</a></li>
-              <li><a href="/corex/documentation/components/avatar" class="nav-link" {{#if (eq page "avatar"
-                )}}data-selected{{/if}}>Avatar</a></li>
-          <li><a href="/corex/documentation/components/badge" class="nav-link" {{#if (eq page "badge"
-              )}}data-selected{{/if}}>Badge</a></li>
-          <li><a href="/corex/documentation/components/button" class="nav-link" {{#if (eq page "button"
-              )}}data-selected{{/if}}>Button</a></li>
-              <li><a href="/corex/documentation/components/checkbox" class="nav-link" {{#if (eq page "checkbox"
-                )}}data-selected{{/if}}>Checkbox</a></li>
-          <li><a href="/corex/documentation/components/clipboard" class="nav-link" {{#if (eq page "clipboard"
-            accordion  )}}data-selected{{/if}}>Clipboard</a></li>
-            <li><a href="/corex/documentation/components/collapsible" class="nav-link" {{#if (eq page "collapsible"
-                )}}data-selected{{/if}}>Collapsible</a></li>
-          <li><a href="/corex/documentation/components/dialog" class="nav-link" {{#if (eq page "dialog"
-              )}}data-selected{{/if}}>Dialog</a></li>
-          <li><a href="/corex/documentation/components/link" class="nav-link" {{#if (eq page "link"
-              )}}data-selected{{/if}}>Link</a></li>
-          <li><a href="/corex/documentation/components/listbox" class="nav-link" {{#if (eq page "listbox"
-              )}}data-selected{{/if}}>Listbox</a></li>
-          <li><a href="/corex/documentation/components/menu" class="nav-link" {{#if (eq page "menu"
-              )}}data-selected{{/if}}>Menu</a></li>
-              <li><a href="/corex/documentation/components/switch" class="nav-link" {{#if (eq page "switch"
-                )}}data-selected{{/if}}>Switch</a></li>
-          <li><a href="/corex/documentation/components/switcher" class="nav-link" {{#if (eq page "switcher"
-              )}}data-selected{{/if}}>Switcher</a></li>
-          <li><a href="/corex/documentation/components/tabs" class="nav-link" {{#if (eq page "tabs"
-              )}}data-selected{{/if}}>Tabs</a></li>
-          <li><a href="/corex/documentation/components/toggle-group" class="nav-link" {{#if (eq page "toggle-group"
-              )}}data-selected{{/if}}>Toggle Group</a></li>
-          <li><a href="/corex/documentation/components/tree-view" class="nav-link" {{#if (eq page "tree-view"
-              )}}data-selected{{/if}}>Tree View</a></li>
-       
+            )}}data-selected{{/if}}>Accordion</a></li>
+        <li><a href="/corex/documentation/components/avatar" class="nav-link" {{#if (eq page "avatar"
+            )}}data-selected{{/if}}>Avatar</a></li>
+        <li><a href="/corex/documentation/components/badge" class="nav-link" {{#if (eq page "badge"
+            )}}data-selected{{/if}}>Badge</a></li>
+        <li><a href="/corex/documentation/components/button" class="nav-link" {{#if (eq page "button"
+            )}}data-selected{{/if}}>Button</a></li>
+        <li><a href="/corex/documentation/components/checkbox" class="nav-link" {{#if (eq page "checkbox"
+            )}}data-selected{{/if}}>Checkbox</a></li>
+        <li><a href="/corex/documentation/components/clipboard" class="nav-link" {{#if (eq page "clipboard" accordion
+            )}}data-selected{{/if}}>Clipboard</a></li>
+        <li><a href="/corex/documentation/components/code" class="nav-link" {{#if (eq page "code"
+            )}}data-selected{{/if}}>Code</a></li>
+        <li><a href="/corex/documentation/components/collapsible" class="nav-link" {{#if (eq page "collapsible"
+            )}}data-selected{{/if}}>Collapsible</a></li>
+        <li><a href="/corex/documentation/components/date-picker" class="nav-link" {{#if (eq page "date-picker"
+            )}}data-selected{{/if}}>Date Picker</a></li>
+        <li><a href="/corex/documentation/components/dialog" class="nav-link" {{#if (eq page "dialog"
+            )}}data-selected{{/if}}>Dialog</a></li>
+        <li><a href="/corex/documentation/components/link" class="nav-link" {{#if (eq page "link"
+            )}}data-selected{{/if}}>Link</a></li>
+        <li><a href="/corex/documentation/components/listbox" class="nav-link" {{#if (eq page "listbox"
+            )}}data-selected{{/if}}>Listbox</a></li>
+        <li><a href="/corex/documentation/components/menu" class="nav-link" {{#if (eq page "menu"
+            )}}data-selected{{/if}}>Menu</a></li>
+        <li><a href="/corex/documentation/components/scrollbar" class="nav-link" {{#if (eq page "scrollbar"
+            )}}data-selected{{/if}}>Scrollbar</a></li>
+        <li><a href="/corex/documentation/components/switch" class="nav-link" {{#if (eq page "switch"
+            )}}data-selected{{/if}}>Switch</a></li>
+        <li><a href="/corex/documentation/components/switcher" class="nav-link" {{#if (eq page "switcher"
+            )}}data-selected{{/if}}>Switcher</a></li>
+        <li><a href="/corex/documentation/components/tabs" class="nav-link" {{#if (eq page "tabs"
+            )}}data-selected{{/if}}>Tabs</a></li>
+        <li><a href="/corex/documentation/components/timer" class="nav-link" {{#if (eq page "timer"
+            )}}data-selected{{/if}}>Timer</a></li>
+        <li><a href="/corex/documentation/components/toggle-group" class="nav-link" {{#if (eq page "toggle-group"
+            )}}data-selected{{/if}}>Toggle Group</a></li>
+        <li><a href="/corex/documentation/components/tree-view" class="nav-link" {{#if (eq page "tree-view"
+            )}}data-selected{{/if}}>Tree View</a></li>
+        <li><a href="/corex/documentation/components/typo" class="nav-link" {{#if (eq page "typo"
+            )}}data-selected{{/if}}>Typo</a></li>
+    
             </ul>
-
+            <div class="pt-12">
+              <a class="link link--font-brand" href="https://netoum.com" target="_blank">Made by Netoum
+                <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor">
+                  <title>Opens in a new window</title>
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25">
+                  </path>
+                </svg>
+              </a>
+              <p>MIT License</p>
+            </div>
+            
       </nav>
 
+      
     </div>
   </div>
 </div>

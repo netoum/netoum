@@ -1,6 +1,6 @@
 {
   "name": "netoum",
-  "version": "0.0.2",
+  "private": "true",
   "description": "The official site and documentation for Corex and Themex template — featuring a modern web development stack built with Corex, Vite, Tailwind, and Handlebars for dynamic content rendering.",
   "type": "module",
   "scripts": {
@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@netoum/corex": "0.0.2",
-    "@netoum/themex-tailwind": "0.0.2",
+    "@netoum/corex": "0.0.3",
+    "@netoum/themex-tailwind": "0.0.3",
     "@tailwindcss/vite": "^4.0.12",
     "@types/prismjs": "^1.26.5",
     "jsdom": "^26.1.0",

@@ -1,0 +1,27 @@
+<div class="relative w-full">
+    <div id="clipboard" data-part="root" class="clipboard clipboard-js absolute top-2 right-6 z-1"
+        data-default-value="{{@timer.attribute}}">
+        <div data-part="control">
+            <label data-part="label" class="sr-only">Copy HTML</label>
+            <button data-part="trigger" class="button button--circle">
+                <svg id="clipboard-copy" class="button__icon" stroke="currentColor" fill="none" stroke-width="2"
+                    viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                    </path>
+                </svg>
+                <svg id="clipboard-copied" class="button__icon" stroke="currentColor"
+                    fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+                    width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="preview-code scrollbar scrollbar--sm">
+        <pre><code data-lang="html" class="code-js">{{@timer.attribute}}</code></pre>
+    </div>
+</div>

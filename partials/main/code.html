@@ -1,0 +1,93 @@
+<main class="layout-main scrollbar">
+  <section>
+    <h1>Code</h1>
+    <h2>A pure vanilla JS implementation of <a href="https://prismjs.com/" target="_blank" class="link ">Prism JS
+        {{> icon/external}}
+      </a>
+    </h2>
+  </section>
+  <hr id="anatomy">
+  <section>
+    <h3>Anatomy</h3>
+    <p>The Code component can be configured as a code block or a inline code.</p>
+    <div class="preview">
+      <div id="code-anatomy" class="preview-display">
+        <code data-lang="js" class="code-js">import "@netoum/corex";</code>
+        <pre>
+                <code data-lang="js" class="code-js">import "@netoum/corex";
+                </code>
+              </pre>
+
+        <code data-lang="bash" class="code-js">npm install @netoum/corex</code>
+        <pre>
+                <code data-lang="bash" class="code-js">npm install @netoum/corex
+                </code>
+              </pre>
+      </div>
+      {{> copy/code/anatomy}}
+    </div>
+  </section>
+  <hr id="attribute">
+  <section>
+    <h3>Data attributes</h3>
+    <p>Each code can be set with different settings with the following data-attribute.</p>
+    <div class="preview">
+      <div id="code-attribute" class="preview-display">
+        <code data-lang="bash" class="code-js">npm install @netoum/corex</code>
+        <code data-lang="js" class="code-js">import "@netoum/corex";</code>
+        <code data-lang="ts" class="code-js">import "@netoum/corex";</code>
+        <code data-lang="css" class="code-js">@import "@netoum/corex-css";</code>
+        <code data-lang="html" class="code-js">&lt;button class=&quot;button&quot;&gt;Text&lt;&#47;button&gt;</code>
+      </div>
+
+
+      {{> copy/code/attribute}}
+    </div>
+    <div class="table-wrapper scrollbar scrollbar--sm">
+      <table>
+        <thead>
+          <tr>
+            <th>Data attribute</th>
+            <th>Type / Options</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code class="code-js select-all">data-lang</code></td>
+            <td>string</td>
+            <td>The language code used for code highlighting. Default to html </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <hr id="custom">
+  <section>
+    <h3>Custom Languages</h3>
+    <p>By default the following languages are available</p>
+    <div class="flex flex-wrap gap-4 ">
+      <code class="code-js">html</code>
+      <code class="code-js">js</code>
+      <code class="code-js">ts</code>
+      <code class="code-js">css</code>
+      <code class="code-js">markup</code>
+      <code class="code-js">bash</code>
+      <code class="code-js">shell-session</code>
+    </div>
+    <p>To add more languages you will need to install and import to required languages</p>
+    <code class="code-js" data-lang="bash">npm install prismjs @types/prismjs</code>
+
+    <pre>
+    <code class="code-js" data-lang="ts">
+      import "prismjs/components/prism-go";
+      import "prismjs/components/prism-halm";
+      </code>
+   </pre>
+  </section>
+  <h3>Templates</h3>
+  <p>Code components is available in the followng templates</p>
+  {{> styling}}
+  </section>
+  {{> skip prev="Clipboard" next="Collapsible" prev-path="components/clipboard" next-path="components/collapsible"}}
+</main>

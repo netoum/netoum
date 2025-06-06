@@ -1,0 +1,360 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Timer</h1>
+        <h2>A pure vanilla JS implementation of
+            <a href="https://zagjs.com/components/react/timer" target="_blank" class="link ">Zag JS Timer
+                {{> icon/external}}
+            </a>
+        </h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Timer component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">area</code>
+            <code class="code-js">item</code>
+            <code class="code-js">separator</code>
+            <code class="code-js">control</code>
+            <code class="code-js">action-trigger</code>
+        </div>
+        <div class="preview">
+            <div id="timer-anatomy" class="preview-display">
+                <div class="timer timer-js" data-countdown="true" data-auto-start="true" data-interval="1000"
+                    data-days="1" data-hours="0" data-minutes="0" data-seconds="0">
+                    <div data-part="root">
+                        <div data-part="area">
+                            <div data-part="item" data-type="days"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="hours"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="minutes"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="seconds"></div>
+                        </div>
+                    </div>
+                    <div data-part="control">
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="start">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                            </svg>
+
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="pause">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                            </svg>
+
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger"
+                            data-action="resume">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                            </svg>
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" />
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {{> copy/timer/anatomy}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each timer can be set with different settings with the following data-attribute.</p>
+
+        <div class="preview">
+            <div id="timer-attribute" class="preview-display">
+                <div class="timer timer-js" 
+                data-countdown="false" 
+                data-auto-start="true" 
+                data-interval="1000"
+
+                    data-days="0" data-hours="0" data-minutes="1" data-seconds="0"
+                    data-days-target="0" data-hours-target="1" data-minutes-target="0" data-seconds-target="0">
+                    <div data-part="root">
+                        <div data-part="area">
+                            <div data-part="item" data-type="days"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="hours"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="minutes"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="seconds"></div>
+                        </div>
+                    </div>
+                    <div data-part="control">
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="start">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                            </svg>
+
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="pause">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                            </svg>
+
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger"
+                            data-action="resume">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                            </svg>
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" />
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {{> copy/timer/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-countdown</code></td>
+                        <td>boolean</td>
+                        <td>Whether the timer should countdown, decrementing the timer on each tick.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-auto-start</code></td>
+                        <td>string</td>
+                        <td>Whether the timer should start automatically
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-interval</code></td>
+                        <td>number</td>
+                        <td>The interval in milliseconds to update the timer count.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-days</code></td>
+                        <td>number</td>
+                        <td>The total duration of the timer in days.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-hours</code></td>
+                        <td>number</td>
+                        <td>The total duration of the timer in hours.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-minutes</code></td>
+                        <td>number</td>
+                        <td>The total duration of the timer in minutes.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-seconds</code></td>
+                        <td>number</td>
+                        <td>The total duration of the timer in seconds.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-days-target</code></td>
+                        <td>number</td>
+                        <td>The minimun count of the timer in days.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-hours-target</code></td>
+                        <td>number</td>
+                        <td>The minimun count of the timer in hours.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-minutes-target</code></td>
+                        <td>number</td>
+                        <td>The minimun count of the timer in minutes.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-seconds-target</code></td>
+                        <td>number</td>
+                        <td>The minimun count of the timer in seconds.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callbacks">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each Timer component can receive callbacks that can be used to respond to user interaction with
+            custom
+            behavior.</p>
+        <p>You must add a custom id for the timer and a event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+                document.getElementById("my-callback-timer")
+                ?.addEventListener("my-callback-timer-event", (event) => {
+                  console.log("Received event:", (event as CustomEvent).detail);
+                });
+            </code></pre>
+        <div class="preview">
+            <div id="timer-callback" class="preview-display">
+                <div id="my-callback-timer" class="timer timer-js" data-countdown="true" data-auto-start="true" data-on-complete="my-callback-timer-event"
+                    data-days="0" data-hours="0" data-minutes="0" data-seconds="10">
+                    <div data-part="root">
+                        <div data-part="area">
+                            <div data-part="item" data-type="days"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="hours"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="minutes"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="seconds"></div>
+                        </div>
+                    </div>
+                    <div data-part="control">
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="start">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                            </svg>
+
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="pause">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                            </svg>
+
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger"
+                            data-action="resume">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                            </svg>
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" />
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {{> copy/timer/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when the timer is copied</p>
+        </div>
+    </section>
+
+    <hr id="custom">
+    <section>
+        <h3>Custom (Tailwind)</h3>
+        <p>If you are using Tailwind styling, you can customize each timer and its parts with Tailwind utilities
+        </p>
+        <div class="preview my-6">
+            <div id="timer-custom" class="preview-display">
+                <div class="timer timer-js" data-countdown="true" data-auto-start="true" data-interval="1000"
+                    data-days="1" data-hours="0" data-minutes="0" data-seconds="0">
+                    <div data-part="root">
+                        <div data-part="area" class="bg-ui-brand rounded-full w-auto h-auto py-0 p-6">
+                            <div data-part="item" data-type="days" class="text-contrast-brand"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="hours" class="text-contrast-brand"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="minutes" class="text-contrast-brand"></div>
+                            <div data-part="separator">:</div>
+                            <div data-part="item" data-type="seconds" class="text-contrast-alert"></div>
+                        </div>
+                    </div>
+                    <div data-part="control">
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="start">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                            </svg>
+
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="pause">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                            </svg>
+
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger"
+                            data-action="resume">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                            </svg>
+                        </button>
+                        <button class="button button--circle button--sm" data-part="action-trigger" data-action="reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="button__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" />
+                            </svg>
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {{> copy/timer/custom}}
+        </div>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Timer components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Tabs" next="Toggle Group" prev-path="components/tabs" next-path="components/toggle-group"}}
+</main>

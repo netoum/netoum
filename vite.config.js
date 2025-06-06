@@ -11,6 +11,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
 /**
 * Extracts HTML content from an element by ID and formats it
 * @param {Document} document - DOM document
@@ -29,13 +30,51 @@ const extractElementContent = (document, id) => {
 };
 
 /**
-* Extracts component data from an HTML file based on element IDs
+* Discovers all sections for a component by scanning the HTML file for elements with the component prefix
 * @param {string} htmlFile - Path to HTML file
 * @param {string} componentPrefix - Prefix for element IDs (e.g., 'button-', 'tabs-')
-* @param {string[]} sections - List of section names to extract
+* @returns {string[]} Array of discovered section names
+*/
+const discoverComponentSections = (htmlFile, componentPrefix) => {
+ try {
+   const html = readFileSync(htmlFile, 'utf-8');
+   const dom = new JSDOM(html);
+   const document = dom.window.document;
+   
+   const sections = [];
+   const elements = document.querySelectorAll(`[id^="${componentPrefix}"]`);
+   
+   elements.forEach(element => {
+     const id = element.id;
+     if (id.startsWith(componentPrefix)) {
+       const section = id.substring(componentPrefix.length);
+       if (section && !sections.includes(section)) {
+         sections.push(section);
+       }
+     }
+   });
+   
+   return sections.sort(); // Sort for consistency
+ } catch (error) {
+   console.warn(`Could not read or parse ${htmlFile}:`, error.message);
+   return [];
+ }
+};
+
+/**
+* Extracts component data from an HTML file by discovering and extracting all sections
+* @param {string} htmlFile - Path to HTML file
+* @param {string} componentPrefix - Prefix for element IDs (e.g., 'button-', 'tabs-')
 * @returns {Object} Component data object
 */
-const extractComponentData = (htmlFile, componentPrefix, sections) => {
+const extractComponentData = (htmlFile, componentPrefix) => {
+ const sections = discoverComponentSections(htmlFile, componentPrefix);
+ 
+ if (sections.length === 0) {
+   console.warn(`No sections found for component with prefix "${componentPrefix}" in ${htmlFile}`);
+   return {};
+ }
+ 
  const html = readFileSync(htmlFile, 'utf-8');
  const dom = new JSDOM(html);
  const document = dom.window.document;
@@ -44,64 +83,66 @@ const extractComponentData = (htmlFile, componentPrefix, sections) => {
  
  sections.forEach(section => {
    const id = `${componentPrefix}${section}`;
-   data[section] = extractElementContent(document, id);
+   const content = extractElementContent(document, id);
+   if (content) { // Only add non-empty content
+     data[section] = content;
+   }
  });
  
  return data;
 };
 
-const buttonSections = ['variant', 'color', 'font-color', 'size', 'idle', 'idle', 'shape', 'disabled', 'mix', 'custom', 'anatomy', 'rtl'];
-const buttonData = extractComponentData('partials/main/button.html', 'button-', buttonSections);
-
-const linkSections = ['font-color', 'size', 'mix', 'custom', 'anatomy', 'rtl'];
-const linkData = extractComponentData('partials/main/link.html', 'link-', linkSections);
-
-const tabsSections = ['anatomy', 'attribute',  'callback', 'variant', 'color', 'size', 'mix', 'custom', 'rtl'];
-const tabsData = extractComponentData('partials/main/tabs.html', 'tabs-', tabsSections);
-
-const toggleGroupSections = ['anatomy', 'attribute',  'callback', 'variant', 'color', 'size', 'mix', 'custom', 'rtl', 'duo'];
-const toggleGroupData = extractComponentData('partials/main/toggle-group.html', 'toggle-group-', toggleGroupSections);
-
-const menuSections = ['anatomy', 'attribute',  'callback', 'variant', 'color', 'size', 'mix', 'custom', 'rtl', 'group'];
-const menuData = extractComponentData('partials/main/menu.html', 'menu-', menuSections);
-
-const listboxSections = ['anatomy', 'attribute',  'callback', 'variant', 'color', 'size', 'mix', 'custom', 'rtl', 'group'];
-const listboxData = extractComponentData('partials/main/listbox.html', 'listbox-', listboxSections);
-
-const accordionSections = ['anatomy', 'attribute',  'callback', 'custom', 'rtl', 'disabled', 'orientation'];
-const accordionData = extractComponentData('partials/main/accordion.html', 'accordion-', accordionSections);
-
-
-const avatarSections = ['anatomy', 'attribute',  'callback', 'custom', 'rtl', 'font-color', 'color', 'size', 'mix', 'variant'];
-const avatarData = extractComponentData('partials/main/avatar.html', 'avatar-', avatarSections);
-
-
-const clipboardSections = ['anatomy', 'attribute',  'callback', 'variant', 'color', 'size', 'mix', 'custom', 'rtl', 'group'];
-const clipboardData = extractComponentData('partials/main/clipboard.html', 'clipboard-', clipboardSections);
-
-const treeViewSections = ['anatomy', 'attribute',  'callback', 'variant', 'color', 'size', 'mix', 'custom', 'rtl'];
-const treeViewData = extractComponentData('partials/main/tree-view.html', 'tree-view-', treeViewSections);
-
-const switcherSections = ['anatomy', 'attribute',  'callback', 'variant', 'color', 'size', 'mix', 'custom', 'rtl', 'example', 'duo'];
-const switcherData = extractComponentData('partials/main/switcher.html', 'switcher-', switcherSections);
-
-const dialogSections = ['anatomy', 'attribute', 'callback', 'state'];
-const dialogData = extractComponentData('partials/main/dialog.html', 'dialog-', dialogSections);
-
-const badgeSections = ['variant', 'color', 'font-color', 'size', 'idle', 'idle', 'shape', 'disabled', 'mix', 'custom', 'anatomy', 'rtl'];
-const badgeData = extractComponentData('partials/main/badge.html', 'badge-', badgeSections);
-
-const collapsibleSections = ['anatomy', 'attribute',  'callback', 'custom', 'rtl', 'font-color', 'color', 'size', 'mix', 'variant', 'state'];
-const collapsibleData = extractComponentData('partials/main/collapsible.html', 'collapsible-', collapsibleSections);
+/**
+* Dynamically extracts data for all components
+* @returns {Object} Object containing all component data
+*/
+const extractAllComponentData = () => {
+ const components = [
+   { name: 'button', file: 'partials/main/button.html', prefix: 'button-' },
+   { name: 'badge', file: 'partials/main/badge.html', prefix: 'badge-' },
+   { name: 'tabs', file: 'partials/main/tabs.html', prefix: 'tabs-' },
+   { name: 'toggleGroup', file: 'partials/main/toggle-group.html', prefix: 'toggle-group-' },
+   { name: 'treeView', file: 'partials/main/tree-view.html', prefix: 'tree-view-' },
+   { name: 'switcher', file: 'partials/main/switcher.html', prefix: 'switcher-' },
+   { name: 'link', file: 'partials/main/link.html', prefix: 'link-' },
+   { name: 'dialog', file: 'partials/main/dialog.html', prefix: 'dialog-' },
+   { name: 'menu', file: 'partials/main/menu.html', prefix: 'menu-' },
+   { name: 'listbox', file: 'partials/main/listbox.html', prefix: 'listbox-' },
+   { name: 'clipboard', file: 'partials/main/clipboard.html', prefix: 'clipboard-' },
+   { name: 'accordion', file: 'partials/main/accordion.html', prefix: 'accordion-' },
+   { name: 'avatar', file: 'partials/main/avatar.html', prefix: 'avatar-' },
+   { name: 'collapsible', file: 'partials/main/collapsible.html', prefix: 'collapsible-' },
+   { name: 'checkbox', file: 'partials/main/checkbox.html', prefix: 'checkbox-' },
+   { name: 'switch', file: 'partials/main/switch.html', prefix: 'switch-' },
+   { name: 'scrollbar', file: 'partials/main/scrollbar.html', prefix: 'scrollbar-' },
+   { name: 'code', file: 'partials/main/code.html', prefix: 'code-' },
+   { name: 'timer', file: 'partials/main/timer.html', prefix: 'timer-' },
+   { name: 'datePicker', file: 'partials/main/date-picker.html', prefix: 'date-picker-' },
+   { name: 'typo', file: 'partials/main/typo.html', prefix: 'typo-' },
 
 
-const checkboxSections = ['anatomy', 'attribute', 'callback', 'state', 'form', 'custom', 'color','size','shape', 'mix'];
-const checkboxData = extractComponentData('partials/main/checkbox.html', 'checkbox-', checkboxSections);
+ ];
 
-
-const switchSections = ['anatomy', 'attribute', 'callback', 'state', 'form', 'custom', 'color','size','shape', 'mix'];
-const switchData = extractComponentData('partials/main/switch.html', 'switch-', switchSections);
-
+ const allComponentData = {};
+ 
+ components.forEach(({ name, file, prefix }) => {
+   try {
+     const data = extractComponentData(file, prefix);
+     allComponentData[name] = data;
+     
+     // Log discovered sections for debugging
+     const sections = Object.keys(data);
+     if (sections.length > 0) {
+       console.log(`${name}: found sections [${sections.join(', ')}]`);
+     }
+   } catch (error) {
+     console.warn(`Failed to extract data for ${name}:`, error.message);
+     allComponentData[name] = {};
+   }
+ });
+ 
+ return allComponentData;
+};
 
 const handlebarsHelpers = {
   eq: (a, b) => a === b
@@ -131,6 +172,9 @@ function getHtmlInputs(baseDir) {
 
 const corexHtmlInputs = getHtmlInputs(resolve(__dirname, 'corex'));
 
+// Extract all component data dynamically
+const componentData = extractAllComponentData();
+
 export default defineConfig({
   base: '/',
   plugins: [
@@ -152,29 +196,7 @@ export default defineConfig({
       helpers: handlebarsHelpers,
       partialDirectory: [resolve(__dirname, 'partials')],
       runtimeOptions: {
-        data: {
-          button: buttonData,
-          badge: badgeData,
-          tabs: tabsData,
-          toggleGroup: toggleGroupData,
-          treeView: treeViewData,
-          switcher: switcherData,
-          link: linkData,
-          dialog: dialogData,
-          menu: menuData,
-          listbox: listboxData,
-          clipboard: clipboardData,
-          accordion: accordionData,
-          avatar: avatarData,
-          collapsible: collapsibleData,
-          checkbox: checkboxData,
-          switch: switchData
-
-
-
-
-
-        }
+        data: componentData
       }
     })
   ],

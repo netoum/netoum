@@ -1,7 +1,8 @@
 import "@netoum/corex"
-import "./components/code"
+// import "./components/code"
 import "./main.css";
 
+// import "@netoum/corex/components/code"
 
 
 document.getElementById("my-callback-dialog")
@@ -60,6 +61,16 @@ document.getElementById("my-callback-collapsible")
     console.log("Received event:", (event as CustomEvent).detail);
   });
 
+  document.getElementById("my-callback-date-picker")
+  ?.addEventListener("my-callback-date-picker-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+  
+  document.getElementById("my-callback-timer")
+  ?.addEventListener("my-callback-timer-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+  
 document.getElementById("mode-switcher-demo")?.addEventListener("update-mode-switcher", (event) => {
   const { value } = (event as CustomEvent<{ value: string[] }>).detail;
   const targetEl = document.getElementById("mode-switcher-side");
@@ -122,8 +133,6 @@ document.getElementById("theme-switcher-side")?.addEventListener("update-theme-s
   console.log("sfd")
   const { value } = (event as CustomEvent<{ value: string[] }>).detail;
   const targetEl = document.getElementById("theme-switcher-header");
-  // console.log(value)
-  // console.log(targetEl)
 
   if (targetEl && targetEl !== event.target) {
     console.log(targetEl)
@@ -149,5 +158,17 @@ document.getElementById("timer-2")
       const formData = new FormData(form);
       const newsletter = (formData.get('newsletter') as string) || 'no';
       result.textContent = `Submitted: newsletter: ${newsletter}`;
+    });
+  }
+
+  const formBirth = document.getElementById('my-form-birth') as HTMLFormElement | null;
+  const resultBirth = document.getElementById('result') as HTMLDivElement | null;
+  
+  if (formBirth && resultBirth) {
+    formBirth.addEventListener('submit', (e: Event) => {
+      e.preventDefault();
+      const formData = new FormData(formBirth);
+      const dateOfBirth = (formData.get('date-of-birth') as string);
+      resultBirth.textContent = `Submitted: birth day: ${dateOfBirth}`;
     });
   }

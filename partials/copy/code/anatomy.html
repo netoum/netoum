@@ -1,6 +1,6 @@
 <div class="relative w-full">
     <div id="clipboard" data-part="root" class="clipboard clipboard-js absolute top-2 right-6 z-1"
-        data-default-value="{{@toggleGroup.color}}">
+        data-default-value="{{@code.anatomy}}">
         <div data-part="control">
             <label data-part="label" class="sr-only">Copy HTML</label>
             <button data-part="trigger" class="button button--circle">
@@ -22,6 +22,6 @@
         </div>
     </div>
     <div class="preview-code scrollbar scrollbar--sm">
-        <pre><code data-lang="html" class="code-js">{{@toggleGroup.color}}</code></pre>
+        <pre><code data-lang="html" class="code-js">{{@code.anatomy}}</code></pre>
     </div>
 </div>

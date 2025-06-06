@@ -1,0 +1,246 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Scrollbar</h1>
+        <h2>A pure CSS component</h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>  The Scrollbar component can be configured to scroll vertically, horizontally, or in both directions.</p>
+        <div class="preview">
+            <div id="scrollbar-anatomy" class="preview-display">
+                <div class="scrollbar" style="width: 150px; height: 150px; overflow-y: auto; justify-content: start;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                    suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                    Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                    rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                </div>
+                <div class="scrollbar" style="width: 150px; overflow-x: auto; justify-content: start;">
+                    <div style="min-width: 300px; display: inline-block;">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus.
+                    </div>
+                </div>
+                <div class="scrollbar" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+            </div>
+            {{> copy/scrollbar/anatomy}}
+        </div>
+    </section>
+    <hr id="modifers">
+    <section>
+        <h3>Modifier</h3>
+        <p>Each scrollbar can be styled with modifiers.</p>
+        <p>You can <a href="#mix" class="link">mix as many modifiers</a> on the same scrollbar, however you
+            can choose only one choice per modifer</p>
+        <p>For convenience the default variant name is omited, meaning there is no need to add the default name
+            class</p>
+        <div class="table-wrapper scrollbar">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modifier</th>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#variant" class="link">Variant</a></td>
+                        <td>neutral (default), accent</td>
+                        <td>Used for different types of actions</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#color" class="link">Color</a></td>
+                        <td>base (default), brand, alert</td>
+                        <td>Use any semantic colors</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#size" class="link">Size</a></td>
+                        <td>md (default), sm, lg, xl</td>
+                        <td>Modify the size of the scrollbar.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="variant">
+    <section>
+        <h3>Variant</h3>
+        <p>Set the variant of each scrollbar</p>
+        <p>Options: <strong>neutral(default)</strong>, <strong>accent</strong></p>
+        <div class="preview my-6">
+            <div id="scrollbar-variant" class="preview-display">
+           
+                <div class="scrollbar" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+
+                <div class="scrollbar scrollbar--accent" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+            </div>
+            {{>copy/scrollbar/variant}}
+        </div>
+    </section>
+    <hr id="color">
+    <section>
+        <h3>Color</h3>
+        <p>Set the color of each scrollbar</p>
+        <p>Options: <strong>base(default)</strong>, <strong>brand</strong>, <strong>alert</strong></p>
+        <div class="preview my-6">
+            <div id="scrollbar-color" class="preview-display">
+           
+                <div class="scrollbar" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+
+                <div class="scrollbar scrollbar--brand" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+
+                <div class="scrollbar scrollbar--alert" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+
+                <div class="scrollbar scrollbar--accent" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+
+                <div class="scrollbar scrollbar--brand scrollbar--accent" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+
+                <div class="scrollbar scrollbar--alert scrollbar--accent" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+            </div>
+            {{>copy/scrollbar/color}}
+        </div>
+    </section>
+    <hr id="size">
+    <section>
+        <h3>Size</h3>
+        <p>Set the size of each scrollbar</p>
+        <p>Options: <strong>md(default)</strong>, <strong>sm</strong>, <strong>lg</strong>, <strong>xl</strong></p>
+        <div class="preview my-6">
+            <div id="scrollbar-size" class="preview-display">
+                <div class="scrollbar scrollbar--sm" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+
+                <div class="scrollbar" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+
+                <div class="scrollbar scrollbar--lg" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+
+                <div class="scrollbar scrollbar--xl" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+            </div>
+            {{>copy/scrollbar/size}}
+        </div>
+    </section>
+    <hr id="mix">
+    <section>
+        <h3>Mix</h3>
+        <p>Mix as many modifiers for each scrollbar</p>
+        <div class="preview my-6">
+            <div id="scrollbar-mix" class="preview-display">
+                <div class="scrollbar scrollbar--sm scrollbar--alert scrollbar--accent" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+                <div class="scrollbar scrollbar--xl scrollbar--brand scrollbar--accent" style="width: 150px; height: 150px; overflow: auto; justify-content: start;">
+                    <div style="min-width: 300px; min-height: 300px; display: block;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nisi risus, aliquam vitae
+                        suscipit non, mattis vel enim. Aliquam in leo luctus, accumsan neque varius, fringilla lorem.
+                        Duis eros ipsum, efficitur non faucibus vel, eleifend nec urna. Nunc varius, nisl sed blandit
+                        rhoncus, urna neque posuere nisi, eu lacinia odio felis sed nibh.
+                    </div>
+                </div>
+
+
+            </div>
+            {{>copy/scrollbar/mix}}
+        </div>
+    </section>
+    <section>
+        <h3>Templates</h3>
+        <p>Scrollbar components is available in the followng templates</p>
+        {{>styling}}
+    </section>
+    {{> skip prev="Menu" next="Switch" prev-path="components/menu" next-path="components/switch"}}
+</main>
