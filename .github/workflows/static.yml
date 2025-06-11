@@ -32,10 +32,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        
-      - name: Run Pagefind to generate search index
-        run: npx pagefind --site "dist"
-        
+
       - name: Initial build (no Pagefind)
         run: npm run build
 
