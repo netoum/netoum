@@ -11,8 +11,7 @@ if (import.meta.env?.VITE_PAGEFIND === "true") {
 
       await pagefind.options({
         bundlePath: "../dist/corex/pagefind/pagefind.js",
-        baseUrl: "/corex",
-        basePath: "https://netoum.com"
+        baseUrl: "/corex"
       });
       await pagefind.init();
       initializeSiteSearch(pagefind);
