@@ -46,7 +46,7 @@ jobs:
         run: npm run build:with-pagefind
 
       - name: Re-run Pagefind after final build
-        run: npx pagefind --site "dist/corex"
+        run: npx pagefind --site "corex"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
