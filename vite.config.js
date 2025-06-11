@@ -210,8 +210,8 @@ export default defineConfig({
       ],
       input: {
         ...corexHtmlInputs,
-        index: resolve(__dirname, 'index.html'), // if needed
-        corex: resolve(__dirname, 'corex.html'), // if needed
+        index: resolve(__dirname, 'index.html'),
+        corex: resolve(__dirname, 'corex.html'),
       },
     },
   }
