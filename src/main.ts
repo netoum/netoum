@@ -16,7 +16,7 @@ if (import.meta.env.VITE_PAGEFIND === "true") {
   (async () => {
     try {
       // @ts-ignore
-      const pagefind = await import("../dist/corex/pagefind/pagefind.js");
+      const pagefind = await import("../public/pagefind/pagefind.js");
 
       await pagefind.options({
         baseUrl: "/corex"
