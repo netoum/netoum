@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    try {
+      const mode = localStorage.getItem("mode") || "light";
+      const theme = localStorage.getItem("theme") || "neo";
+      const html = document.documentElement;
+      html.setAttribute("data-mode", mode);
+      html.setAttribute("data-theme", theme);
+    } catch (_) { }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/images/corex.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction- Corex</title>
+  <script type="module" crossorigin src="/assets/main-CuEBz49X.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main--fIYXZkV.css">
+</head>
+
+<body class="layout scrollbar">
+  <header class="layout-header">
+    <button data-open-dialog="menu" class="button button--circle lg:hidden" aria-label="Open Corex Documentation Menu">
+      <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" viewBox="0 0 24 24"
+        stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+    <div class="flex flex-wrap items-center gap-1 ">
+      <a href="/corex/documentation/introduction.html">
+        <svg class="hover:text-accent-brand-1 h-5 md:h-6 text-accent-brand" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 428 136" version="1.1">
+          <!-- C logo -->
+          <path
+            d="M70.573 1.67C33.94 1.67 4.243 31.367 4.243 68c0 36.634 29.697 66.33 66.33 66.33s66.33-29.696 66.33-66.33c0-36.633-29.697-66.33-66.33-66.33m.05 102.736c-20.117 0-36.427-16.308-36.427-36.427 0-20.118 16.31-36.427 36.427-36.427 17.055 0 31.37 11.723 35.333 27.55H89.845c-3.365-7.255-10.713-12.301-19.222-12.301-11.678 0-21.179 9.501-21.179 21.18s9.501 21.178 21.18 21.178c8.539 0 15.907-5.08 19.256-12.377h16.095c-3.939 15.864-18.269 27.624-35.352 27.624"
+            fill="currentColor" />
+  
+          <!-- O letter -->
+          <path
+            d="M181.505 108.48q-10.5 0-19.24-4.88-8.75-4.87-13.89-13.62-5.14-8.74-5.14-19.66t5.14-19.61q5.14-8.69 13.89-13.57 8.74-4.87 19.24-4.87 10.49 0 19.24 4.87 8.74 4.88 13.78 13.57 5.03 8.69 5.03 19.61t-5.09 19.66q-5.09 8.75-13.78 13.62-8.69 4.88-19.18 4.88m0-16.54q8.9 0 14.25-5.93 5.36-5.94 5.36-15.69 0-9.86-5.36-15.74-5.35-5.88-14.25-5.88-9.01 0-14.37 5.83-5.35 5.83-5.35 15.79 0 9.86 5.35 15.74 5.36 5.88 14.37 5.88"
+            fill="currentColor" />
+  
+          <!-- R letter -->
+          <path
+            d="m267.575 107.74-15.48-28.09h-4.34v28.09h-18.13V33.33h30.42q8.8 0 15 3.07 6.2 3.07 9.28 8.43 3.07 5.35 3.07 11.92 0 7.42-4.19 13.25-4.18 5.83-12.35 8.27l17.18 29.47Zm-19.82-40.92h11.23q4.98 0 7.48-2.44 2.49-2.43 2.49-6.89 0-4.24-2.49-6.67-2.5-2.44-7.48-2.44h-11.23Z"
+            fill="currentColor" />
+  
+          <!-- E letter -->
+          <path d="M316.865 47.85V62.9h24.27v13.99h-24.27v16.33h27.45v14.52h-45.58V33.33h45.58v14.52Z"
+            fill="currentColor" />
+  
+          <!-- X letter -->
+          <path
+            d="m401.665 107.74-15.16-22.79-13.36 22.79h-20.56l23.85-37.84-24.38-36.57h21.09l14.95 22.47 13.14-22.47h20.57l-23.64 37.52 24.59 36.89Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <span class="badge badge--sm badge--brand  badge--accent">
+        0.0.4
+      </span>
+    </div>
+  
+    <nav>
+      <ul class="flex-wrap items-center flex gap-4">
+        <li>
+          <a href="/corex/documentation/introduction" aria-label="Go to Corex documentation" class="nav-link">
+            Doc
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+    <a href="https://github.com/netoum/corex" target="_blank" class="button button--circle"
+      aria-label="Visit Corex Github repository">
+      <svg class="button__icon" viewBox="0 0 98 96" width="98" height="96" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+          fill="currentColor" />
+      </svg>
+    </a>
+  
+  </header>
+  
+  <div id="menu" class="dialog dialog--side dialog-js">
+    <div data-part="backdrop"></div>
+    <div data-part="positioner">
+      <div data-part="content">
+        <button data-part="close-trigger" class="button button--circle  button--sm" aria-label="Close menu">
+          <svg class="button__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+  
+        <nav
+          class="h-full overflow-y-auto scrollbar scrollbar--sm z-20 scrollbar scrollbar--sm p-4 pb-24 mb-24 mt-(--height-ui)"
+          role="navigation" aria-labelledby="sidebar-title">
+  
+          <div class="flex flex-wrap gap-2">
+            <div id="mode-switcher-header" class="switcher switcher-js switcher--duo switcher--circle"
+              data-default-value="light" data-key="mode" data-on-value-change="update-mode-switcher">
+              <div data-part="root">
+                <button data-part="item" data-value="light" aria-label="Switch to light color mode">
+                  <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                  </svg>
+                </button>
+                <button data-part="item" data-value="dark" aria-label="Switch to dark color mode">
+                  <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div id="theme-switcher-header" class="switcher switcher-js switcher--sm" data-default-value="neo"
+              data-key="theme" data-on-value-change="update-theme-switcher-side">
+              <div data-part="root">
+                <button data-part="item" data-value="neo"
+                  class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                  aria-label="Switch to Neo theme">
+                  Neo
+                </button>
+                <button data-part="item" data-value="revo"
+                  class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                  aria-label="Switch to Revo theme">
+                  Revo
+                </button>
+                <button data-part="item" data-value="uno"
+                  class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                  aria-label="Switch to Uno theme">
+                  Uno
+                </button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="site-search-js site-search my-4" data-placeholder="Search documentation"  data-max-results="30" data-no-results="No results. Try another keyword.">
+            <div data-part="root">
+              <div data-part="control">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="site-search__icon">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+                <input data-part="input" />
+              </div>
+              <div data-part="positioner">
+                <ul data-part="content" class="scrollbar">
+  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <h2 id="sidebar-title" class="sr-only">Documentation Navigation</h2>
+          <h5 class="nav-title">Getting Started</h5>
+  
+          <ul class="nav-list">
+            <li><a href="/corex/documentation/introduction" class="nav-link" >Introduction</a></li>
+            <li><a href="/corex/documentation/installation" class="nav-link" >Installation</a></li>
+            <li><a href="/corex/documentation/templates" class="nav-link" >Templates</a></li>
+            <li><a href="/corex/documentation/theming" class="nav-link" >Theming</a></li>
+            <li><a href="/corex/documentation/starters" class="nav-link" >Starters</a></li>
+          </ul>
+  
+  
+          <h5 class="nav-title">Tokens</h5>
+  
+          <ul class="nav-list">
+            <li><a href="/corex/documentation/tokens/color" class="nav-link" >Color</a></li>
+          </ul>
+  
+          <h5 class="nav-title">Components</h5>
+  
+  
+          <ul class="nav-list">
+            <li><a href="/corex/documentation/components/accordion" class="nav-link" >Accordion</a></li>
+            <li><a href="/corex/documentation/components/avatar" class="nav-link" >Avatar</a></li>
+            <li><a href="/corex/documentation/components/badge" class="nav-link" >Badge</a></li>
+            <li><a href="/corex/documentation/components/button" class="nav-link" >Button</a></li>
+            <li><a href="/corex/documentation/components/checkbox" class="nav-link" >Checkbox</a></li>
+            <li><a href="/corex/documentation/components/clipboard" class="nav-link" >Clipboard</a></li>
+            <li><a href="/corex/documentation/components/code" class="nav-link" >Code</a></li>
+            <li><a href="/corex/documentation/components/collapsible" class="nav-link" >Collapsible</a></li>
+            <li><a href="/corex/documentation/components/combobox" class="nav-link" >Combobox</a></li>
+            <li><a href="/corex/documentation/components/date-picker" class="nav-link" >Date Picker</a></li>
+            <li><a href="/corex/documentation/components/dialog" class="nav-link" >Dialog</a></li>
+            <li><a href="/corex/documentation/components/link" class="nav-link" >Link</a></li>
+            <li><a href="/corex/documentation/components/listbox" class="nav-link" >Listbox</a></li>
+            <li><a href="/corex/documentation/components/menu" class="nav-link" >Menu</a></li>
+            <li><a href="/corex/documentation/components/site-search" class="nav-link" >Site Search</a></li>
+            <li><a href="/corex/documentation/components/scrollbar" class="nav-link" >Scrollbar</a></li>
+            <li><a href="/corex/documentation/components/switch" class="nav-link" >Switch</a></li>
+            <li><a href="/corex/documentation/components/switcher" class="nav-link" >Switcher</a></li>
+            <li><a href="/corex/documentation/components/tabs" class="nav-link" >Tabs</a></li>
+            <li><a href="/corex/documentation/components/timer" class="nav-link" >Timer</a></li>
+            <li><a href="/corex/documentation/components/toggle-group" class="nav-link" >Toggle Group</a></li>
+            <li><a href="/corex/documentation/components/tree-view" class="nav-link" >Tree View</a></li>
+            <li><a href="/corex/documentation/components/typo" class="nav-link" >Typo</a></li>
+  
+          </ul>
+          <div class="pt-12">
+            <a class="link link--font-brand" href="https://netoum.com" target="_blank">Made by Netoum
+              <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <title>Opens in a new window</title>
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25">
+                </path>
+              </svg>
+            </a>
+            <p>MIT License</p>
+          </div>
+  
+        </nav>
+  
+  
+      </div>
+    </div>
+  </div>  <div class="layout-wrapper">
+    <nav class="layout-side h-full overflow-y-auto scrollbar scrollbar--sm z-20 mt-6" role="navigation"
+      aria-labelledby="sidebar-title">
+    
+      <div class="flex flex-wrap gap-2">
+        <div id="mode-switcher-side" class="switcher switcher-js switcher--duo switcher--circle" data-default-value="light"
+          data-key="mode" data-on-value-change="update-mode-switcher">
+          <div data-part="root">
+            <button data-part="item" data-value="light" aria-label="Switch to light color mode">
+              <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+              </svg>
+            </button>
+            <button data-part="item" data-value="dark" aria-label="Switch to dark color mode">
+              <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="theme-switcher-side" class="switcher switcher-js switcher--sm" data-default-value="neo" data-key="theme"
+          data-on-value-change="update-theme-switcher-header">
+          <div data-part="root">
+            <button data-part="item" data-value="neo"
+              class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+              aria-label="Switch to Neo theme">
+              Neo
+            </button>
+            <button data-part="item" data-value="revo"
+              class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+              aria-label="Switch to Revo theme">
+              Revo
+            </button>
+            <button data-part="item" data-value="uno"
+              class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+              aria-label="Switch to Uno theme">
+              Uno
+            </button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="site-search-js site-search my-4" data-placeholder="Search documentation" data-max-results="30" data-no-results="No results. Try another keyword.">
+        <div data-part="root">
+          <div data-part="control">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              class="site-search__icon">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <input data-part="input" />
+          </div>
+          <div data-part="positioner">
+            <ul data-part="content" class="scrollbar">
+    
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+      <h2 id="sidebar-title" class="sr-only">Documentation Navigation</h2>
+      <h5 class="nav-title">Getting Started</h5>
+    
+      <ul class="nav-list">
+        <li><a href="/corex/documentation/introduction" class="nav-link" data-selected>Introduction</a></li>
+        <li><a href="/corex/documentation/installation" class="nav-link" >Installation</a></li>
+        <li><a href="/corex/documentation/templates" class="nav-link" >Templates</a></li>
+        <li><a href="/corex/documentation/theming" class="nav-link" >Theming</a></li>
+        <li><a href="/corex/documentation/starters" class="nav-link" >Starters</a></li>
+      </ul>
+    
+      <h5 class="nav-title">Tokens</h5>
+    
+      <ul class="nav-list">
+        <li><a href="/corex/documentation/tokens/color" class="nav-link" >Color</a></li>
+      </ul>
+    
+    
+      <h5 class="nav-title">Components</h5>
+    
+      <ul class="nav-list">
+        <li><a href="/corex/documentation/components/accordion" class="nav-link" >Accordion</a></li>
+        <li><a href="/corex/documentation/components/avatar" class="nav-link" >Avatar</a></li>
+        <li><a href="/corex/documentation/components/badge" class="nav-link" >Badge</a></li>
+        <li><a href="/corex/documentation/components/button" class="nav-link" >Button</a></li>
+        <li><a href="/corex/documentation/components/checkbox" class="nav-link" >Checkbox</a></li>
+        <li><a href="/corex/documentation/components/clipboard" class="nav-link" >Clipboard</a></li>
+        <li><a href="/corex/documentation/components/code" class="nav-link" >Code</a></li>
+        <li><a href="/corex/documentation/components/collapsible" class="nav-link" >Collapsible</a></li>
+        <li><a href="/corex/documentation/components/combobox" class="nav-link" >Combobox</a></li>
+        <li><a href="/corex/documentation/components/date-picker" class="nav-link" >Date Picker</a></li>
+        <li><a href="/corex/documentation/components/dialog" class="nav-link" >Dialog</a></li>
+        <li><a href="/corex/documentation/components/link" class="nav-link" >Link</a></li>
+        <li><a href="/corex/documentation/components/listbox" class="nav-link" >Listbox</a></li>
+        <li><a href="/corex/documentation/components/menu" class="nav-link" >Menu</a></li>
+        <li><a href="/corex/documentation/components/site-search" class="nav-link" >Site Search</a></li>
+        <li><a href="/corex/documentation/components/scrollbar" class="nav-link" >Scrollbar</a></li>
+        <li><a href="/corex/documentation/components/switch" class="nav-link" >Switch</a></li>
+        <li><a href="/corex/documentation/components/switcher" class="nav-link" >Switcher</a></li>
+        <li><a href="/corex/documentation/components/tabs" class="nav-link" >Tabs</a></li>
+        <li><a href="/corex/documentation/components/timer" class="nav-link" >Timer</a></li>
+        <li><a href="/corex/documentation/components/toggle-group" class="nav-link" >Toggle Group</a></li>
+        <li><a href="/corex/documentation/components/tree-view" class="nav-link" >Tree View</a></li>
+        <li><a href="/corex/documentation/components/typo" class="nav-link" >Typo</a></li>
+    
+      </ul>
+    
+      <div class="pt-12">
+        <a class="link link--font-brand" href="https://netoum.com" target="_blank">Made by Netoum
+          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <title>Opens in a new window</title>
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25">
+            </path>
+          </svg>
+        </a>
+        <p>MIT License</p>
+      </div>
+    </nav>    <main class="layout-main scrollbar">
+      <section>
+        <h1>Introduction to Corex</h1>
+    
+        <p><strong>Corex</strong> is a UI component library built with web fundamentals: pure HTML, CSS, and vanilla
+          JavaScript/TypeScript. Designed for flexibility and accessibility, Corex provides modular components that
+          integrate seamlessly into any project.</p>
+    
+        <h2>Core Principles</h2>
+    
+        <p>Corex is built on web standards with a focus on accessibility, flexibility, and developer experience. Every
+          component is crafted to work across different environments while maintaining consistent behavior and styling.</p>
+    
+        <h3>Web Standards Foundation</h3>
+        <p>Components are built with semantic HTML, modular CSS, and vanilla JavaScript/TypeScript. This approach ensures
+          compatibility across frameworks, static sites, and any web environment without dependencies or build requirements.
+        </p>
+    
+        <h3>Accessibility First</h3>
+        <p>Interactive components are powered by <a href="https://zagjs.com/components/react/checkbox" target="_blank"
+            class="link link--font-brand">Zag JS
+            <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <title>Opens in a new window</title>
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>      </a>, a headless state machine library that provides robust accessibility patterns. Every component includes
+          proper ARIA attributes, keyboard navigation, and screen reader support by default.</p>
+    
+        <h3>Flexible Architecture</h3>
+        <p>Corex components are designed to adapt to your workflow and design requirements, offering multiple integration
+          paths and styling approaches.</p>
+    
+        <h2>Component Structure</h2>
+    
+        <h3>Static Components</h3>
+        <p>Form elements, buttons, badges, and links components built with semantic HTML and CSS. These components require
+          no JavaScript and work immediately upon inclusion.</p>
+    
+        <h3>Interactive Components</h3>
+        <p>Complex components like dialogs, dropdowns, tooltips, and switches built on top of <a
+            href="https://zagjs.com/components/react/checkbox" target="_blank" class="link link--font-brand">Zag JS
+            <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <title>Opens in a new window</title>
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>      </a>. These components provide accessible state management and keyboard interactions while remaining
+          framework-agnostic.</p>
+    
+        <h2>Styling Flexibility</h2>
+    
+        <h3>Export Formats</h3>
+        <p>Every component is available in multiple formats to match your preferred development approach:</p>
+        <ul>
+          <li><strong>Unstyled</strong>: Pure HTML structure with semantic markup for complete custom styling</li>
+          <li><strong>CSS</strong>: Modular CSS files with custom properties for direct customization</li>
+          <li><strong>Tailwind CSS</strong>: Pre-configured utility classes that integrate with Tailwind workflows</li>
+        </ul>
+    
+        <h3>Design Token Integration</h3>
+        <p>Corex supports flexible theming approaches:</p>
+        <ul>
+          <li><strong>CSS Variables</strong>: Direct customization through CSS custom properties</li>
+          <li><strong>Design Tokens</strong>: Integration with <strong>Tokens Studio</strong> and <strong>Style
+              Dictionary</strong> for design tool workflows</li>
+          <li><strong>Token Generation</strong>: Build comprehensive design systems from centralized token sources</li>
+        </ul>
+    
+        <h2>Technical Approach</h2>
+    
+        <p>Built with simplicity in mind, Corex components use standard web technologies that developers can easily
+          understand, modify, and integrate. No complex abstractions or hidden configurations—just straightforward HTML,
+          CSS, and JavaScript that works.</p>
+    
+      </section>
+    
+      <section class="flex w-full flex-wrap justify-end sm:justify-end items-center gap-4 my-8">
+        <a href="/corex/documentation/installation " class="link link--lg">Installation
+          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+        </a>
+      </section>
+    </main>  </div>
+
+
+</body>
+
+</html>
