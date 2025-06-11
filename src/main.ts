@@ -1,5 +1,7 @@
 import "@netoum/corex"
 import "./main.css";
+
+// @ts-ignore
 import { initializeSiteSearch } from "@netoum/corex/components/site-search";
 
 if (import.meta.env?.VITE_PAGEFIND === "true") {
