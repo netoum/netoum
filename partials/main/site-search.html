@@ -1,0 +1,88 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Site Search</h1>
+        <h2>A pure vanilla JS implementation based of <a href="/corex/documentation/components/combobox.html"
+                class="link ">Combobox</a> and <a href="https://pagefind.app/" target="_blank" class="link ">Pagefind
+                API
+                {{> icon/external}}
+            </a></h2>
+        <p>It allows indexing and searching static sites without third parties and no database</p>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Site Search component consists of the following <code class="code-js" data-lang="html">data-part</code>
+        </p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">label</code>
+            <code class="code-js">control</code>
+            <code class="code-js">title</code>
+            <code class="code-js">input</code>
+            <code class="code-js">trigger</code>
+            <code class="code-js">positioner</code>
+            <code class="code-js">content</code>
+        </div>
+        <div class="preview">
+            <div id="site-search-anatomy" class="preview-display">
+                <div class="site-search-js site-search" data-placeholder="Search documentation">
+                    <div data-part="root">
+                        <div data-part="control">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="site-search__icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                            </svg>
+                            <input data-part="input" />
+                        </div>
+                        <div data-part="positioner">
+                            <ul data-part="content" class="scrollbar">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/site-search/anatomy}}
+        </div>
+        <p>Before using Pagefind, you need to build your site and run the indexing process.</p>
+        <p>If you're using Vite, start by building your site:</p>
+        <p><code class="code-js" data-lang="bash">npm run build</code></p>
+        <p>Once the build is complete, run Pagefind to index your site:</p>
+        <p><code class="code-js" data-lang="bash">npm install -D pagefind</code></p>
+        <p><code class="code-js" data-lang="bash">npx pagefind --site "dist"</code></p>
+        <p>Finally, make sure to initialize Pagefind in your main TypeScript file.</p>
+
+        <pre>
+            <code data-lang="ts" class="code-js">import { initializeSiteSearch } from "@netoum/corex/components/site-search";
+                (async () => {
+                try {
+                // @ts-ignore
+                const pagefind = await import("../dist/pagefind/pagefind.js");
+                await pagefind.options({
+                bundlePath: "../dist/pagefind/pagefind.js",
+                baseUrl: "/",
+                });
+                await pagefind.init();
+                console.log("Pagefind initialized");
+                initializeSiteSearch(pagefind);
+                } catch (error) {
+                console.error("Failed to initialize Pagefind:", error);
+                }
+                })();</code>
+        </pre>
+       
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each site-search can be set with different settings with the following data-attribute.</p>
+    <p>Refer to the <a href="link" href="/corex/documentation/components/combobox.html">Comboxbox</a> component for more details</p>
+    <hr>
+    <h3>Templates</h3>
+    <p>Site Search components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Collapsible" next="Date Picker" prev-path="components/collapsible"
+    next-path="components/date-picker"}}
+</main>

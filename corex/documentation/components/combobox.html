@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" /> 
+ <script>
+    try {
+      const mode = localStorage.getItem("mode") || "light";
+      const theme = localStorage.getItem("theme") || "neo";
+      const html = document.documentElement;
+      html.setAttribute("data-mode", mode);
+      html.setAttribute("data-theme", theme);
+    } catch (_) {}
+  </script>
+    <script type="application/json" data-combobox="countries">
+      [
+      { "label": "France", "code": "FR" },
+      { "label": "Belgium", "code": "BE" },
+      { "label": "Germany", "code": "DE" },
+      { "label": "Italy", "code": "IT" },
+      { "label": "Spain", "code": "ES" },
+      { "label": "Portugal", "code": "PT" },
+      { "label": "Netherlands", "code": "NL" },
+      { "label": "Switzerland", "code": "CH" },
+      { "label": "Austria", "code": "AT" },
+      { "label": "Poland", "code": "PL" },
+      { "label": "Czech Republic", "code": "CZ" },
+      { "label": "Hungary", "code": "HU" },
+      { "label": "Greece", "code": "GR" }
+      ]
+      </script>
+  <link rel="icon" type="image/svg+xml" href="/images/corex.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Combobox component- Corex</title>
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body class="layout scrollbar">
+  {{> header page="combobox"}}
+  <div class="layout-wrapper">
+    {{> side-menu page="combobox"}}
+    
+      {{> main/combobox }}
+
+  </div>
+</body>
+</html>

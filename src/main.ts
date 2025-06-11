@@ -1,5 +1,25 @@
 import "@netoum/corex"
 import "./main.css";
+import { initializeSiteSearch } from "@netoum/corex/components/site-search";
+
+if (import.meta.env?.VITE_PAGEFIND === "true") {
+  (async () => {
+    try {
+      // @ts-ignore
+      const pagefind = await import("../dist/corex/pagefind/pagefind.js");
+
+      await pagefind.options({
+        bundlePath: "../dist/corex/pagefind/pagefind.js",
+        baseUrl: "/corex",
+      });
+      await pagefind.init();
+      initializeSiteSearch(pagefind);
+    } catch (error) {
+      console.error("Failed to initialize Pagefind:", error);
+    }
+  })();
+}
+
 document.getElementById("my-callback-dialog")
   ?.addEventListener("my-callback-dialog-event", (event) => {
     console.log("Received event:", (event as CustomEvent).detail);
@@ -50,6 +70,10 @@ document.getElementById("my-callback-date-picker")
   });
 document.getElementById("my-callback-timer")
   ?.addEventListener("my-callback-timer-event", (event) => {
+    console.log("Received event:", (event as CustomEvent).detail);
+  });
+  document.getElementById("my-callback-combobox")
+  ?.addEventListener("my-callback-combobox-event", (event) => {
     console.log("Received event:", (event as CustomEvent).detail);
   });
 document.getElementById("mode-switcher-demo")?.addEventListener("update-mode-switcher", (event) => {
@@ -139,5 +163,29 @@ if (formBirth && resultBirth) {
     const formData = new FormData(formBirth);
     const dateOfBirth = (formData.get('date-of-birth') as string);
     resultBirth.textContent = `Submitted: birth day: ${dateOfBirth}`;
+  });
+}
+
+const formFlight = document.getElementById('my-form-flight') as HTMLFormElement | null;
+const resultFlight  = document.getElementById('result-flight') as HTMLDivElement | null;
+if (formFlight  && resultFlight ) {
+  formFlight.addEventListener('submit', (e: Event) => {
+    e.preventDefault();
+    const formData = new FormData(formFlight );
+    const dep = (formData.get('departure') as string);
+    const ret = (formData.get('return') as string);
+    resultFlight.textContent = `Submitted: departure: ${dep} and return: ${ret}`;
+  });
+}
+
+const formCurrency = document.getElementById('my-form') as HTMLFormElement | null;
+const resultCurrency  = document.getElementById('result') as HTMLDivElement | null;
+
+if (formCurrency && resultCurrency) {
+  formCurrency.addEventListener('submit', (e: Event) => {
+    e.preventDefault();
+    const formData = new FormData(formCurrency);
+    const currency = (formData.get('currency') as string) || 'none';
+    resultCurrency.textContent = `Submitted currency: ${currency}`;
   });
 }

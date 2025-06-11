@@ -1,0 +1,684 @@
+<main class="layout-main scrollbar">
+    <section>
+        <h1>Combobox</h1>
+        <h2>A pure vanilla JS implementation of <a href="https://zagjs.com/components/react/combobox" target="_blank"
+                class="link ">Zag JS Combobox
+                {{> icon/external}}
+            </a></h2>
+    </section>
+    <hr id="anatomy">
+    <section>
+        <h3>Anatomy</h3>
+        <p>The Combobox component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">root</code>
+            <code class="code-js">label</code>
+            <code class="code-js">control</code>
+            <code class="code-js">title</code>
+            <code class="code-js">input</code>
+            <code class="code-js">clear-trigger</code>
+            <code class="code-js">trigger</code>
+            <code class="code-js">positioner</code>
+            <code class="code-js">content</code>
+            <code class="code-js">item</code>
+        </div>
+        <div class="preview">
+            <div id="combobox-anatomy" class="preview-display">
+                <div class="combobox-js combobox" data-placeholder="Type or select currency">
+                    <div data-part="root">
+                        <label data-part="label">Your Currency</label>
+                        <div data-part="control">
+                            <input data-part="input" />
+                            <button data-part="clear-trigger">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                                </svg>
+                            </button>
+                            <button data-part="trigger">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div data-part="positioner">
+                            <ul data-part="content" class="scrollbar">
+                                <li data-part="item" data-code="USD" data-label="US Dollar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    US Dollar
+                                </li>
+                                <li data-part="item" data-code="EURO" data-label="Euro">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    Euro
+                                </li>
+                                <li data-part="item" data-code="GBP" data-label="British Pound">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    British Pound
+                                </li>
+                                <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    Japanese Yen
+                                </li>
+                                <li data-part="item" data-code="AL" data-label="Indian Rupee">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    Indian Rupee
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/combobox/anatomy}}
+        </div>
+        <p>If you have a lot of data, you can also load the collection with a json file</p>
+        <p>You first need to add a inline script including the collection as well as the collection name</p>
+        <pre>
+            <code data-lang="html" class="code-js">&lt;script type=&quot;application/json&quot; data-combobox=&quot;countries&quot;&gt;
+                [
+                { &quot;label&quot;: &quot;France&quot;, &quot;code&quot;: &quot;FR&quot; },
+                { &quot;label&quot;: &quot;Belgium&quot;, &quot;code&quot;: &quot;BE&quot; },
+                { &quot;label&quot;: &quot;Germany&quot;, &quot;code&quot;: &quot;DE&quot; },
+                { &quot;label&quot;: &quot;Italy&quot;, &quot;code&quot;: &quot;IT&quot; },
+                { &quot;label&quot;: &quot;Spain&quot;, &quot;code&quot;: &quot;ES&quot; },
+                { &quot;label&quot;: &quot;Portugal&quot;, &quot;code&quot;: &quot;PT&quot; },
+                { &quot;label&quot;: &quot;Netherlands&quot;, &quot;code&quot;: &quot;NL&quot; },
+                { &quot;label&quot;: &quot;Switzerland&quot;, &quot;code&quot;: &quot;CH&quot; },
+                { &quot;label&quot;: &quot;Austria&quot;, &quot;code&quot;: &quot;AT&quot; },
+                { &quot;label&quot;: &quot;Poland&quot;, &quot;code&quot;: &quot;PL&quot; },
+                { &quot;label&quot;: &quot;Czech Republic&quot;, &quot;code&quot;: &quot;CZ&quot; },
+                { &quot;label&quot;: &quot;Hungary&quot;, &quot;code&quot;: &quot;HU&quot; },
+                { &quot;label&quot;: &quot;Greece&quot;, &quot;code&quot;: &quot;GR&quot; }
+                ]
+                &lt;/script&gt;
+            </code>
+        </pre>
+        <div class="preview">
+            <div id="combobox-anatomy-json" class="preview-display">
+                <div class="combobox-js combobox" data-json="countries" data-placeholder="Type or select country">
+                    <div data-part="root">
+                        <label data-part="label">Your Country</label>
+                        <div data-part="control">
+                            <input data-part="input" />
+                            <button data-part="clear-trigger">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                                </svg>
+                            </button>
+                            <button data-part="trigger">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div data-part="positioner">
+                            <ul data-part="content" class="scrollbar">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/combobox/anatomy-json}}
+        </div>
+    </section>
+    <hr id="attribute">
+    <section>
+        <h3>Data attributes</h3>
+        <p>Each combobox can be set with different settings with the following data-attribute.</p>
+        <div class="preview">
+            <div id="combobox-attribute" class="preview-display">
+                <div class="combobox-js combobox" data-default-open="true"
+                    data-allow-custom-value="true" data-placeholder="Type or select currency">
+                    <div data-part="root">
+                        <label data-part="label">Your Currency</label>
+                        <div data-part="control">
+                            <input data-part="input" />
+                            <button data-part="clear-trigger">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                                </svg>
+                            </button>
+                            <button data-part="trigger">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div data-part="positioner">
+                            <ul data-part="content" class="scrollbar">
+                                <li data-part="item" data-code="USD" data-label="US Dollar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    US Dollar
+                                </li>
+                                <li data-part="item" data-code="EURO" data-label="Euro">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    Euro
+                                </li>
+                                <li data-part="item" data-code="GBP" data-label="British Pound">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    British Pound
+                                </li>
+                                <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    Japanese Yen
+                                </li>
+                                <li data-part="item" data-code="AL" data-label="Indian Rupee">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    Indian Rupee
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/combobox/attribute}}
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">id</code></td>
+                        <td>string</td>
+                        <td>The unique id of the component. Default generated if none is provided</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-json</code></td>
+                        <td>string</td>
+                        <td>The name of the collection loaded as a inline script
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-open</code></td>
+                        <td>boolean</td>
+                        <td>The controlled open state of the combobox
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-open</code></td>
+                        <td>boolean</td>
+                        <td>The initial open state of the combobox when rendered. Use when you don't need to control the
+                            open state of the combobox.</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-input-value</code></td>
+                        <td>string</td>
+                        <td>The controlled value of the combobox's input
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-input-value</code></td>
+                        <td>string</td>
+                        <td>The initial value of the combobox's input when rendered. Use when you don't need to control
+                            the value of the combobox's input.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-dir</code></td>
+                        <td>ltr | rtl</td>
+                        <td>The orientation of the combobox. Can be `ltr` or `rtl`</td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-name</code></td>
+                        <td>string</td>
+                        <td>The `name` attribute of the combobox's input. Useful for form submission
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-form</code></td>
+                        <td>string</td>
+                        <td>The associate form of the combobox.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-disabled</code></td>
+                        <td>boolean</td>
+                        <td>Whether the combobox is disabled
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-read-only</code></td>
+                        <td>boolean</td>
+                        <td>Whether the combobox is readonly. This puts the combobox in a "non-editable" mode but the
+                            user can still interact with it
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-invalid</code></td>
+                        <td>boolean</td>
+                        <td>Whether the combobox is invalid
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-required</code></td>
+                        <td>boolean</td>
+                        <td>Whether the combobox is required
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-placeholder</code></td>
+                        <td>boolean</td>
+                        <td>The placeholder text of the combobox's input
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-default-highlighted-value</code></td>
+                        <td>string</td>
+                        <td>The initial highlighted value of the combobox when rendered. Use when you don't need to
+                            control the highlighted value of the combobox.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-highlighted-value</code></td>
+                        <td>string</td>
+                        <td>The controlled highlighted value of the combobox
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-value</code></td>
+                        <td>string list</td>
+                        <td>The controlled value of the combobox's selected items
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data--default-value</code></td>
+                        <td>string list</td>
+                        <td>The initial value of the combobox's selected items when rendered. Use when you don't need to
+                            control the value of the combobox's selected items.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-input-behavior                        </code></td>
+                        <td>"autohighlight" | "autocomplete" | "none"
+                        </td>
+                        <td>Defines the auto-completion behavior of the combobox. - `autohighlight`: The first focused
+                            item is highlighted as the user types - `autocomplete`: Navigating the listbox with the
+                            arrow keys selects the item and the input is updated
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-selectionBehavior</code></td>
+                        <td>"clear" | "replace" | "preserve"
+                        </td>
+                        <td>The behavior of the combobox input when an item is selected - `replace`: The selected item
+                            string is set as the input value - `clear`: The input value is cleared - `preserve`: The
+                            input value is preserved
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-auto-focus</code></td>
+                        <td>boolean</td>
+                        <td>Whether to autofocus the input on mount
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-open-on-click</code></td>
+                        <td>boolean</td>
+                        <td>Whether to open the combobox popup on initial click on the input
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-open-on-change</code></td>
+                        <td>boolean</td>
+                        <td>Whether to open the combobox popup on initial click on the input
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-open-on-click</code></td>
+                        <td>boolean</td>
+                        <td>Whether to show the combobox when the input value changes
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-allow-custom-value</code></td>
+                        <td>boolean</td>
+                        <td>Whether to allow typing custom values in the input
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-loop-focus</code></td>
+                        <td>boolean</td>
+                        <td>Whether to loop the keyboard navigation through the items
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-multiple</code></td>
+                        <td>boolean</td>
+                        <td>Whether to allow multiple selection. **Good to know:** When `multiple` is `true`, the
+                            `selectionBehavior` is automatically set to `clear`. It is recommended to render the
+                            selected items in a separate container.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-close-on-select</code></td>
+                        <td>boolean</td>
+                        <td>Whether to close the combobox when an item is selected.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-composite</code></td>
+                        <td>boolean</td>
+                        <td>Whether the combobox is a composed with other composite widgets like tabs
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-disable-layer</code></td>
+                        <td>boolean</td>
+                        <td>Whether to disable registering this a dismissable layer
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="callback">
+    <section>
+        <h3>Callbacks</h3>
+        <p> Each combobox component can receive callbacks that can be used to respond to user interaction with custom
+            behavior.</p>
+        <p>You must add a custom id and an event listener for your event name</p>
+        <pre><code class="code-js" data-lang="js">
+            document.getElementById("my-callback-combobox")
+            ?.addEventListener("my-callback-combobox-event", (event) => {
+              console.log("Received event:", (event as CustomEvent).detail);
+            });
+        </code></pre>
+        <div class="preview">
+            <div id="combobox-callback" class="preview-display">
+                <div id="my-callback-combobox" class="combobox-js combobox" data-placeholder="Type or select currency"
+                    data-on-input-value-change="my-callback-combobox-event">
+                    <div data-part="root">
+                        <label data-part="label">Your Currency</label>
+                        <div data-part="control">
+                            <input data-part="input" />
+                            <button data-part="clear-trigger">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                                </svg>
+                            </button>
+                            <button data-part="trigger">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div data-part="positioner">
+                            <ul data-part="content" class="scrollbar">
+                                <li data-part="item" data-code="USD" data-label="US Dollar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    US Dollar
+                                </li>
+                                <li data-part="item" data-code="EURO" data-label="Euro">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    Euro
+                                </li>
+                                <li data-part="item" data-code="GBP" data-label="British Pound">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    British Pound
+                                </li>
+                                <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    Japanese Yen
+                                </li>
+                                <li data-part="item" data-code="AL" data-label="Indian Rupee">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                    Indian Rupee
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> copy/combobox/callback}}
+        </div>
+        <div class="notification">
+            <p>Open your browser's console to see the events received when you open or close the above combobox</p>
+        </div>
+        <div class="table-wrapper scrollbar scrollbar--sm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data attribute</th>
+                        <th>Type / Options</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-input-value-change</code></td>
+                        <td>string</td>
+                        <td>Event name to send when the input's value changes
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-value-change</code></td>
+                        <td>string</td>
+                        <td>Event name to send when a new item is selected
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-highlight-change</code></td>
+                        <td>string</td>
+                        <td>Event name to send when an item is highlighted using the pointer or keyboard navigation.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-select</code></td>
+                        <td>string</td>
+                        <td>Event name to send when an item is selected
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-open-change</code></td>
+                        <td>string</td>
+                        <td>Event name to send when the popup is opened
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-on-pointerdown-outside</code></td>
+                        <td>string</td>
+                        <td>Event name to send when the pointer is pressed down outside the component
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-focus-outside</code></td>
+                        <td>string</td>
+                        <td>Event name to send when the focus is moved outside the component
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code class="code-js select-all">data-on-interact-outside</code></td>
+                        <td>string</td>
+                        <td>Event name to send when an interaction happens outside the component
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <hr id="form">
+    <section>
+        <h3>Use with Form</h3>
+        <p>Combobox can be used inside a form</p>
+        <p>You must set the id of the form and the name of the Combobox</p>
+        <div class="flex flex-wrap gap-4 ">
+            <code class="code-js">data-form="form-id"</code>
+            <code class="code-js">data-name="combobox-name"</code>
+        </div>
+        <div class="preview">
+            <div id="combobox-form" class="preview-display">
+                <form id="my-form">
+                    <div class="combobox-js combobox" data-form="my-form" data-name="currency"
+                        data-placeholder="Type or select currency">
+                        <div data-part="root">
+                            <label data-part="label">Your Currency</label>
+                            <div data-part="control">
+                                <input data-part="input" />
+                                <button data-part="clear-trigger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                                    </svg>
+                                </button>
+                                <button data-part="trigger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div data-part="positioner">
+                                <ul data-part="content" class="scrollbar">
+                                    <li data-part="item" data-code="USD" data-label="US Dollar">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        US Dollar
+                                    </li>
+                                    <li data-part="item" data-code="EURO" data-label="Euro">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        Euro
+                                    </li>
+                                    <li data-part="item" data-code="GBP" data-label="British Pound">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        British Pound
+                                    </li>
+                                    <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        Japanese Yen
+                                    </li>
+                                    <li data-part="item" data-code="AL" data-label="Indian Rupee">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        Indian Rupee
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="button button--accent" type="submit">Submit</button>
+                </form>
+                <div id="result"></div>
+            </div>
+            {{> copy/combobox/form}}
+        </div>
+        <p>You can use the results from the form as you wish</p>
+        <pre><code class="code-js" data-lang="js">const formCurrency = document.getElementById('my-form') as HTMLFormElement | null;
+            const resultCurrency  = document.getElementById('result') as HTMLDivElement | null;
+            if (formCurrency && resultCurrency) {
+              formCurrency.addEventListener('submit', (e: Event) => {
+                e.preventDefault();
+                const formData = new FormData(formCurrency);
+                const currency = (formData.get('currency') as string) || 'none';
+                resultCurrency.textContent = `Submitted currency: ${currency}`;
+              });
+            }
+        </code></pre>
+    </section>
+    <hr>
+    <h3>Templates</h3>
+    <p>Combobox components is available in the followng templates</p>
+    {{> styling}}
+    </section>
+    {{> skip prev="Collapsible" next="Date Picker" prev-path="components/collapsible"
+    next-path="components/date-picker"}}
+</main>

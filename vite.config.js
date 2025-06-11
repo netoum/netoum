@@ -119,6 +119,8 @@ const extractAllComponentData = () => {
    { name: 'timer', file: 'partials/main/timer.html', prefix: 'timer-' },
    { name: 'datePicker', file: 'partials/main/date-picker.html', prefix: 'date-picker-' },
    { name: 'typo', file: 'partials/main/typo.html', prefix: 'typo-' },
+   { name: 'combobox', file: 'partials/main/combobox.html', prefix: 'combobox-' },
+   { name: 'site-search', file: 'partials/main/site-search.html', prefix: 'site-search-' },
 
 
  ];
@@ -203,6 +205,9 @@ export default defineConfig({
   build: {
     cssMinify: true,
     rollupOptions: {
+      external: [
+        './dist/pagefind/pagefind.js'
+      ],
       input: {
         ...corexHtmlInputs,
         index: resolve(__dirname, 'index.html'), // if needed

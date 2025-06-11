@@ -43,6 +43,24 @@
     </div>
   </div>
 
+  <div class="site-search-js site-search my-4" data-placeholder="Search documentation" data-max-results="30" data-no-results="No results. Try another keyword.">
+    <div data-part="root">
+      <div data-part="control">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="site-search__icon">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+        <input data-part="input" />
+      </div>
+      <div data-part="positioner">
+        <ul data-part="content" class="scrollbar">
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <h2 id="sidebar-title" class="sr-only">Documentation Navigation</h2>
   <h5 class="nav-title">Getting Started</h5>
 
@@ -86,6 +104,8 @@
         )}}data-selected{{/if}}>Code</a></li>
     <li><a href="/corex/documentation/components/collapsible" class="nav-link" {{#if (eq page "collapsible"
         )}}data-selected{{/if}}>Collapsible</a></li>
+    <li><a href="/corex/documentation/components/combobox" class="nav-link" {{#if (eq page "combobox"
+        )}}data-selected{{/if}}>Combobox</a></li>
     <li><a href="/corex/documentation/components/date-picker" class="nav-link" {{#if (eq page "date-picker"
         )}}data-selected{{/if}}>Date Picker</a></li>
     <li><a href="/corex/documentation/components/dialog" class="nav-link" {{#if (eq page "dialog"
@@ -96,6 +116,8 @@
         )}}data-selected{{/if}}>Listbox</a></li>
     <li><a href="/corex/documentation/components/menu" class="nav-link" {{#if (eq page "menu"
         )}}data-selected{{/if}}>Menu</a></li>
+    <li><a href="/corex/documentation/components/site-search" class="nav-link" {{#if (eq page "site-search"
+        )}}data-selected{{/if}}>Site Search</a></li>
     <li><a href="/corex/documentation/components/scrollbar" class="nav-link" {{#if (eq page "scrollbar"
         )}}data-selected{{/if}}>Scrollbar</a></li>
     <li><a href="/corex/documentation/components/switch" class="nav-link" {{#if (eq page "switch"
