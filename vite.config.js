@@ -206,12 +206,12 @@ export default defineConfig({
     cssMinify: true,
     rollupOptions: {
       external: [
-        '../dist/pagefind/pagefind.js'
+        './dist/pagefind/pagefind.js'
       ],
       input: {
         ...corexHtmlInputs,
-        index: resolve(__dirname, 'index.html'),
-        corex: resolve(__dirname, 'corex.html'),
+        index: resolve(__dirname, 'index.html'), // if needed
+        corex: resolve(__dirname, 'corex.html'), // if needed
       },
     },
   }
