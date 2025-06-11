@@ -1,24 +1,38 @@
 import "@netoum/corex"
 import "./main.css";
 
-import { initializeSiteSearch } from "@netoum/corex/components/site-search";
+// import { initializeSiteSearch } from "@netoum/corex/components/site-search";
+// Add this at the very top of your main.ts to see what's happening
+console.log("=== Environment Debug ===");
+console.log("All env vars:", import.meta.env);
+console.log("VITE_PAGEFIND:", import.meta.env.VITE_PAGEFIND);
+console.log("VITE_PAGEFIND type:", typeof import.meta.env.VITE_PAGEFIND);
+console.log("Is production:", import.meta.env.PROD);
+console.log("========================");
 
-if (import.meta.env?.VITE_PAGEFIND === "true") {
-  (async () => {
-    try {
-      // @ts-ignore
-      const pagefind = await import("../dist/corex/pagefind/pagefind.js");
-
-      await pagefind.options({
-        baseUrl: "/corex"
-      });
-      await pagefind.init();
-      initializeSiteSearch(pagefind);
-    } catch (error) {
-      console.error("Failed to initialize Pagefind:", error);
-    }
-  })();
+// Your existing code
+if (import.meta.env.VITE_PAGEFIND === "true") {
+  console.log("Pagefind condition matched!");
+  // ... rest of your code
+} else {
+  console.log("Pagefind condition NOT matched, value is:", import.meta.env.VITE_PAGEFIND);
 }
+// if (import.meta.env?.VITE_PAGEFIND === "true") {
+//   (async () => {
+//     try {
+//       // @ts-ignore
+//       const pagefind = await import("../dist/corex/pagefind/pagefind.js");
+
+//       await pagefind.options({
+//         baseUrl: "/corex"
+//       });
+//       await pagefind.init();
+//       initializeSiteSearch(pagefind);
+//     } catch (error) {
+//       console.error("Failed to initialize Pagefind:", error);
+//     }
+//   })();
+// }
 
 document.getElementById("my-callback-dialog")
   ?.addEventListener("my-callback-dialog-event", (event) => {
