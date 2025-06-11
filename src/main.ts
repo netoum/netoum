@@ -2,15 +2,6 @@ import "@netoum/corex"
 import "./main.css";
 
 import { initializeSiteSearch } from "@netoum/corex/components/site-search";
-// Add this at the very top of your main.ts to see what's happening
-console.log("=== Environment Debug ===");
-console.log("All env vars:", import.meta.env);
-console.log("VITE_PAGEFIND:", import.meta.env.VITE_PAGEFIND);
-console.log("VITE_PAGEFIND type:", typeof import.meta.env.VITE_PAGEFIND);
-console.log("Is production:", import.meta.env.PROD);
-console.log("========================");
-
-// Your existing code
 if (import.meta.env.VITE_PAGEFIND === "true") {
   console.log("Pagefind condition matched!");
   (async () => {
@@ -19,7 +10,8 @@ if (import.meta.env.VITE_PAGEFIND === "true") {
       const pagefind = await import("../public/pagefind/pagefind.js");
 
       await pagefind.options({
-        baseUrl: "/corex"
+        baseUrl: "/corex",
+        basePath: "/"
       });
       await pagefind.init();
       initializeSiteSearch(pagefind);
