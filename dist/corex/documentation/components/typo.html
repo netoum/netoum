@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" /> 
+ <script>
+    try {
+      const mode = localStorage.getItem("mode") || "light";
+      const theme = localStorage.getItem("theme") || "neo";
+      const html = document.documentElement;
+      html.setAttribute("data-mode", mode);
+      html.setAttribute("data-theme", theme);
+    } catch (_) {}
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/images/corex.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typo component- Corex</title>
+  <script type="module" crossorigin src="/assets/main-D3P9tll6.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main--fIYXZkV.css">
+</head>
+<body class="layout scrollbar">
+  <header class="layout-header">
+    <button data-open-dialog="menu" class="button button--circle lg:hidden" aria-label="Open Corex Documentation Menu">
+      <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" viewBox="0 0 24 24"
+        stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+    <div class="flex flex-wrap items-center gap-1 ">
+      <a href="/corex/documentation/introduction.html">
+        <svg class="hover:text-accent-brand-1 h-5 md:h-6 text-accent-brand" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 428 136" version="1.1">
+          <!-- C logo -->
+          <path
+            d="M70.573 1.67C33.94 1.67 4.243 31.367 4.243 68c0 36.634 29.697 66.33 66.33 66.33s66.33-29.696 66.33-66.33c0-36.633-29.697-66.33-66.33-66.33m.05 102.736c-20.117 0-36.427-16.308-36.427-36.427 0-20.118 16.31-36.427 36.427-36.427 17.055 0 31.37 11.723 35.333 27.55H89.845c-3.365-7.255-10.713-12.301-19.222-12.301-11.678 0-21.179 9.501-21.179 21.18s9.501 21.178 21.18 21.178c8.539 0 15.907-5.08 19.256-12.377h16.095c-3.939 15.864-18.269 27.624-35.352 27.624"
+            fill="currentColor" />
+  
+          <!-- O letter -->
+          <path
+            d="M181.505 108.48q-10.5 0-19.24-4.88-8.75-4.87-13.89-13.62-5.14-8.74-5.14-19.66t5.14-19.61q5.14-8.69 13.89-13.57 8.74-4.87 19.24-4.87 10.49 0 19.24 4.87 8.74 4.88 13.78 13.57 5.03 8.69 5.03 19.61t-5.09 19.66q-5.09 8.75-13.78 13.62-8.69 4.88-19.18 4.88m0-16.54q8.9 0 14.25-5.93 5.36-5.94 5.36-15.69 0-9.86-5.36-15.74-5.35-5.88-14.25-5.88-9.01 0-14.37 5.83-5.35 5.83-5.35 15.79 0 9.86 5.35 15.74 5.36 5.88 14.37 5.88"
+            fill="currentColor" />
+  
+          <!-- R letter -->
+          <path
+            d="m267.575 107.74-15.48-28.09h-4.34v28.09h-18.13V33.33h30.42q8.8 0 15 3.07 6.2 3.07 9.28 8.43 3.07 5.35 3.07 11.92 0 7.42-4.19 13.25-4.18 5.83-12.35 8.27l17.18 29.47Zm-19.82-40.92h11.23q4.98 0 7.48-2.44 2.49-2.43 2.49-6.89 0-4.24-2.49-6.67-2.5-2.44-7.48-2.44h-11.23Z"
+            fill="currentColor" />
+  
+          <!-- E letter -->
+          <path d="M316.865 47.85V62.9h24.27v13.99h-24.27v16.33h27.45v14.52h-45.58V33.33h45.58v14.52Z"
+            fill="currentColor" />
+  
+          <!-- X letter -->
+          <path
+            d="m401.665 107.74-15.16-22.79-13.36 22.79h-20.56l23.85-37.84-24.38-36.57h21.09l14.95 22.47 13.14-22.47h20.57l-23.64 37.52 24.59 36.89Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <span class="badge badge--sm badge--brand  badge--accent">
+        0.0.4
+      </span>
+    </div>
+  
+    <nav>
+      <ul class="flex-wrap items-center flex gap-4">
+        <li>
+          <a href="/corex/documentation/introduction" aria-label="Go to Corex documentation" class="nav-link">
+            Doc
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+    <a href="https://github.com/netoum/corex" target="_blank" class="button button--circle"
+      aria-label="Visit Corex Github repository">
+      <svg class="button__icon" viewBox="0 0 98 96" width="98" height="96" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+          fill="currentColor" />
+      </svg>
+    </a>
+  
+  </header>
+  
+  <div id="menu" class="dialog dialog--side dialog-js">
+    <div data-part="backdrop"></div>
+    <div data-part="positioner">
+      <div data-part="content">
+        <button data-part="close-trigger" class="button button--circle  button--sm" aria-label="Close menu">
+          <svg class="button__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+  
+        <nav
+          class="h-full overflow-y-auto scrollbar scrollbar--sm z-20 scrollbar scrollbar--sm p-4 pb-24 mb-24 mt-(--height-ui)"
+          role="navigation" aria-labelledby="sidebar-title">
+  
+          <div class="flex flex-wrap gap-2">
+            <div id="mode-switcher-header" class="switcher switcher-js switcher--duo switcher--circle"
+              data-default-value="light" data-key="mode" data-on-value-change="update-mode-switcher">
+              <div data-part="root">
+                <button data-part="item" data-value="light" aria-label="Switch to light color mode">
+                  <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                  </svg>
+                </button>
+                <button data-part="item" data-value="dark" aria-label="Switch to dark color mode">
+                  <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div id="theme-switcher-header" class="switcher switcher-js switcher--sm" data-default-value="neo"
+              data-key="theme" data-on-value-change="update-theme-switcher-side">
+              <div data-part="root">
+                <button data-part="item" data-value="neo"
+                  class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                  aria-label="Switch to Neo theme">
+                  Neo
+                </button>
+                <button data-part="item" data-value="revo"
+                  class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                  aria-label="Switch to Revo theme">
+                  Revo
+                </button>
+                <button data-part="item" data-value="uno"
+                  class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                  aria-label="Switch to Uno theme">
+                  Uno
+                </button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="site-search-js site-search my-4" data-placeholder="Search documentation"  data-max-results="30" data-no-results="No results. Try another keyword.">
+            <div data-part="root">
+              <div data-part="control">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="site-search__icon">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+                <input data-part="input" />
+              </div>
+              <div data-part="positioner">
+                <ul data-part="content" class="scrollbar">
+  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <h2 id="sidebar-title" class="sr-only">Documentation Navigation</h2>
+          <h5 class="nav-title">Getting Started</h5>
+  
+          <ul class="nav-list">
+            <li><a href="/corex/documentation/introduction" class="nav-link" >Introduction</a></li>
+            <li><a href="/corex/documentation/installation" class="nav-link" >Installation</a></li>
+            <li><a href="/corex/documentation/templates" class="nav-link" >Templates</a></li>
+            <li><a href="/corex/documentation/theming" class="nav-link" >Theming</a></li>
+            <li><a href="/corex/documentation/starters" class="nav-link" >Starters</a></li>
+          </ul>
+  
+  
+          <h5 class="nav-title">Tokens</h5>
+  
+          <ul class="nav-list">
+            <li><a href="/corex/documentation/tokens/color" class="nav-link" >Color</a></li>
+          </ul>
+  
+          <h5 class="nav-title">Components</h5>
+  
+  
+          <ul class="nav-list">
+            <li><a href="/corex/documentation/components/accordion" class="nav-link" >Accordion</a></li>
+            <li><a href="/corex/documentation/components/avatar" class="nav-link" >Avatar</a></li>
+            <li><a href="/corex/documentation/components/badge" class="nav-link" >Badge</a></li>
+            <li><a href="/corex/documentation/components/button" class="nav-link" >Button</a></li>
+            <li><a href="/corex/documentation/components/checkbox" class="nav-link" >Checkbox</a></li>
+            <li><a href="/corex/documentation/components/clipboard" class="nav-link" >Clipboard</a></li>
+            <li><a href="/corex/documentation/components/code" class="nav-link" >Code</a></li>
+            <li><a href="/corex/documentation/components/collapsible" class="nav-link" >Collapsible</a></li>
+            <li><a href="/corex/documentation/components/combobox" class="nav-link" >Combobox</a></li>
+            <li><a href="/corex/documentation/components/date-picker" class="nav-link" >Date Picker</a></li>
+            <li><a href="/corex/documentation/components/dialog" class="nav-link" >Dialog</a></li>
+            <li><a href="/corex/documentation/components/link" class="nav-link" >Link</a></li>
+            <li><a href="/corex/documentation/components/listbox" class="nav-link" >Listbox</a></li>
+            <li><a href="/corex/documentation/components/menu" class="nav-link" >Menu</a></li>
+            <li><a href="/corex/documentation/components/site-search" class="nav-link" >Site Search</a></li>
+            <li><a href="/corex/documentation/components/scrollbar" class="nav-link" >Scrollbar</a></li>
+            <li><a href="/corex/documentation/components/switch" class="nav-link" >Switch</a></li>
+            <li><a href="/corex/documentation/components/switcher" class="nav-link" >Switcher</a></li>
+            <li><a href="/corex/documentation/components/tabs" class="nav-link" >Tabs</a></li>
+            <li><a href="/corex/documentation/components/timer" class="nav-link" >Timer</a></li>
+            <li><a href="/corex/documentation/components/toggle-group" class="nav-link" >Toggle Group</a></li>
+            <li><a href="/corex/documentation/components/tree-view" class="nav-link" >Tree View</a></li>
+            <li><a href="/corex/documentation/components/typo" class="nav-link" data-selected>Typo</a></li>
+  
+          </ul>
+          <div class="pt-12">
+            <a class="link link--font-brand" href="https://netoum.com" target="_blank">Made by Netoum
+              <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <title>Opens in a new window</title>
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25">
+                </path>
+              </svg>
+            </a>
+            <p>MIT License</p>
+          </div>
+  
+        </nav>
+  
+  
+      </div>
+    </div>
+  </div>  <div class="layout-wrapper">
+    <nav class="layout-side h-full overflow-y-auto scrollbar scrollbar--sm z-20 mt-6" role="navigation"
+      aria-labelledby="sidebar-title">
+    
+      <div class="flex flex-wrap gap-2">
+        <div id="mode-switcher-side" class="switcher switcher-js switcher--duo switcher--circle" data-default-value="light"
+          data-key="mode" data-on-value-change="update-mode-switcher">
+          <div data-part="root">
+            <button data-part="item" data-value="light" aria-label="Switch to light color mode">
+              <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+              </svg>
+            </button>
+            <button data-part="item" data-value="dark" aria-label="Switch to dark color mode">
+              <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="theme-switcher-side" class="switcher switcher-js switcher--sm" data-default-value="neo" data-key="theme"
+          data-on-value-change="update-theme-switcher-header">
+          <div data-part="root">
+            <button data-part="item" data-value="neo"
+              class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+              aria-label="Switch to Neo theme">
+              Neo
+            </button>
+            <button data-part="item" data-value="revo"
+              class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+              aria-label="Switch to Revo theme">
+              Revo
+            </button>
+            <button data-part="item" data-value="uno"
+              class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+              aria-label="Switch to Uno theme">
+              Uno
+            </button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="site-search-js site-search my-4" data-placeholder="Search documentation" data-max-results="30" data-no-results="No results. Try another keyword.">
+        <div data-part="root">
+          <div data-part="control">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              class="site-search__icon">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <input data-part="input" />
+          </div>
+          <div data-part="positioner">
+            <ul data-part="content" class="scrollbar">
+    
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+      <h2 id="sidebar-title" class="sr-only">Documentation Navigation</h2>
+      <h5 class="nav-title">Getting Started</h5>
+    
+      <ul class="nav-list">
+        <li><a href="/corex/documentation/introduction" class="nav-link" >Introduction</a></li>
+        <li><a href="/corex/documentation/installation" class="nav-link" >Installation</a></li>
+        <li><a href="/corex/documentation/templates" class="nav-link" >Templates</a></li>
+        <li><a href="/corex/documentation/theming" class="nav-link" >Theming</a></li>
+        <li><a href="/corex/documentation/starters" class="nav-link" >Starters</a></li>
+      </ul>
+    
+      <h5 class="nav-title">Tokens</h5>
+    
+      <ul class="nav-list">
+        <li><a href="/corex/documentation/tokens/color" class="nav-link" >Color</a></li>
+      </ul>
+    
+    
+      <h5 class="nav-title">Components</h5>
+    
+      <ul class="nav-list">
+        <li><a href="/corex/documentation/components/accordion" class="nav-link" >Accordion</a></li>
+        <li><a href="/corex/documentation/components/avatar" class="nav-link" >Avatar</a></li>
+        <li><a href="/corex/documentation/components/badge" class="nav-link" >Badge</a></li>
+        <li><a href="/corex/documentation/components/button" class="nav-link" >Button</a></li>
+        <li><a href="/corex/documentation/components/checkbox" class="nav-link" >Checkbox</a></li>
+        <li><a href="/corex/documentation/components/clipboard" class="nav-link" >Clipboard</a></li>
+        <li><a href="/corex/documentation/components/code" class="nav-link" >Code</a></li>
+        <li><a href="/corex/documentation/components/collapsible" class="nav-link" >Collapsible</a></li>
+        <li><a href="/corex/documentation/components/combobox" class="nav-link" >Combobox</a></li>
+        <li><a href="/corex/documentation/components/date-picker" class="nav-link" >Date Picker</a></li>
+        <li><a href="/corex/documentation/components/dialog" class="nav-link" >Dialog</a></li>
+        <li><a href="/corex/documentation/components/link" class="nav-link" >Link</a></li>
+        <li><a href="/corex/documentation/components/listbox" class="nav-link" >Listbox</a></li>
+        <li><a href="/corex/documentation/components/menu" class="nav-link" >Menu</a></li>
+        <li><a href="/corex/documentation/components/site-search" class="nav-link" >Site Search</a></li>
+        <li><a href="/corex/documentation/components/scrollbar" class="nav-link" >Scrollbar</a></li>
+        <li><a href="/corex/documentation/components/switch" class="nav-link" >Switch</a></li>
+        <li><a href="/corex/documentation/components/switcher" class="nav-link" >Switcher</a></li>
+        <li><a href="/corex/documentation/components/tabs" class="nav-link" >Tabs</a></li>
+        <li><a href="/corex/documentation/components/timer" class="nav-link" >Timer</a></li>
+        <li><a href="/corex/documentation/components/toggle-group" class="nav-link" >Toggle Group</a></li>
+        <li><a href="/corex/documentation/components/tree-view" class="nav-link" >Tree View</a></li>
+        <li><a href="/corex/documentation/components/typo" class="nav-link" data-selected>Typo</a></li>
+    
+      </ul>
+    
+      <div class="pt-12">
+        <a class="link link--font-brand" href="https://netoum.com" target="_blank">Made by Netoum
+          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <title>Opens in a new window</title>
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25">
+            </path>
+          </svg>
+        </a>
+        <p>MIT License</p>
+      </div>
+    </nav>
+    
+      <main class="layout-main scrollbar">
+          <section>
+              <h1>Typo</h1>
+              <h2>A pure CSS component</h2>
+          </section>
+          <hr id="anatomy">
+          <section>
+              <h3>Anatomy</h3>
+              <p>The Typo component is used as a base for font managment and basic html tags used in all components</p>
+              <div class="preview">
+                  <div id="typo-anatomy" class="preview-display">
+                      <h1>Heading 1</h1>
+                      <h2>Heading 2</h2>
+                      <h3>Heading 3</h3>
+                      <h4>Heading 4</h4>
+                      <p>This is a paragraph to demonstrate the base font size and line height. It should look readable and
+                          well-spaced. 
+                      <small>This is some small text.</small>
+                  </div>
+                  <div class="relative w-full">
+                      <div id="clipboard" data-part="root" class="clipboard clipboard-js absolute top-2 right-6 z-1"
+                          data-default-value="&lt;h1&gt;Heading 1&lt;/h1&gt;
+                  &lt;h2&gt;Heading 2&lt;/h2&gt;
+                  &lt;h3&gt;Heading 3&lt;/h3&gt;
+                  &lt;h4&gt;Heading 4&lt;/h4&gt;
+                  &lt;p&gt;This is a paragraph to demonstrate the base font size and line height. It should look readable and
+                  well-spaced.
+                  &lt;small&gt;This is some small text.&lt;/small&gt;
+                  &lt;/p&gt;">
+                          <div data-part="control">
+                              <label data-part="label" class="sr-only">Copy HTML</label>
+                              <button data-part="trigger" class="button button--circle">
+                                  <svg id="clipboard-copy" class="button__icon" stroke="currentColor" fill="none" stroke-width="2"
+                                      viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                      </path>
+                                  </svg>
+                                  <svg id="clipboard-copied" class="button__icon" stroke="currentColor"
+                                      fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+                                      width="1em" xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                          clip-rule="evenodd"></path>
+                                  </svg>
+                              </button>
+                          </div>
+                      </div>
+                      <div class="preview-code scrollbar scrollbar--sm">
+                          <pre><code data-lang="html" class="code-js">&lt;h1&gt;Heading 1&lt;/h1&gt;
+                  &lt;h2&gt;Heading 2&lt;/h2&gt;
+                  &lt;h3&gt;Heading 3&lt;/h3&gt;
+                  &lt;h4&gt;Heading 4&lt;/h4&gt;
+                  &lt;p&gt;This is a paragraph to demonstrate the base font size and line height. It should look readable and
+                  well-spaced.
+                  &lt;small&gt;This is some small text.&lt;/small&gt;
+                  &lt;/p&gt;</code></pre>
+                      </div>
+                  </div>        </div>
+          </section>
+          <hr>
+          <h3>Templates</h3>
+          <p>Typo components is available in the followng templates</p>
+          <ul>
+              <li>
+                  <h4>Corex template</h4>
+                  <p>Default corex templates. It provides the global, semantic and components tokens </p>
+                  <div class="flex flex-wrap items-center gap-4">
+                      <a href="https://github.com/netoum/corex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 128 128">
+                              <path fill="#1572B6"
+                                  d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+                              <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+                              <path fill="#fff"
+                                  d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+                              <path fill="#fff"
+                                  d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+                          </svg>
+                          CSS
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/corex-tailwind" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32">
+                              <path
+                                  d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
+                                  style="fill:#44a8b3" />
+                          </svg>
+                          Tailwind
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/corex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                              <path fill="#1ABCFE"
+                                  d="M8.55 8c0-1.289 1.019-2.333 2.275-2.333C12.082 5.667 13.1 6.71 13.1 8c0 1.289-1.018 2.333-2.275 2.333C9.57 10.333 8.55 9.29 8.55 8z" />
+                              <path fill="#0ACF83"
+                                  d="M4 12.667c0-1.289 1.019-2.334 2.275-2.334H8.55v2.334C8.55 13.955 7.531 15 6.275 15S4 13.955 4 12.667z" />
+                              <path fill="#FF7262"
+                                  d="M8.55 1v4.667h2.275c1.257 0 2.275-1.045 2.275-2.334C13.1 2.045 12.082 1 10.825 1H8.55z" />
+                              <path fill="#F24E1E"
+                                  d="M4 3.333c0 1.289 1.019 2.334 2.275 2.334H8.55V1H6.275C5.019 1 4 2.045 4 3.333z" />
+                              <path fill="#A259FF"
+                                  d="M4 8c0 1.289 1.019 2.333 2.275 2.333H8.55V5.667H6.275C5.019 5.667 4 6.71 4 8z" />
+                          </svg>
+                          Design Tokens
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                  </div>
+              </li>
+              <li>
+                  <h4>Modex template</h4>
+                  <p>Based on Corex default template, it adds dark and light mode option to the tokens </p>
+                  <div class="flex flex-wrap items-center gap-4">
+                      <a href="https://github.com/netoum/modex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 128 128">
+                              <path fill="#1572B6"
+                                  d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+                              <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+                              <path fill="#fff"
+                                  d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+                              <path fill="#fff"
+                                  d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+                          </svg>
+                          CSS
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/modex-tailwind" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32">
+                              <path
+                                  d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
+                                  style="fill:#44a8b3" />
+                          </svg>
+                          Tailwind
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/modex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                              <path fill="#1ABCFE"
+                                  d="M8.55 8c0-1.289 1.019-2.333 2.275-2.333C12.082 5.667 13.1 6.71 13.1 8c0 1.289-1.018 2.333-2.275 2.333C9.57 10.333 8.55 9.29 8.55 8z" />
+                              <path fill="#0ACF83"
+                                  d="M4 12.667c0-1.289 1.019-2.334 2.275-2.334H8.55v2.334C8.55 13.955 7.531 15 6.275 15S4 13.955 4 12.667z" />
+                              <path fill="#FF7262"
+                                  d="M8.55 1v4.667h2.275c1.257 0 2.275-1.045 2.275-2.334C13.1 2.045 12.082 1 10.825 1H8.55z" />
+                              <path fill="#F24E1E"
+                                  d="M4 3.333c0 1.289 1.019 2.334 2.275 2.334H8.55V1H6.275C5.019 1 4 2.045 4 3.333z" />
+                              <path fill="#A259FF"
+                                  d="M4 8c0 1.289 1.019 2.333 2.275 2.333H8.55V5.667H6.275C5.019 5.667 4 6.71 4 8z" />
+                          </svg>
+                          Design Tokens
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                  </div>
+              </li>
+          
+              <li>
+                  <h4>Themex template</h4>
+                  <p>Based on the Corex default template, it adds theming capabilities as well as light and dark mode options to the tokens.</p>        <div class="flex flex-wrap items-center gap-4">
+                      <a href="https://github.com/netoum/themex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 128 128">
+                              <path fill="#1572B6"
+                                  d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+                              <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+                              <path fill="#fff"
+                                  d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+                              <path fill="#fff"
+                                  d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+                          </svg>
+                          CSS
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/themex-tailwind" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32">
+                              <path
+                                  d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
+                                  style="fill:#44a8b3" />
+                          </svg>
+                          Tailwind
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/themex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                              <path fill="#1ABCFE"
+                                  d="M8.55 8c0-1.289 1.019-2.333 2.275-2.333C12.082 5.667 13.1 6.71 13.1 8c0 1.289-1.018 2.333-2.275 2.333C9.57 10.333 8.55 9.29 8.55 8z" />
+                              <path fill="#0ACF83"
+                                  d="M4 12.667c0-1.289 1.019-2.334 2.275-2.334H8.55v2.334C8.55 13.955 7.531 15 6.275 15S4 13.955 4 12.667z" />
+                              <path fill="#FF7262"
+                                  d="M8.55 1v4.667h2.275c1.257 0 2.275-1.045 2.275-2.334C13.1 2.045 12.082 1 10.825 1H8.55z" />
+                              <path fill="#F24E1E"
+                                  d="M4 3.333c0 1.289 1.019 2.334 2.275 2.334H8.55V1H6.275C5.019 1 4 2.045 4 3.333z" />
+                              <path fill="#A259FF"
+                                  d="M4 8c0 1.289 1.019 2.333 2.275 2.333H8.55V5.667H6.275C5.019 5.667 4 6.71 4 8z" />
+                          </svg>
+                          Design Tokens
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                  </div>
+              </li>
+             
+          </ul>    </section>
+          <section class="flex flex-wrap justify-between items-center gap-4 my-8">
+              <a href="/corex/documentation/components/tree-view" class="link">
+                  <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+      Tree View
+              </a>
+            </section>
+          </main>
+  </div>
+</body>
+</html>
