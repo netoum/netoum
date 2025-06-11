@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 import "@netoum/corex"
 import "./main.css";
 import { initializeSiteSearch } from "@netoum/corex/components/site-search";
