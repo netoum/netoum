@@ -40,7 +40,7 @@ jobs:
         run: npx pagefind --site "dist/corex"
 
       - name: Final build with Pagefind enabled
-        run: VITE_PAGEFIND=true npx tsc && VITE_PAGEFIND=true npx vite build
+        run:  npm run build:with-pagefind
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
