@@ -8,6 +8,7 @@
     "outDir": "dist",
     "rootDir": "src",
     "esModuleInterop": true,
+    "types": ["vite/client"],
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
