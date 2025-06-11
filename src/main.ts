@@ -11,7 +11,6 @@ if (import.meta.env.VITE_PAGEFIND === "true") {
 
       await pagefind.options({
         baseUrl: "/corex",
-        basePath: "/"
       });
       await pagefind.init();
       initializeSiteSearch(pagefind);
