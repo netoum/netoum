@@ -39,6 +39,9 @@ jobs:
       - name: Initial build (no Pagefind)
         run: npm run build
 
+      - name: Run Pagefind to generate search index
+        run: npx pagefind --site "dist/corex"
+
       - name: Final build with Pagefind enabled
         run: VITE_PAGEFIND=true npx tsc && VITE_PAGEFIND=true npx vite build
 
