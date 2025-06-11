@@ -45,9 +45,6 @@ jobs:
       - name: Run Pagefind to generate search index
         run: npx pagefind --site "dist/corex"
 
-      - name: Initial build (no Pagefind)
-        run: npm run build
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
