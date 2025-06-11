@@ -1,6 +1,25 @@
 import "@netoum/corex"
 import "./main.css";
 
+import { initializeSiteSearch } from "@netoum/corex/components/site-search";
+
+if (import.meta.env?.VITE_PAGEFIND === "true") {
+  (async () => {
+    try {
+      // @ts-ignore
+      const pagefind = await import("../dist/corex/pagefind/pagefind.js");
+
+      await pagefind.options({
+        bundlePath: "../dist/corex/pagefind/pagefind.js",
+        baseUrl: "/corex",
+      });
+      await pagefind.init();
+      initializeSiteSearch(pagefind);
+    } catch (error) {
+      console.error("Failed to initialize Pagefind:", error);
+    }
+  })();
+}
 
 document.getElementById("my-callback-dialog")
   ?.addEventListener("my-callback-dialog-event", (event) => {
