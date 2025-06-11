@@ -39,16 +39,12 @@ jobs:
         run: npm ci
         - name: Initial build (no Pagefind)
         run: npm run build
-
       - name: Run Pagefind to generate search index
         run: npx pagefind --site "dist"
-
       - name: Final build with Pagefind enabled
         run: npm run build:with-pagefind
-
       - name: Re-run Pagefind after final build
         run: npx pagefind --site "dist"
-        
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
