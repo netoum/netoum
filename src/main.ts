@@ -10,7 +10,6 @@ if (import.meta.env?.VITE_PAGEFIND === "true") {
       const pagefind = await import("../dist/corex/pagefind/pagefind.js");
 
       await pagefind.options({
-        bundlePath: "../dist/corex/pagefind/pagefind.js",
         baseUrl: "/corex"
       });
       await pagefind.init();
