@@ -1,0 +1,1838 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" /> 
+ <script>
+    try {
+      const mode = localStorage.getItem("mode") || "light";
+      const theme = localStorage.getItem("theme") || "neo";
+      const html = document.documentElement;
+      html.setAttribute("data-mode", mode);
+      html.setAttribute("data-theme", theme);
+    } catch (_) {}
+  </script>
+    <script type="application/json" data-combobox="countries">
+      [
+      { "label": "France", "code": "FR" },
+      { "label": "Belgium", "code": "BE" },
+      { "label": "Germany", "code": "DE" },
+      { "label": "Italy", "code": "IT" },
+      { "label": "Spain", "code": "ES" },
+      { "label": "Portugal", "code": "PT" },
+      { "label": "Netherlands", "code": "NL" },
+      { "label": "Switzerland", "code": "CH" },
+      { "label": "Austria", "code": "AT" },
+      { "label": "Poland", "code": "PL" },
+      { "label": "Czech Republic", "code": "CZ" },
+      { "label": "Hungary", "code": "HU" },
+      { "label": "Greece", "code": "GR" }
+      ]
+      </script>
+  <link rel="icon" type="image/svg+xml" href="/images/corex.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Combobox component- Corex</title>
+  <script type="module" crossorigin src="/assets/main-B9BZuVu2.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-CtaSoipW.css">
+</head>
+<body class="layout scrollbar">
+  <header class="layout-header">
+    <button data-open-dialog="menu" class="button button--circle lg:hidden" aria-label="Open Corex Documentation Menu">
+      <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" viewBox="0 0 24 24"
+        stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+    <div class="flex flex-wrap items-center gap-1 ">
+      <a href="/corex/documentation/introduction.html">
+        <svg class="hover:text-accent-brand-1 h-5 md:h-6 text-accent-brand" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 428 136" version="1.1">
+          <!-- C logo -->
+          <path
+            d="M70.573 1.67C33.94 1.67 4.243 31.367 4.243 68c0 36.634 29.697 66.33 66.33 66.33s66.33-29.696 66.33-66.33c0-36.633-29.697-66.33-66.33-66.33m.05 102.736c-20.117 0-36.427-16.308-36.427-36.427 0-20.118 16.31-36.427 36.427-36.427 17.055 0 31.37 11.723 35.333 27.55H89.845c-3.365-7.255-10.713-12.301-19.222-12.301-11.678 0-21.179 9.501-21.179 21.18s9.501 21.178 21.18 21.178c8.539 0 15.907-5.08 19.256-12.377h16.095c-3.939 15.864-18.269 27.624-35.352 27.624"
+            fill="currentColor" />
+  
+          <!-- O letter -->
+          <path
+            d="M181.505 108.48q-10.5 0-19.24-4.88-8.75-4.87-13.89-13.62-5.14-8.74-5.14-19.66t5.14-19.61q5.14-8.69 13.89-13.57 8.74-4.87 19.24-4.87 10.49 0 19.24 4.87 8.74 4.88 13.78 13.57 5.03 8.69 5.03 19.61t-5.09 19.66q-5.09 8.75-13.78 13.62-8.69 4.88-19.18 4.88m0-16.54q8.9 0 14.25-5.93 5.36-5.94 5.36-15.69 0-9.86-5.36-15.74-5.35-5.88-14.25-5.88-9.01 0-14.37 5.83-5.35 5.83-5.35 15.79 0 9.86 5.35 15.74 5.36 5.88 14.37 5.88"
+            fill="currentColor" />
+  
+          <!-- R letter -->
+          <path
+            d="m267.575 107.74-15.48-28.09h-4.34v28.09h-18.13V33.33h30.42q8.8 0 15 3.07 6.2 3.07 9.28 8.43 3.07 5.35 3.07 11.92 0 7.42-4.19 13.25-4.18 5.83-12.35 8.27l17.18 29.47Zm-19.82-40.92h11.23q4.98 0 7.48-2.44 2.49-2.43 2.49-6.89 0-4.24-2.49-6.67-2.5-2.44-7.48-2.44h-11.23Z"
+            fill="currentColor" />
+  
+          <!-- E letter -->
+          <path d="M316.865 47.85V62.9h24.27v13.99h-24.27v16.33h27.45v14.52h-45.58V33.33h45.58v14.52Z"
+            fill="currentColor" />
+  
+          <!-- X letter -->
+          <path
+            d="m401.665 107.74-15.16-22.79-13.36 22.79h-20.56l23.85-37.84-24.38-36.57h21.09l14.95 22.47 13.14-22.47h20.57l-23.64 37.52 24.59 36.89Z"
+            fill="currentColor" />
+        </svg>
+      </a>
+      <span class="badge badge--sm badge--brand  badge--accent">
+        0.0.4
+      </span>
+    </div>
+  
+    <nav>
+      <ul class="flex-wrap items-center flex gap-4">
+        <li>
+          <a href="/corex/documentation/introduction" aria-label="Go to Corex documentation" class="nav-link">
+            Doc
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+    <a href="https://github.com/netoum/corex" target="_blank" class="button button--circle"
+      aria-label="Visit Corex Github repository">
+      <svg class="button__icon" viewBox="0 0 98 96" width="98" height="96" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+          fill="currentColor" />
+      </svg>
+    </a>
+  
+  </header>
+  
+  <div id="menu" class="dialog dialog--side dialog-js">
+    <div data-part="backdrop"></div>
+    <div data-part="positioner">
+      <div data-part="content">
+        <button data-part="close-trigger" class="button button--circle  button--sm" aria-label="Close menu">
+          <svg class="button__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+  
+        <nav
+          class="h-full overflow-y-auto scrollbar scrollbar--sm z-20 scrollbar scrollbar--sm p-4 pb-24 mb-24 mt-(--height-ui)"
+          role="navigation" aria-labelledby="sidebar-title">
+  
+          <div class="flex flex-wrap gap-2">
+            <div id="mode-switcher-header" class="switcher switcher-js switcher--duo switcher--circle"
+              data-default-value="light" data-key="mode" data-on-value-change="update-mode-switcher">
+              <div data-part="root">
+                <button data-part="item" data-value="light" aria-label="Switch to light color mode">
+                  <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                  </svg>
+                </button>
+                <button data-part="item" data-value="dark" aria-label="Switch to dark color mode">
+                  <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div id="theme-switcher-header" class="switcher switcher-js switcher--sm" data-default-value="neo"
+              data-key="theme" data-on-value-change="update-theme-switcher-side">
+              <div data-part="root">
+                <button data-part="item" data-value="neo"
+                  class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                  aria-label="Switch to Neo theme">
+                  Neo
+                </button>
+                <button data-part="item" data-value="revo"
+                  class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                  aria-label="Switch to Revo theme">
+                  Revo
+                </button>
+                <button data-part="item" data-value="uno"
+                  class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+                  aria-label="Switch to Uno theme">
+                  Uno
+                </button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="site-search-js site-search my-4" data-placeholder="Search documentation"  data-max-results="30" data-no-results="No results. Try another keyword.">
+            <div data-part="root">
+              <div data-part="control">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="site-search__icon">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+                <input data-part="input" />
+              </div>
+              <div data-part="positioner">
+                <ul data-part="content" class="scrollbar">
+  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <h2 id="sidebar-title" class="sr-only">Documentation Navigation</h2>
+          <h5 class="nav-title">Getting Started</h5>
+  
+          <ul class="nav-list">
+            <li><a href="/corex/documentation/introduction" class="nav-link" >Introduction</a></li>
+            <li><a href="/corex/documentation/installation" class="nav-link" >Installation</a></li>
+            <li><a href="/corex/documentation/templates" class="nav-link" >Templates</a></li>
+            <li><a href="/corex/documentation/theming" class="nav-link" >Theming</a></li>
+            <li><a href="/corex/documentation/starters" class="nav-link" >Starters</a></li>
+          </ul>
+  
+  
+          <h5 class="nav-title">Tokens</h5>
+  
+          <ul class="nav-list">
+            <li><a href="/corex/documentation/tokens/color" class="nav-link" >Color</a></li>
+          </ul>
+  
+          <h5 class="nav-title">Components</h5>
+  
+  
+          <ul class="nav-list">
+            <li><a href="/corex/documentation/components/accordion" class="nav-link" >Accordion</a></li>
+            <li><a href="/corex/documentation/components/avatar" class="nav-link" >Avatar</a></li>
+            <li><a href="/corex/documentation/components/badge" class="nav-link" >Badge</a></li>
+            <li><a href="/corex/documentation/components/button" class="nav-link" >Button</a></li>
+            <li><a href="/corex/documentation/components/checkbox" class="nav-link" >Checkbox</a></li>
+            <li><a href="/corex/documentation/components/clipboard" class="nav-link" >Clipboard</a></li>
+            <li><a href="/corex/documentation/components/code" class="nav-link" >Code</a></li>
+            <li><a href="/corex/documentation/components/collapsible" class="nav-link" >Collapsible</a></li>
+            <li><a href="/corex/documentation/components/combobox" class="nav-link" data-selected>Combobox</a></li>
+            <li><a href="/corex/documentation/components/date-picker" class="nav-link" >Date Picker</a></li>
+            <li><a href="/corex/documentation/components/dialog" class="nav-link" >Dialog</a></li>
+            <li><a href="/corex/documentation/components/link" class="nav-link" >Link</a></li>
+            <li><a href="/corex/documentation/components/listbox" class="nav-link" >Listbox</a></li>
+            <li><a href="/corex/documentation/components/menu" class="nav-link" >Menu</a></li>
+            <li><a href="/corex/documentation/components/site-search" class="nav-link" >Site Search</a></li>
+            <li><a href="/corex/documentation/components/scrollbar" class="nav-link" >Scrollbar</a></li>
+            <li><a href="/corex/documentation/components/switch" class="nav-link" >Switch</a></li>
+            <li><a href="/corex/documentation/components/switcher" class="nav-link" >Switcher</a></li>
+            <li><a href="/corex/documentation/components/tabs" class="nav-link" >Tabs</a></li>
+            <li><a href="/corex/documentation/components/timer" class="nav-link" >Timer</a></li>
+            <li><a href="/corex/documentation/components/toggle-group" class="nav-link" >Toggle Group</a></li>
+            <li><a href="/corex/documentation/components/tree-view" class="nav-link" >Tree View</a></li>
+            <li><a href="/corex/documentation/components/typo" class="nav-link" >Typo</a></li>
+  
+          </ul>
+          <div class="pt-12">
+            <a class="link link--font-brand" href="https://netoum.com" target="_blank">Made by Netoum
+              <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <title>Opens in a new window</title>
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25">
+                </path>
+              </svg>
+            </a>
+            <p>MIT License</p>
+          </div>
+  
+        </nav>
+  
+  
+      </div>
+    </div>
+  </div>  <div class="layout-wrapper">
+    <nav class="layout-side h-full overflow-y-auto scrollbar scrollbar--sm z-20 mt-6" role="navigation"
+      aria-labelledby="sidebar-title">
+    
+      <div class="flex flex-wrap gap-2">
+        <div id="mode-switcher-side" class="switcher switcher-js switcher--duo switcher--circle" data-default-value="light"
+          data-key="mode" data-on-value-change="update-mode-switcher">
+          <div data-part="root">
+            <button data-part="item" data-value="light" aria-label="Switch to light color mode">
+              <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+              </svg>
+            </button>
+            <button data-part="item" data-value="dark" aria-label="Switch to dark color mode">
+              <svg class="item__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="theme-switcher-side" class="switcher switcher-js switcher--sm" data-default-value="neo" data-key="theme"
+          data-on-value-change="update-theme-switcher-header">
+          <div data-part="root">
+            <button data-part="item" data-value="neo"
+              class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+              aria-label="Switch to Neo theme">
+              Neo
+            </button>
+            <button data-part="item" data-value="revo"
+              class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+              aria-label="Switch to Revo theme">
+              Revo
+            </button>
+            <button data-part="item" data-value="uno"
+              class="data-[state=on]:bg-accent-brand data-[state=on]:text-accent-contrast data-[state=on]:hover:bg-accent-brand-1 data-[state=on]:active:bg-accent-brand-2"
+              aria-label="Switch to Uno theme">
+              Uno
+            </button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="site-search-js site-search my-4" data-placeholder="Search documentation" data-max-results="30" data-no-results="No results. Try another keyword.">
+        <div data-part="root">
+          <div data-part="control">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              class="site-search__icon">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <input data-part="input" />
+          </div>
+          <div data-part="positioner">
+            <ul data-part="content" class="scrollbar">
+    
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+      <h2 id="sidebar-title" class="sr-only">Documentation Navigation</h2>
+      <h5 class="nav-title">Getting Started</h5>
+    
+      <ul class="nav-list">
+        <li><a href="/corex/documentation/introduction" class="nav-link" >Introduction</a></li>
+        <li><a href="/corex/documentation/installation" class="nav-link" >Installation</a></li>
+        <li><a href="/corex/documentation/templates" class="nav-link" >Templates</a></li>
+        <li><a href="/corex/documentation/theming" class="nav-link" >Theming</a></li>
+        <li><a href="/corex/documentation/starters" class="nav-link" >Starters</a></li>
+      </ul>
+    
+      <h5 class="nav-title">Tokens</h5>
+    
+      <ul class="nav-list">
+        <li><a href="/corex/documentation/tokens/color" class="nav-link" >Color</a></li>
+      </ul>
+    
+    
+      <h5 class="nav-title">Components</h5>
+    
+      <ul class="nav-list">
+        <li><a href="/corex/documentation/components/accordion" class="nav-link" >Accordion</a></li>
+        <li><a href="/corex/documentation/components/avatar" class="nav-link" >Avatar</a></li>
+        <li><a href="/corex/documentation/components/badge" class="nav-link" >Badge</a></li>
+        <li><a href="/corex/documentation/components/button" class="nav-link" >Button</a></li>
+        <li><a href="/corex/documentation/components/checkbox" class="nav-link" >Checkbox</a></li>
+        <li><a href="/corex/documentation/components/clipboard" class="nav-link" >Clipboard</a></li>
+        <li><a href="/corex/documentation/components/code" class="nav-link" >Code</a></li>
+        <li><a href="/corex/documentation/components/collapsible" class="nav-link" >Collapsible</a></li>
+        <li><a href="/corex/documentation/components/combobox" class="nav-link" data-selected>Combobox</a></li>
+        <li><a href="/corex/documentation/components/date-picker" class="nav-link" >Date Picker</a></li>
+        <li><a href="/corex/documentation/components/dialog" class="nav-link" >Dialog</a></li>
+        <li><a href="/corex/documentation/components/link" class="nav-link" >Link</a></li>
+        <li><a href="/corex/documentation/components/listbox" class="nav-link" >Listbox</a></li>
+        <li><a href="/corex/documentation/components/menu" class="nav-link" >Menu</a></li>
+        <li><a href="/corex/documentation/components/site-search" class="nav-link" >Site Search</a></li>
+        <li><a href="/corex/documentation/components/scrollbar" class="nav-link" >Scrollbar</a></li>
+        <li><a href="/corex/documentation/components/switch" class="nav-link" >Switch</a></li>
+        <li><a href="/corex/documentation/components/switcher" class="nav-link" >Switcher</a></li>
+        <li><a href="/corex/documentation/components/tabs" class="nav-link" >Tabs</a></li>
+        <li><a href="/corex/documentation/components/timer" class="nav-link" >Timer</a></li>
+        <li><a href="/corex/documentation/components/toggle-group" class="nav-link" >Toggle Group</a></li>
+        <li><a href="/corex/documentation/components/tree-view" class="nav-link" >Tree View</a></li>
+        <li><a href="/corex/documentation/components/typo" class="nav-link" >Typo</a></li>
+    
+      </ul>
+    
+      <div class="pt-12">
+        <a class="link link--font-brand" href="https://netoum.com" target="_blank">Made by Netoum
+          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <title>Opens in a new window</title>
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25">
+            </path>
+          </svg>
+        </a>
+        <p>MIT License</p>
+      </div>
+    </nav>    
+      <main class="layout-main scrollbar">
+          <section>
+              <h1>Combobox</h1>
+              <h2>A pure vanilla JS implementation of <a href="https://zagjs.com/components/react/combobox" target="_blank"
+                      class="link ">Zag JS Combobox
+                      <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                      stroke="currentColor">
+                      <title>Opens in a new window</title>
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                      </svg>            </a></h2>
+          </section>
+          <hr id="anatomy">
+          <section>
+              <h3>Anatomy</h3>
+              <p>The Combobox component consists of the following <code class="code-js" data-lang="html">data-part</code></p>
+              <div class="flex flex-wrap gap-4 ">
+                  <code class="code-js">root</code>
+                  <code class="code-js">label</code>
+                  <code class="code-js">control</code>
+                  <code class="code-js">title</code>
+                  <code class="code-js">input</code>
+                  <code class="code-js">clear-trigger</code>
+                  <code class="code-js">trigger</code>
+                  <code class="code-js">positioner</code>
+                  <code class="code-js">content</code>
+                  <code class="code-js">item</code>
+              </div>
+              <div class="preview">
+                  <div id="combobox-anatomy" class="preview-display">
+                      <div class="combobox-js combobox" data-placeholder="Type or select currency">
+                          <div data-part="root">
+                              <label data-part="label">Your Currency</label>
+                              <div data-part="control">
+                                  <input data-part="input" />
+                                  <button data-part="clear-trigger">
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                          stroke-width="1.5" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                                      </svg>
+                                  </button>
+                                  <button data-part="trigger">
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                          stroke-width="1.5" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                      </svg>
+                                  </button>
+                              </div>
+                              <div data-part="positioner">
+                                  <ul data-part="content" class="scrollbar">
+                                      <li data-part="item" data-code="USD" data-label="US Dollar">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          US Dollar
+                                      </li>
+                                      <li data-part="item" data-code="EURO" data-label="Euro">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          Euro
+                                      </li>
+                                      <li data-part="item" data-code="GBP" data-label="British Pound">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          British Pound
+                                      </li>
+                                      <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          Japanese Yen
+                                      </li>
+                                      <li data-part="item" data-code="AL" data-label="Indian Rupee">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          Indian Rupee
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="relative w-full">
+                      <div id="clipboard" data-part="root" class="clipboard clipboard-js absolute top-2 right-6 z-1"
+                          data-default-value="&lt;div class&#x3D;&quot;combobox-js combobox&quot; data-placeholder&#x3D;&quot;Type or select currency&quot;&gt;
+                  &lt;div data-part&#x3D;&quot;root&quot;&gt;
+                  &lt;label data-part&#x3D;&quot;label&quot;&gt;Your Currency&lt;/label&gt;
+                  &lt;div data-part&#x3D;&quot;control&quot;&gt;
+                  &lt;input data-part&#x3D;&quot;input&quot;&gt;
+                  &lt;button data-part&#x3D;&quot;clear-trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;button data-part&#x3D;&quot;trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div data-part&#x3D;&quot;positioner&quot;&gt;
+                  &lt;ul data-part&#x3D;&quot;content&quot; class&#x3D;&quot;scrollbar&quot;&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;USD&quot; data-label&#x3D;&quot;US Dollar&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  US Dollar
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;EURO&quot; data-label&#x3D;&quot;Euro&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Euro
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;GBP&quot; data-label&#x3D;&quot;British Pound&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  British Pound
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;YEN&quot; data-label&#x3D;&quot;Japanese Yen&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Japanese Yen
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;AL&quot; data-label&#x3D;&quot;Indian Rupee&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Indian Rupee
+                  &lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;">
+                          <div data-part="control">
+                              <label data-part="label" class="sr-only">Copy HTML</label>
+                              <button data-part="trigger" class="button button--circle">
+                                  <svg id="clipboard-copy" class="button__icon" stroke="currentColor" fill="none" stroke-width="2"
+                                      viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                      </path>
+                                  </svg>
+                                  <svg id="clipboard-copied" class="button__icon" stroke="currentColor"
+                                      fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+                                      width="1em" xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                          clip-rule="evenodd"></path>
+                                  </svg>
+                              </button>
+                          </div>
+                      </div>
+                      <div class="preview-code scrollbar scrollbar--sm">
+                          <pre><code data-lang="html" class="code-js">&lt;div class&#x3D;&quot;combobox-js combobox&quot; data-placeholder&#x3D;&quot;Type or select currency&quot;&gt;
+                  &lt;div data-part&#x3D;&quot;root&quot;&gt;
+                  &lt;label data-part&#x3D;&quot;label&quot;&gt;Your Currency&lt;/label&gt;
+                  &lt;div data-part&#x3D;&quot;control&quot;&gt;
+                  &lt;input data-part&#x3D;&quot;input&quot;&gt;
+                  &lt;button data-part&#x3D;&quot;clear-trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;button data-part&#x3D;&quot;trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div data-part&#x3D;&quot;positioner&quot;&gt;
+                  &lt;ul data-part&#x3D;&quot;content&quot; class&#x3D;&quot;scrollbar&quot;&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;USD&quot; data-label&#x3D;&quot;US Dollar&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  US Dollar
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;EURO&quot; data-label&#x3D;&quot;Euro&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Euro
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;GBP&quot; data-label&#x3D;&quot;British Pound&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  British Pound
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;YEN&quot; data-label&#x3D;&quot;Japanese Yen&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Japanese Yen
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;AL&quot; data-label&#x3D;&quot;Indian Rupee&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Indian Rupee
+                  &lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;</code></pre>
+                      </div>
+                  </div>        </div>
+              <p>If you have a lot of data, you can also load the collection with a json file</p>
+              <p>You first need to add a inline script including the collection as well as the collection name</p>
+              <pre>
+                  <code data-lang="html" class="code-js">&lt;script type=&quot;application/json&quot; data-combobox=&quot;countries&quot;&gt;
+                      [
+                      { &quot;label&quot;: &quot;France&quot;, &quot;code&quot;: &quot;FR&quot; },
+                      { &quot;label&quot;: &quot;Belgium&quot;, &quot;code&quot;: &quot;BE&quot; },
+                      { &quot;label&quot;: &quot;Germany&quot;, &quot;code&quot;: &quot;DE&quot; },
+                      { &quot;label&quot;: &quot;Italy&quot;, &quot;code&quot;: &quot;IT&quot; },
+                      { &quot;label&quot;: &quot;Spain&quot;, &quot;code&quot;: &quot;ES&quot; },
+                      { &quot;label&quot;: &quot;Portugal&quot;, &quot;code&quot;: &quot;PT&quot; },
+                      { &quot;label&quot;: &quot;Netherlands&quot;, &quot;code&quot;: &quot;NL&quot; },
+                      { &quot;label&quot;: &quot;Switzerland&quot;, &quot;code&quot;: &quot;CH&quot; },
+                      { &quot;label&quot;: &quot;Austria&quot;, &quot;code&quot;: &quot;AT&quot; },
+                      { &quot;label&quot;: &quot;Poland&quot;, &quot;code&quot;: &quot;PL&quot; },
+                      { &quot;label&quot;: &quot;Czech Republic&quot;, &quot;code&quot;: &quot;CZ&quot; },
+                      { &quot;label&quot;: &quot;Hungary&quot;, &quot;code&quot;: &quot;HU&quot; },
+                      { &quot;label&quot;: &quot;Greece&quot;, &quot;code&quot;: &quot;GR&quot; }
+                      ]
+                      &lt;/script&gt;
+                  </code>
+              </pre>
+              <div class="preview">
+                  <div id="combobox-anatomy-json" class="preview-display">
+                      <div class="combobox-js combobox" data-json="countries" data-placeholder="Type or select country">
+                          <div data-part="root">
+                              <label data-part="label">Your Country</label>
+                              <div data-part="control">
+                                  <input data-part="input" />
+                                  <button data-part="clear-trigger">
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                          stroke-width="1.5" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                                      </svg>
+                                  </button>
+                                  <button data-part="trigger">
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                          stroke-width="1.5" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                      </svg>
+                                  </button>
+                              </div>
+                              <div data-part="positioner">
+                                  <ul data-part="content" class="scrollbar">
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="relative w-full">
+                      <div id="clipboard" data-part="root" class="clipboard clipboard-js absolute top-2 right-6 z-1"
+                          data-default-value="&lt;div class&#x3D;&quot;combobox-js combobox&quot; data-json&#x3D;&quot;countries&quot; data-placeholder&#x3D;&quot;Type or select country&quot;&gt;
+                  &lt;div data-part&#x3D;&quot;root&quot;&gt;
+                  &lt;label data-part&#x3D;&quot;label&quot;&gt;Your Country&lt;/label&gt;
+                  &lt;div data-part&#x3D;&quot;control&quot;&gt;
+                  &lt;input data-part&#x3D;&quot;input&quot;&gt;
+                  &lt;button data-part&#x3D;&quot;clear-trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;button data-part&#x3D;&quot;trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div data-part&#x3D;&quot;positioner&quot;&gt;
+                  &lt;ul data-part&#x3D;&quot;content&quot; class&#x3D;&quot;scrollbar&quot;&gt;
+                  &lt;/ul&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;">
+                          <div data-part="control">
+                              <label data-part="label" class="sr-only">Copy HTML</label>
+                              <button data-part="trigger" class="button button--circle">
+                                  <svg id="clipboard-copy" class="button__icon" stroke="currentColor" fill="none" stroke-width="2"
+                                      viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                      </path>
+                                  </svg>
+                                  <svg id="clipboard-copied" class="button__icon" stroke="currentColor"
+                                      fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+                                      width="1em" xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                          clip-rule="evenodd"></path>
+                                  </svg>
+                              </button>
+                          </div>
+                      </div>
+                      <div class="preview-code scrollbar scrollbar--sm">
+                          <pre><code data-lang="html" class="code-js">&lt;div class&#x3D;&quot;combobox-js combobox&quot; data-json&#x3D;&quot;countries&quot; data-placeholder&#x3D;&quot;Type or select country&quot;&gt;
+                  &lt;div data-part&#x3D;&quot;root&quot;&gt;
+                  &lt;label data-part&#x3D;&quot;label&quot;&gt;Your Country&lt;/label&gt;
+                  &lt;div data-part&#x3D;&quot;control&quot;&gt;
+                  &lt;input data-part&#x3D;&quot;input&quot;&gt;
+                  &lt;button data-part&#x3D;&quot;clear-trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;button data-part&#x3D;&quot;trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div data-part&#x3D;&quot;positioner&quot;&gt;
+                  &lt;ul data-part&#x3D;&quot;content&quot; class&#x3D;&quot;scrollbar&quot;&gt;
+                  &lt;/ul&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;</code></pre>
+                      </div>
+                  </div>        </div>
+          </section>
+          <hr id="attribute">
+          <section>
+              <h3>Data attributes</h3>
+              <p>Each combobox can be set with different settings with the following data-attribute.</p>
+              <div class="preview">
+                  <div id="combobox-attribute" class="preview-display">
+                      <div class="combobox-js combobox" data-default-open="true"
+                          data-allow-custom-value="true" data-placeholder="Type or select currency">
+                          <div data-part="root">
+                              <label data-part="label">Your Currency</label>
+                              <div data-part="control">
+                                  <input data-part="input" />
+                                  <button data-part="clear-trigger">
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                          stroke-width="1.5" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                                      </svg>
+                                  </button>
+                                  <button data-part="trigger">
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                          stroke-width="1.5" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                      </svg>
+                                  </button>
+                              </div>
+                              <div data-part="positioner">
+                                  <ul data-part="content" class="scrollbar">
+                                      <li data-part="item" data-code="USD" data-label="US Dollar">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          US Dollar
+                                      </li>
+                                      <li data-part="item" data-code="EURO" data-label="Euro">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          Euro
+                                      </li>
+                                      <li data-part="item" data-code="GBP" data-label="British Pound">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          British Pound
+                                      </li>
+                                      <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          Japanese Yen
+                                      </li>
+                                      <li data-part="item" data-code="AL" data-label="Indian Rupee">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          Indian Rupee
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="relative w-full">
+                      <div id="clipboard" data-part="root" class="clipboard clipboard-js absolute top-2 right-6 z-1"
+                          data-default-value="&lt;div class&#x3D;&quot;combobox-js combobox&quot; data-default-open&#x3D;&quot;true&quot; data-allow-custom-value&#x3D;&quot;true&quot; data-placeholder&#x3D;&quot;Type or select currency&quot;&gt;
+                  &lt;div data-part&#x3D;&quot;root&quot;&gt;
+                  &lt;label data-part&#x3D;&quot;label&quot;&gt;Your Currency&lt;/label&gt;
+                  &lt;div data-part&#x3D;&quot;control&quot;&gt;
+                  &lt;input data-part&#x3D;&quot;input&quot;&gt;
+                  &lt;button data-part&#x3D;&quot;clear-trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;button data-part&#x3D;&quot;trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div data-part&#x3D;&quot;positioner&quot;&gt;
+                  &lt;ul data-part&#x3D;&quot;content&quot; class&#x3D;&quot;scrollbar&quot;&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;USD&quot; data-label&#x3D;&quot;US Dollar&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  US Dollar
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;EURO&quot; data-label&#x3D;&quot;Euro&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Euro
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;GBP&quot; data-label&#x3D;&quot;British Pound&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  British Pound
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;YEN&quot; data-label&#x3D;&quot;Japanese Yen&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Japanese Yen
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;AL&quot; data-label&#x3D;&quot;Indian Rupee&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Indian Rupee
+                  &lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;">
+                          <div data-part="control">
+                              <label data-part="label" class="sr-only">Copy HTML</label>
+                              <button data-part="trigger" class="button button--circle">
+                                  <svg id="clipboard-copy" class="button__icon" stroke="currentColor" fill="none" stroke-width="2"
+                                      viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                      </path>
+                                  </svg>
+                                  <svg id="clipboard-copied" class="button__icon" stroke="currentColor"
+                                      fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+                                      width="1em" xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                          clip-rule="evenodd"></path>
+                                  </svg>
+                              </button>
+                          </div>
+                      </div>
+                      <div class="preview-code scrollbar scrollbar--sm">
+                          <pre><code data-lang="html" class="code-js">&lt;div class&#x3D;&quot;combobox-js combobox&quot; data-default-open&#x3D;&quot;true&quot; data-allow-custom-value&#x3D;&quot;true&quot; data-placeholder&#x3D;&quot;Type or select currency&quot;&gt;
+                  &lt;div data-part&#x3D;&quot;root&quot;&gt;
+                  &lt;label data-part&#x3D;&quot;label&quot;&gt;Your Currency&lt;/label&gt;
+                  &lt;div data-part&#x3D;&quot;control&quot;&gt;
+                  &lt;input data-part&#x3D;&quot;input&quot;&gt;
+                  &lt;button data-part&#x3D;&quot;clear-trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;button data-part&#x3D;&quot;trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div data-part&#x3D;&quot;positioner&quot;&gt;
+                  &lt;ul data-part&#x3D;&quot;content&quot; class&#x3D;&quot;scrollbar&quot;&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;USD&quot; data-label&#x3D;&quot;US Dollar&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  US Dollar
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;EURO&quot; data-label&#x3D;&quot;Euro&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Euro
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;GBP&quot; data-label&#x3D;&quot;British Pound&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  British Pound
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;YEN&quot; data-label&#x3D;&quot;Japanese Yen&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Japanese Yen
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;AL&quot; data-label&#x3D;&quot;Indian Rupee&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Indian Rupee
+                  &lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;</code></pre>
+                      </div>
+                  </div>        </div>
+              <div class="table-wrapper scrollbar scrollbar--sm">
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Data attribute</th>
+                              <th>Type / Options</th>
+                              <th>Description</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td><code class="code-js select-all">id</code></td>
+                              <td>string</td>
+                              <td>The unique id of the component. Default generated if none is provided</td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-json</code></td>
+                              <td>string</td>
+                              <td>The name of the collection loaded as a inline script
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-open</code></td>
+                              <td>boolean</td>
+                              <td>The controlled open state of the combobox
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-default-open</code></td>
+                              <td>boolean</td>
+                              <td>The initial open state of the combobox when rendered. Use when you don't need to control the
+                                  open state of the combobox.</td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-input-value</code></td>
+                              <td>string</td>
+                              <td>The controlled value of the combobox's input
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-default-input-value</code></td>
+                              <td>string</td>
+                              <td>The initial value of the combobox's input when rendered. Use when you don't need to control
+                                  the value of the combobox's input.
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-dir</code></td>
+                              <td>ltr | rtl</td>
+                              <td>The orientation of the combobox. Can be `ltr` or `rtl`</td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-name</code></td>
+                              <td>string</td>
+                              <td>The `name` attribute of the combobox's input. Useful for form submission
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-form</code></td>
+                              <td>string</td>
+                              <td>The associate form of the combobox.
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-disabled</code></td>
+                              <td>boolean</td>
+                              <td>Whether the combobox is disabled
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-read-only</code></td>
+                              <td>boolean</td>
+                              <td>Whether the combobox is readonly. This puts the combobox in a "non-editable" mode but the
+                                  user can still interact with it
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-invalid</code></td>
+                              <td>boolean</td>
+                              <td>Whether the combobox is invalid
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-required</code></td>
+                              <td>boolean</td>
+                              <td>Whether the combobox is required
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-placeholder</code></td>
+                              <td>boolean</td>
+                              <td>The placeholder text of the combobox's input
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-default-highlighted-value</code></td>
+                              <td>string</td>
+                              <td>The initial highlighted value of the combobox when rendered. Use when you don't need to
+                                  control the highlighted value of the combobox.
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-highlighted-value</code></td>
+                              <td>string</td>
+                              <td>The controlled highlighted value of the combobox
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-value</code></td>
+                              <td>string list</td>
+                              <td>The controlled value of the combobox's selected items
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data--default-value</code></td>
+                              <td>string list</td>
+                              <td>The initial value of the combobox's selected items when rendered. Use when you don't need to
+                                  control the value of the combobox's selected items.
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-input-behavior                        </code></td>
+                              <td>"autohighlight" | "autocomplete" | "none"
+                              </td>
+                              <td>Defines the auto-completion behavior of the combobox. - `autohighlight`: The first focused
+                                  item is highlighted as the user types - `autocomplete`: Navigating the listbox with the
+                                  arrow keys selects the item and the input is updated
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-selectionBehavior</code></td>
+                              <td>"clear" | "replace" | "preserve"
+                              </td>
+                              <td>The behavior of the combobox input when an item is selected - `replace`: The selected item
+                                  string is set as the input value - `clear`: The input value is cleared - `preserve`: The
+                                  input value is preserved
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-auto-focus</code></td>
+                              <td>boolean</td>
+                              <td>Whether to autofocus the input on mount
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-open-on-click</code></td>
+                              <td>boolean</td>
+                              <td>Whether to open the combobox popup on initial click on the input
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-open-on-change</code></td>
+                              <td>boolean</td>
+                              <td>Whether to open the combobox popup on initial click on the input
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-open-on-click</code></td>
+                              <td>boolean</td>
+                              <td>Whether to show the combobox when the input value changes
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-allow-custom-value</code></td>
+                              <td>boolean</td>
+                              <td>Whether to allow typing custom values in the input
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-loop-focus</code></td>
+                              <td>boolean</td>
+                              <td>Whether to loop the keyboard navigation through the items
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-multiple</code></td>
+                              <td>boolean</td>
+                              <td>Whether to allow multiple selection. **Good to know:** When `multiple` is `true`, the
+                                  `selectionBehavior` is automatically set to `clear`. It is recommended to render the
+                                  selected items in a separate container.
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-close-on-select</code></td>
+                              <td>boolean</td>
+                              <td>Whether to close the combobox when an item is selected.
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-composite</code></td>
+                              <td>boolean</td>
+                              <td>Whether the combobox is a composed with other composite widgets like tabs
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-disable-layer</code></td>
+                              <td>boolean</td>
+                              <td>Whether to disable registering this a dismissable layer
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </section>
+          <hr id="callback">
+          <section>
+              <h3>Callbacks</h3>
+              <p> Each combobox component can receive callbacks that can be used to respond to user interaction with custom
+                  behavior.</p>
+              <p>You must add a custom id and an event listener for your event name</p>
+              <pre><code class="code-js" data-lang="js">
+                  document.getElementById("my-callback-combobox")
+                  ?.addEventListener("my-callback-combobox-event", (event) => {
+                    console.log("Received event:", (event as CustomEvent).detail);
+                  });
+              </code></pre>
+              <div class="preview">
+                  <div id="combobox-callback" class="preview-display">
+                      <div id="my-callback-combobox" class="combobox-js combobox" data-placeholder="Type or select currency"
+                          data-on-input-value-change="my-callback-combobox-event">
+                          <div data-part="root">
+                              <label data-part="label">Your Currency</label>
+                              <div data-part="control">
+                                  <input data-part="input" />
+                                  <button data-part="clear-trigger">
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                          stroke-width="1.5" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                                      </svg>
+                                  </button>
+                                  <button data-part="trigger">
+                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                          stroke-width="1.5" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                      </svg>
+                                  </button>
+                              </div>
+                              <div data-part="positioner">
+                                  <ul data-part="content" class="scrollbar">
+                                      <li data-part="item" data-code="USD" data-label="US Dollar">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          US Dollar
+                                      </li>
+                                      <li data-part="item" data-code="EURO" data-label="Euro">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          Euro
+                                      </li>
+                                      <li data-part="item" data-code="GBP" data-label="British Pound">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          British Pound
+                                      </li>
+                                      <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          Japanese Yen
+                                      </li>
+                                      <li data-part="item" data-code="AL" data-label="Indian Rupee">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                          </svg>
+                                          Indian Rupee
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="relative w-full">
+                      <div id="clipboard" data-part="root" class="clipboard clipboard-js absolute top-2 right-6 z-1"
+                          data-default-value="&lt;div id&#x3D;&quot;my-callback-combobox&quot; class&#x3D;&quot;combobox-js combobox&quot; data-placeholder&#x3D;&quot;Type or select currency&quot; data-on-input-value-change&#x3D;&quot;my-callback-combobox-event&quot;&gt;
+                  &lt;div data-part&#x3D;&quot;root&quot;&gt;
+                  &lt;label data-part&#x3D;&quot;label&quot;&gt;Your Currency&lt;/label&gt;
+                  &lt;div data-part&#x3D;&quot;control&quot;&gt;
+                  &lt;input data-part&#x3D;&quot;input&quot;&gt;
+                  &lt;button data-part&#x3D;&quot;clear-trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;button data-part&#x3D;&quot;trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div data-part&#x3D;&quot;positioner&quot;&gt;
+                  &lt;ul data-part&#x3D;&quot;content&quot; class&#x3D;&quot;scrollbar&quot;&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;USD&quot; data-label&#x3D;&quot;US Dollar&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  US Dollar
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;EURO&quot; data-label&#x3D;&quot;Euro&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Euro
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;GBP&quot; data-label&#x3D;&quot;British Pound&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  British Pound
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;YEN&quot; data-label&#x3D;&quot;Japanese Yen&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Japanese Yen
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;AL&quot; data-label&#x3D;&quot;Indian Rupee&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Indian Rupee
+                  &lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;">
+                          <div data-part="control">
+                              <label data-part="label" class="sr-only">Copy HTML</label>
+                              <button data-part="trigger" class="button button--circle">
+                                  <svg id="clipboard-copy" class="button__icon" stroke="currentColor" fill="none" stroke-width="2"
+                                      viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                      </path>
+                                  </svg>
+                                  <svg id="clipboard-copied" class="button__icon" stroke="currentColor"
+                                      fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+                                      width="1em" xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                          clip-rule="evenodd"></path>
+                                  </svg>
+                              </button>
+                          </div>
+                      </div>
+                      <div class="preview-code scrollbar scrollbar--sm">
+                          <pre><code data-lang="html" class="code-js">&lt;div id&#x3D;&quot;my-callback-combobox&quot; class&#x3D;&quot;combobox-js combobox&quot; data-placeholder&#x3D;&quot;Type or select currency&quot; data-on-input-value-change&#x3D;&quot;my-callback-combobox-event&quot;&gt;
+                  &lt;div data-part&#x3D;&quot;root&quot;&gt;
+                  &lt;label data-part&#x3D;&quot;label&quot;&gt;Your Currency&lt;/label&gt;
+                  &lt;div data-part&#x3D;&quot;control&quot;&gt;
+                  &lt;input data-part&#x3D;&quot;input&quot;&gt;
+                  &lt;button data-part&#x3D;&quot;clear-trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;button data-part&#x3D;&quot;trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div data-part&#x3D;&quot;positioner&quot;&gt;
+                  &lt;ul data-part&#x3D;&quot;content&quot; class&#x3D;&quot;scrollbar&quot;&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;USD&quot; data-label&#x3D;&quot;US Dollar&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  US Dollar
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;EURO&quot; data-label&#x3D;&quot;Euro&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Euro
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;GBP&quot; data-label&#x3D;&quot;British Pound&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  British Pound
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;YEN&quot; data-label&#x3D;&quot;Japanese Yen&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Japanese Yen
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;AL&quot; data-label&#x3D;&quot;Indian Rupee&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Indian Rupee
+                  &lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;</code></pre>
+                      </div>
+                  </div>        </div>
+              <div class="notification">
+                  <p>Open your browser's console to see the events received when you open or close the above combobox</p>
+              </div>
+              <div class="table-wrapper scrollbar scrollbar--sm">
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Data attribute</th>
+                              <th>Type / Options</th>
+                              <th>Description</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td><code class="code-js select-all">data-on-input-value-change</code></td>
+                              <td>string</td>
+                              <td>Event name to send when the input's value changes
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-on-value-change</code></td>
+                              <td>string</td>
+                              <td>Event name to send when a new item is selected
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-on-highlight-change</code></td>
+                              <td>string</td>
+                              <td>Event name to send when an item is highlighted using the pointer or keyboard navigation.
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-on-select</code></td>
+                              <td>string</td>
+                              <td>Event name to send when an item is selected
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-on-open-change</code></td>
+                              <td>string</td>
+                              <td>Event name to send when the popup is opened
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-on-on-pointerdown-outside</code></td>
+                              <td>string</td>
+                              <td>Event name to send when the pointer is pressed down outside the component
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-on-focus-outside</code></td>
+                              <td>string</td>
+                              <td>Event name to send when the focus is moved outside the component
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><code class="code-js select-all">data-on-interact-outside</code></td>
+                              <td>string</td>
+                              <td>Event name to send when an interaction happens outside the component
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </section>
+          <hr id="form">
+          <section>
+              <h3>Use with Form</h3>
+              <p>Combobox can be used inside a form</p>
+              <p>You must set the id of the form and the name of the Combobox</p>
+              <div class="flex flex-wrap gap-4 ">
+                  <code class="code-js">data-form="form-id"</code>
+                  <code class="code-js">data-name="combobox-name"</code>
+              </div>
+              <div class="preview">
+                  <div id="combobox-form" class="preview-display">
+                      <form id="my-form">
+                          <div class="combobox-js combobox" data-form="my-form" data-name="currency"
+                              data-placeholder="Type or select currency">
+                              <div data-part="root">
+                                  <label data-part="label">Your Currency</label>
+                                  <div data-part="control">
+                                      <input data-part="input" />
+                                      <button data-part="clear-trigger">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                                          </svg>
+                                      </button>
+                                      <button data-part="trigger">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                              stroke-width="1.5" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                          </svg>
+                                      </button>
+                                  </div>
+                                  <div data-part="positioner">
+                                      <ul data-part="content" class="scrollbar">
+                                          <li data-part="item" data-code="USD" data-label="US Dollar">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                  stroke-width="1.5" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                              </svg>
+                                              US Dollar
+                                          </li>
+                                          <li data-part="item" data-code="EURO" data-label="Euro">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                  stroke-width="1.5" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                              </svg>
+                                              Euro
+                                          </li>
+                                          <li data-part="item" data-code="GBP" data-label="British Pound">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                  stroke-width="1.5" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                              </svg>
+                                              British Pound
+                                          </li>
+                                          <li data-part="item" data-code="YEN" data-label="Japanese Yen">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                  stroke-width="1.5" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                              </svg>
+                                              Japanese Yen
+                                          </li>
+                                          <li data-part="item" data-code="AL" data-label="Indian Rupee">
+                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                  stroke-width="1.5" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                              </svg>
+                                              Indian Rupee
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <button class="button button--accent" type="submit">Submit</button>
+                      </form>
+                      <div id="result"></div>
+                  </div>
+                  <div class="relative w-full">
+                      <div id="clipboard" data-part="root" class="clipboard clipboard-js absolute top-2 right-6 z-1"
+                          data-default-value="&lt;form id&#x3D;&quot;my-form&quot;&gt;
+                  &lt;div class&#x3D;&quot;combobox-js combobox&quot; data-form&#x3D;&quot;my-form&quot; data-name&#x3D;&quot;currency&quot; data-placeholder&#x3D;&quot;Type or select currency&quot;&gt;
+                  &lt;div data-part&#x3D;&quot;root&quot;&gt;
+                  &lt;label data-part&#x3D;&quot;label&quot;&gt;Your Currency&lt;/label&gt;
+                  &lt;div data-part&#x3D;&quot;control&quot;&gt;
+                  &lt;input data-part&#x3D;&quot;input&quot;&gt;
+                  &lt;button data-part&#x3D;&quot;clear-trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;button data-part&#x3D;&quot;trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div data-part&#x3D;&quot;positioner&quot;&gt;
+                  &lt;ul data-part&#x3D;&quot;content&quot; class&#x3D;&quot;scrollbar&quot;&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;USD&quot; data-label&#x3D;&quot;US Dollar&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  US Dollar
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;EURO&quot; data-label&#x3D;&quot;Euro&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Euro
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;GBP&quot; data-label&#x3D;&quot;British Pound&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  British Pound
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;YEN&quot; data-label&#x3D;&quot;Japanese Yen&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Japanese Yen
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;AL&quot; data-label&#x3D;&quot;Indian Rupee&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Indian Rupee
+                  &lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;button class&#x3D;&quot;button button--accent&quot; type&#x3D;&quot;submit&quot;&gt;Submit&lt;/button&gt;
+                  &lt;/form&gt;
+                  &lt;div id&#x3D;&quot;result&quot;&gt;&lt;/div&gt;">
+                          <div data-part="control">
+                              <label data-part="label" class="sr-only">Copy HTML</label>
+                              <button data-part="trigger" class="button button--circle">
+                                  <svg id="clipboard-copy" class="button__icon" stroke="currentColor" fill="none" stroke-width="2"
+                                      viewBox="0 0 24 24" aria-hidden="true" height="1em" width="1em"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                      </path>
+                                  </svg>
+                                  <svg id="clipboard-copied" class="button__icon" stroke="currentColor"
+                                      fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em"
+                                      width="1em" xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd"
+                                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                          clip-rule="evenodd"></path>
+                                  </svg>
+                              </button>
+                          </div>
+                      </div>
+                      <div class="preview-code scrollbar scrollbar--sm">
+                          <pre><code data-lang="html" class="code-js">&lt;form id&#x3D;&quot;my-form&quot;&gt;
+                  &lt;div class&#x3D;&quot;combobox-js combobox&quot; data-form&#x3D;&quot;my-form&quot; data-name&#x3D;&quot;currency&quot; data-placeholder&#x3D;&quot;Type or select currency&quot;&gt;
+                  &lt;div data-part&#x3D;&quot;root&quot;&gt;
+                  &lt;label data-part&#x3D;&quot;label&quot;&gt;Your Currency&lt;/label&gt;
+                  &lt;div data-part&#x3D;&quot;control&quot;&gt;
+                  &lt;input data-part&#x3D;&quot;input&quot;&gt;
+                  &lt;button data-part&#x3D;&quot;clear-trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;button data-part&#x3D;&quot;trigger&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m19.5 8.25-7.5 7.5-7.5-7.5&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  &lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div data-part&#x3D;&quot;positioner&quot;&gt;
+                  &lt;ul data-part&#x3D;&quot;content&quot; class&#x3D;&quot;scrollbar&quot;&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;USD&quot; data-label&#x3D;&quot;US Dollar&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  US Dollar
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;EURO&quot; data-label&#x3D;&quot;Euro&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.25 7.756a4.5 4.5 0 1 0 0 8.488M7.5 10.5h5.25m-5.25 3h5.25M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Euro
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;GBP&quot; data-label&#x3D;&quot;British Pound&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  British Pound
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;YEN&quot; data-label&#x3D;&quot;Japanese Yen&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;m9 7.5 3 4.5m0 0 3-4.5M12 12v5.25M15 12H9m6 3H9m12-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Japanese Yen
+                  &lt;/li&gt;
+                  &lt;li data-part&#x3D;&quot;item&quot; data-code&#x3D;&quot;AL&quot; data-label&#x3D;&quot;Indian Rupee&quot;&gt;
+                  &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; fill&#x3D;&quot;none&quot; viewBox&#x3D;&quot;0 0 24 24&quot; stroke-width&#x3D;&quot;1.5&quot; stroke&#x3D;&quot;currentColor&quot;&gt;
+                  &lt;path stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot; d&#x3D;&quot;M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z&quot;&gt;&lt;/path&gt;
+                  &lt;/svg&gt;
+                  Indian Rupee
+                  &lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;button class&#x3D;&quot;button button--accent&quot; type&#x3D;&quot;submit&quot;&gt;Submit&lt;/button&gt;
+                  &lt;/form&gt;
+                  &lt;div id&#x3D;&quot;result&quot;&gt;&lt;/div&gt;</code></pre>
+                      </div>
+                  </div>        </div>
+              <p>You can use the results from the form as you wish</p>
+              <pre><code class="code-js" data-lang="js">const formCurrency = document.getElementById('my-form') as HTMLFormElement | null;
+                  const resultCurrency  = document.getElementById('result') as HTMLDivElement | null;
+                  if (formCurrency && resultCurrency) {
+                    formCurrency.addEventListener('submit', (e: Event) => {
+                      e.preventDefault();
+                      const formData = new FormData(formCurrency);
+                      const currency = (formData.get('currency') as string) || 'none';
+                      resultCurrency.textContent = `Submitted currency: ${currency}`;
+                    });
+                  }
+              </code></pre>
+          </section>
+          <hr>
+          <h3>Templates</h3>
+          <p>Combobox components is available in the followng templates</p>
+          <ul>
+              <li>
+                  <h4>Corex template</h4>
+                  <p>Default corex templates. It provides the global, semantic and components tokens </p>
+                  <div class="flex flex-wrap items-center gap-4">
+                      <a href="https://github.com/netoum/corex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 128 128">
+                              <path fill="#1572B6"
+                                  d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+                              <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+                              <path fill="#fff"
+                                  d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+                              <path fill="#fff"
+                                  d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+                          </svg>
+                          CSS
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/corex-tailwind" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32">
+                              <path
+                                  d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
+                                  style="fill:#44a8b3" />
+                          </svg>
+                          Tailwind
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/corex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                              <path fill="#1ABCFE"
+                                  d="M8.55 8c0-1.289 1.019-2.333 2.275-2.333C12.082 5.667 13.1 6.71 13.1 8c0 1.289-1.018 2.333-2.275 2.333C9.57 10.333 8.55 9.29 8.55 8z" />
+                              <path fill="#0ACF83"
+                                  d="M4 12.667c0-1.289 1.019-2.334 2.275-2.334H8.55v2.334C8.55 13.955 7.531 15 6.275 15S4 13.955 4 12.667z" />
+                              <path fill="#FF7262"
+                                  d="M8.55 1v4.667h2.275c1.257 0 2.275-1.045 2.275-2.334C13.1 2.045 12.082 1 10.825 1H8.55z" />
+                              <path fill="#F24E1E"
+                                  d="M4 3.333c0 1.289 1.019 2.334 2.275 2.334H8.55V1H6.275C5.019 1 4 2.045 4 3.333z" />
+                              <path fill="#A259FF"
+                                  d="M4 8c0 1.289 1.019 2.333 2.275 2.333H8.55V5.667H6.275C5.019 5.667 4 6.71 4 8z" />
+                          </svg>
+                          Design Tokens
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                  </div>
+              </li>
+              <li>
+                  <h4>Modex template</h4>
+                  <p>Based on Corex default template, it adds dark and light mode option to the tokens </p>
+                  <div class="flex flex-wrap items-center gap-4">
+                      <a href="https://github.com/netoum/modex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 128 128">
+                              <path fill="#1572B6"
+                                  d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+                              <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+                              <path fill="#fff"
+                                  d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+                              <path fill="#fff"
+                                  d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+                          </svg>
+                          CSS
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/modex-tailwind" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32">
+                              <path
+                                  d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
+                                  style="fill:#44a8b3" />
+                          </svg>
+                          Tailwind
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/modex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                              <path fill="#1ABCFE"
+                                  d="M8.55 8c0-1.289 1.019-2.333 2.275-2.333C12.082 5.667 13.1 6.71 13.1 8c0 1.289-1.018 2.333-2.275 2.333C9.57 10.333 8.55 9.29 8.55 8z" />
+                              <path fill="#0ACF83"
+                                  d="M4 12.667c0-1.289 1.019-2.334 2.275-2.334H8.55v2.334C8.55 13.955 7.531 15 6.275 15S4 13.955 4 12.667z" />
+                              <path fill="#FF7262"
+                                  d="M8.55 1v4.667h2.275c1.257 0 2.275-1.045 2.275-2.334C13.1 2.045 12.082 1 10.825 1H8.55z" />
+                              <path fill="#F24E1E"
+                                  d="M4 3.333c0 1.289 1.019 2.334 2.275 2.334H8.55V1H6.275C5.019 1 4 2.045 4 3.333z" />
+                              <path fill="#A259FF"
+                                  d="M4 8c0 1.289 1.019 2.333 2.275 2.333H8.55V5.667H6.275C5.019 5.667 4 6.71 4 8z" />
+                          </svg>
+                          Design Tokens
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                  </div>
+              </li>
+          
+              <li>
+                  <h4>Themex template</h4>
+                  <p>Based on the Corex default template, it adds theming capabilities as well as light and dark mode options to the tokens.</p>        <div class="flex flex-wrap items-center gap-4">
+                      <a href="https://github.com/netoum/themex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 128 128">
+                              <path fill="#1572B6"
+                                  d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+                              <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+                              <path fill="#fff"
+                                  d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+                              <path fill="#fff"
+                                  d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z" />
+                              <path fill="#EBEBEB"
+                                  d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+                          </svg>
+                          CSS
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/themex-tailwind" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 32 32">
+                              <path
+                                  d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"
+                                  style="fill:#44a8b3" />
+                          </svg>
+                          Tailwind
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                      <a href="https://github.com/netoum/themex-css" class="link" target="_blank">
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                              <path fill="#1ABCFE"
+                                  d="M8.55 8c0-1.289 1.019-2.333 2.275-2.333C12.082 5.667 13.1 6.71 13.1 8c0 1.289-1.018 2.333-2.275 2.333C9.57 10.333 8.55 9.29 8.55 8z" />
+                              <path fill="#0ACF83"
+                                  d="M4 12.667c0-1.289 1.019-2.334 2.275-2.334H8.55v2.334C8.55 13.955 7.531 15 6.275 15S4 13.955 4 12.667z" />
+                              <path fill="#FF7262"
+                                  d="M8.55 1v4.667h2.275c1.257 0 2.275-1.045 2.275-2.334C13.1 2.045 12.082 1 10.825 1H8.55z" />
+                              <path fill="#F24E1E"
+                                  d="M4 3.333c0 1.289 1.019 2.334 2.275 2.334H8.55V1H6.275C5.019 1 4 2.045 4 3.333z" />
+                              <path fill="#A259FF"
+                                  d="M4 8c0 1.289 1.019 2.333 2.275 2.333H8.55V5.667H6.275C5.019 5.667 4 6.71 4 8z" />
+                          </svg>
+                          Design Tokens
+                          <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                              stroke="currentColor">
+                              <title>Opens in a new window</title>
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                          </svg>
+                      </a>
+                  </div>
+              </li>
+             
+          </ul>    </section>
+          <section class="flex flex-wrap justify-between items-center gap-4 my-8">
+              <a href="/corex/documentation/components/collapsible" class="link">
+                  <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                    
+                Collapsible
+              </a>
+              <a href="/corex/documentation/components/date-picker" class="link">Date Picker
+                  <svg class="link__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                    
+              </a>
+            </section></main>
+  </div>
+</body>
+</html>
