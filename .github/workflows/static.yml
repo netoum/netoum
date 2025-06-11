@@ -36,6 +36,9 @@ jobs:
       - name: Initial build (no Pagefind)
         run: npm run build
 
+      - name: Re-run Pagefind after final build
+        run: npx pagefind --site "dist/corex"
+
       - name: Run Pagefind to generate search index
         run: npx pagefind --site "dist/corex"
 
